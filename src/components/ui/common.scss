@@ -1,0 +1,75 @@
+:root {
+  --color-primary: #2e3192;
+  --color-secondary: #9798c9;
+
+  --bg-button-sea: #0071bc;
+  --bg-button-wave: #0091c7;
+  --bg-button-seaweed: #00a99d;
+  --bg-button-grass: #009245;
+
+  --color-orange: #fbb03b;
+  --color-blue: #b8e4fa;
+  --color-orange-secondary: #f9bc90;
+  --color-orange-bright: #f37920;
+  --color-salad: #acca3e;
+  --color-fuchsia: #d60080;
+  --color-fuchsia-secondary: #e97fc0;
+
+  --bg-button-disabled: #818c99;
+
+  --background: #fbfdff;
+  --background-popup: #ffffff;
+}
+
+.text {
+  margin: 0;
+  padding: 0;
+}
+
+.text_color_primary {
+  color: var(--color-primary);
+}
+
+.color_gradient {
+  background-image: linear-gradient(to right, var(--background-popup) 0%, var(--color-primary) 50%, var(--background-popup) 100%);
+}
+
+.text_type_h1 {
+  font-family: "Golos", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.text_type_h2 {
+  font-family: "Golos", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.text_type_h3 {
+  font-family: "Golos", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.text_type_h4 {
+  font-family: "Golos", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.text_type_h5 {
+  font-family: "Golos", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}
