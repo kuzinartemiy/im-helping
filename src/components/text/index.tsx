@@ -1,14 +1,13 @@
-import React from 'react';
 import styles from './text.module.scss';
 
 interface ITextProps {
   children: React.ReactNode
-  tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p'
-  weight: '400' | '700'
-  size: '12' | '16' | '24'
+  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p'
+  weight?: '400' | '700'
+  size?: '12' | '16' | '24'
 }
 
-const Text = ({ children, tag, weight, size }: ITextProps) => {
+const Text = ({ children, tag = 'p', weight = '400', size = '12' }: ITextProps) => {
   switch (true) {
     case tag === 'h1':
       return <h1 className={`${styles.text} ${styles[`text_size_${size}`]} ${styles[`text_weight_${weight}`]}`}>{children}</h1>;
