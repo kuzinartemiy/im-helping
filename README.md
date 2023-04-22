@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# Я помогаю
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Идея
+«Я помогаю» это ресурс поиска добровольцев и волонтеров для помощи людям оказавшихся в сложной ситуации. На нашей площадке вы можете подать заявку на просьбу о помощи либо выступить в роли волонтера и начать оказывать помощь людям живущим рядом с вами. Все заявки проходят строгую модерацию и сложные задания передаются только опытным волонтерам. 
 
-## Available Scripts
+## Обзор
+Площадка с возможностью регистрации и авторизации, написания заявок реципиентом, откликанием на заявки разной сложности волонтером, проецированием заявок на Яндекс.Карты, а так же модерацией взаимодействия реципиента с волонтером через администратора и т.д.
 
-In the project directory, you can run:
+>Данный проект реализован в рамках обучения на курсе "Веб-разработчик плюс" студентами Яндекс Практикума. Команда Фронтики.
 
-### `npm start`
+[Макет в Figma](https://www.figma.com/file/xYLbl9kLmcAwYCbAhCFMCy/%D0%AF%D0%9F%D0%BE%D0%BC%D0%BE%D0%B3%D0%B0%D1%8E-(Web)?node-id=179-1699&t=cp3lBCLa0Hhu3fVY-0).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Используемые технологии
+* ReactJS
+* Sass
+* TypeScript
+* React Date Picker
+* React Form
+* Zustand
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Команда Фронтики
+* [Артемий Кузин](https://github.com/kuzinartemiy).
+* [Любовь Васильева](https://github.com/Luba-web).
+* [Сергей Анохин](https://github.com/sergeianokhin).
+* [Екатерина Крючкова](https://github.com/krekser37).
+* [Юлия Аверьянова](https://github.com/AvaveryU).
+* [Диана Пылаева](https://github.com/loown101).
+* [Иван Жук](https://github.com/Zhukek).
+* [Камиль Каландаров](https://github.com/Kamil-Kalandarov).
+* [Максим Соколов](https://github.com/maxvrt).
+* [Дмитрий Баранов](https://github.com/DmitryBaranovAndreevich).
+* [Лев Пензин](https://github.com/leondasferras).
+* [Георгий Ревазашвили](https://github.com/zigfrei).
+* [Виталий Котов](https://github.com/VitKotov).
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Локальный запуск проекта:
+* Выполните `npm install && npm start` в терминале, находясь в папке проекта.
