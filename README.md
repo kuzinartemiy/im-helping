@@ -32,3 +32,12 @@
 * [Лев Пензин](https://github.com/leondasferras).
 * [Георгий Ревазашвили](https://github.com/zigfrei).
 * [Виталий Котов](https://github.com/VitKotov).
+
+## Локальный запуск проекта:
+* Создайте локальную директорию для проекта
+`mkdir dev`
+* Перейдите в созданную директорию
+`cd dev`
+* Клонируйте репозиторий в созданную директорию
+`git clone https://github.com/kuzinartemiy/im-helping.git`
+* Выполните `npm install && npm start` в терминале, находясь в папке проекта.
