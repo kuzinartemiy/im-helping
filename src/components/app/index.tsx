@@ -2,7 +2,6 @@ import React from 'react';
 import logo from './logo.svg';
 import styles from './app.module.scss';
 import Footer from '../footer/footer';
-import Text from '../text';
 
 function App() {
   return (
