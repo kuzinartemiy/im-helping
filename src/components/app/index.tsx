@@ -1,9 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import styles from './app.module.scss';
+import Footer from '../footer/footer';
 
 function App() {
   return (
+    <>
     <div className={styles.app}>
       <header className={styles.appHeader}>
         <img src={logo} className={styles.appLogo} alt="logo" />
@@ -21,6 +23,8 @@ function App() {
         <div className={`color_gradient ${styles.block}`}></div>
       </header>
     </div>
+    <Footer />
+    </>
   );
 }
 
