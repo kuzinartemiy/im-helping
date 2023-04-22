@@ -1,0 +1,21 @@
+@import url(../../styles/colors.scss);
+
+.text {
+  margin: 0;
+  color: var(--color-orange);
+  &_size_12 {
+    font-size: 12px;
+  }
+  &_size_16 {
+    font-size: 16px;
+  }
+  &_size_24 {
+    font-size: 24px;
+  }
+  &_weight_400 {
+    font-weight: 400;
+  }
+  &_weight_700 {
+    font-weight: 700;
+  }
+}
