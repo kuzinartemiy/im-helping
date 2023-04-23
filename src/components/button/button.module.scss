@@ -1,0 +1,34 @@
+@import url(../../styles/colors.scss);
+
+.button {
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  font-size: 12px;
+  transition: .3s;
+  &_viewType_primary {
+    border: none;
+    color: var(--background-popup);
+    background-color: var(--color-primary);
+    &:hover {
+      background-color: var(--bg-button-sea);
+    }
+    &:disabled {
+      background-color: var(--bg-button-disabled);
+    }
+  }
+  &_viewType_secondary {
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    background-color: var(--background-popup);
+    &:hover {
+      color: var(--background-popup);
+      background-color: var(--bg-button-sea);
+    }
+    &:disabled {
+      color: var(--bg-button-disabled);
+      border: 1px solid var(--bg-button-disabled);
+      background-color: var(--background-popup);
+    }
+  }
+}
