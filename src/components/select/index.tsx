@@ -4,6 +4,7 @@ import styles from './select.module.scss';
 interface ISelect {
   value: string
   elementsList: string[]
+  name?: string
   errorText?: string
   isError?: (value: string) => boolean
   onChange?: (e: React.FormEvent) => void
@@ -15,6 +16,7 @@ const Select: React.FC<ISelect> = ({
   errorText,
   isError: checkError = null,
   onChange,
+  name,
 }) => {
   const [stateValue, setStateValue] = React.useState(value);
   const [isDefault, setIsDefault] = React.useState(true);
@@ -93,6 +95,8 @@ const Select: React.FC<ISelect> = ({
         value={stateValue}
         className={styles.input}
         onInput={onChange}
+        readOnly
+        name={name}
       />
     </div>
   );
