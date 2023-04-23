@@ -1,0 +1,19 @@
+.checkboxes {
+  height: 159px;
+  width: 370px;
+  margin: 0 auto;
+}
+
+.checkboxes__title {
+  padding-top: 22px;
+  padding-left: 30px;
+  margin: 0;
+  padding-bottom: 19px;
+}
+
+.checkboxes__container {
+  max-height: 125px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
