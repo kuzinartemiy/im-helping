@@ -1,7 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
 import styles from './app.module.scss';
 import Checkboxes from '../checkboxes/checkboxes';
+import Footer from '../footer';
+import Box from '../box';
+import Text from '../text';
 
 function App() {
   return (
@@ -23,6 +24,11 @@ function App() {
         </header>
       </div>
       <Checkboxes title='отображать' />
+      <div className={styles.app} />
+      <Box>
+        <Text tag='p' size='24' weight='700'>TEST</Text>
+      </Box>
+      <Footer />
     </>
   );
 }
