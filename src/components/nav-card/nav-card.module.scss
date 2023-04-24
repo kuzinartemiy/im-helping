@@ -1,30 +1,13 @@
 @import url(../../styles/colors.scss);
 
-.linkCardContainer {
-  box-sizing: border-box;
-
-  display: flex;
-  flex-direction: column;
-
-  list-style: none;
-
-  max-width: 295px;
-  height: 426px;
-
-  border: 2px solid var(--color-primary);
-
-  padding-top: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
 .linkCard {
+  margin: 0;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
 
+  max-width: 274px;
   max-height: 113px;
-  margin-bottom: 10px;
 
   cursor: pointer;
 
@@ -58,4 +41,8 @@
   color: var(--background-popup);
   text-decoration: none;
   line-height: 19px;
+}
+
+.colorIcon path {
+  fill: var(--background-popup);
 }

@@ -1,0 +1,24 @@
+@import url(../../styles/colors.scss);
+
+.linkCardContainer {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  list-style: none;
+
+  max-width: 295px;
+  height: 426px;
+
+  border: 2px solid var(--color-primary);
+
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+
+  & li {
+    margin-bottom: 10px;
+  }
+}
