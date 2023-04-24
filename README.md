@@ -32,6 +32,7 @@
 * [Лев Пензин](https://github.com/leondasferras).
 * [Георгий Ревазашвили](https://github.com/zigfrei).
 * [Виталий Котов](https://github.com/VitKotov).
+* [Даниил Андреев](https://github.com/accrrsd).
 
 ## Локальный запуск проекта:
 * Выполните `npm install && npm start` в терминале, находясь в папке проекта.
