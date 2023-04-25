@@ -1,0 +1,95 @@
+@import '../../styles/mixins/index.scss';
+
+.personWrapper {
+  @include font-source-sans(12px, var(--color-primary), 400, 14.4px);
+  max-width: 295px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  position: relative;
+  padding-top: 93px;
+}
+
+.personAvatar {
+  position: absolute;
+  top:0;
+  left: calc(50% - 175px/2);
+  border-radius: 50%;
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+  z-index: 5;
+}
+
+.personInfo {
+  padding-top: 93px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 4px solid;
+  border-image: url('../../assets/images/person-border.svg') 1;
+  position: relative;
+}
+
+
+.personName {
+ font-size: 16px;
+ line-height: 19.2px;
+}
+
+.personId {
+  color: var(--color-secondary)
+}
+
+.personProp {
+
+}
+
+.propKey {
+  font-weight: 700;
+}
+
+.propValue {
+  
+}
+
+.countersWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+}
+
+.counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.editButton {
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+}
+
+.editButton path {
+  fill: white;
+  z-index: 5;
+}
+
+.editIconWrapper {
+  position: relative;
+  background-color: var(--color-primary);
+  z-index: 5;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+}
+
+.editIcon {
+  position: absolute;
+  bottom: -10px;
+  left: -9px;
+  width: 35px;
+  height: 35px;
+}
