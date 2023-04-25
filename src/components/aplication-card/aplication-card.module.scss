@@ -1,34 +1,12 @@
-/* .aplicationCard{
-  width: 889px;
-  max-height: 219px;
-  display: flex;
-  gap: 54px;
-} */
-
 .aplicationCard{
   max-width: 889px;
   min-height: 219px;
   display: grid;
-  grid-template-columns: 0.5fr 2fr 1fr 0.1fr;
-  grid-template-rows: 0.5fr 3fr;
+  grid-template-columns: 0.5fr 1.5fr 1fr 0.1fr;
+  grid-template-rows: 0.1fr 1fr;
   grid-template-areas:
   'category-bar category-bar user buttons'
-  'first-column first-column user buttons';
-  align-items: start;
-}
-
-@media screen and (max-width: 720px) {
-  .aplicationCard {
-    max-width: 365px;
-    height: 436px;
-    grid-template-columns: 2fr 0.1fr;
-    grid-template-rows: 0.5fr 2fr 3fr;
-    grid-template-areas:
-    'category-bar buttons'
-    'user buttons'
-    'first-column complitedApp';
-    row-gap: 20px;
-  }
+  'dateTimeLocation about user buttons';
 }
 
 .aplicationCard__categoryBarContainer {
@@ -36,56 +14,14 @@
   padding-top: 5px;
 }
 
-.aplicationCard__firstColumn {
-  grid-area: first-column;
-  display: flex;
-  flex-direction: column;
-}
-
-.aplicationCard__mainInfo {
-  display: flex;
-  gap: 20px;
-}
-
-@media screen and (max-width: 720px) {
-  .aplicationCard__mainInfo {
-    flex-direction: column;
-  }
-}
-
 .aplicationCard__dateTimeLocation {
+  grid-area: dateTimeLocation;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-@media screen and (max-width: 720px) {
-  .aplicationCard__dateTimeLocation {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 721px) {
-  .aplicationCard__dateTimeLocation_type_smallScreen {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .aplicationCard__dateTimeLocation_type_smallScreen {
-    order: 2;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-    'date time'
-    'location location';
-    column-gap: 40px;
-  }   
-}
-
 .aplicationCard__dateContainer {
-  grid-area: date;
   max-width: 153px;
   display: flex;
   align-items: center;
@@ -94,7 +30,6 @@
 }
 
 .aplicationCard__timeContainer {
-  grid-area: time;
   max-width: 153px;
   display: flex;
   align-items: center;
@@ -103,7 +38,6 @@
 }
 
 .aplicationCard__locationContainer {
-  grid-area: location;
   max-width: 166px;
   display: flex;
   align-items: center;
@@ -112,9 +46,11 @@
 }
 
 .aplicationCard__about {
+  grid-area: about;
   max-height: 149px;
   display: flex;
   flex-direction: column;
+  padding-left: 20px;
 }
 
 .aplicationCard__textContainer {
@@ -127,15 +63,6 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 720px) {
-  .aplicationCard__textContainer {
-    max-height: 108px;
-    max-width: 275px;
-    padding-top: 5px;
-    margin-bottom: 5px;
-  }
-}
-
 .aplicationCard__textAbout {
   box-sizing: border-box;
   font-size: 16px;
@@ -146,12 +73,6 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-@media screen and (max-width: 720px) {
-  .aplicationCard__textAbout {
-    -webkit-line-clamp: 4;
-  }
 }
 
 .aplicationCard__textAboutLink {
@@ -168,27 +89,6 @@
   gap: 5px;
 }
 
-@media screen and (max-width: 720px) {
-  .aplicationCard__completedQuantity {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 721px) {
-  .aplicationCard__completedQuantity_type_smallScreen {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .aplicationCard__completedQuantity_type_smallScreen {
-    grid-area: complitedApp;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-}
-
 .aplicationCard__userColumn {
   grid-area: user;
   display: flex;
@@ -197,9 +97,12 @@
   gap: 2px;
   padding-right: 50px;
   padding-left: 54px;
+  padding-top: 7px;
 }
 
 .aplicationCard__buttonsColumn {
   grid-area: buttons;
-  
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

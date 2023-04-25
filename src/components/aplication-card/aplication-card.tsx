@@ -37,57 +37,35 @@ const AplicationCard: FC<IAplicationCard> = ({
       <div className={styles.aplicationCard__categoryBarContainer}>
         <CategoryBar children={<Text children='категория' color={'#FFFFFF'}/>} bgColor={'#9798C9'}/>
       </div>
-      <div className={styles.aplicationCard__firstColumn}>
-        <div className={styles.aplicationCard__mainInfo}>
-          <div className={styles.aplicationCard__dateTimeLocation}>
-            <div className={styles.aplicationCard__dateContainer}>
-              <Calendar />
-              <Text children={date} size={'24'} color={'#2E3192'} />
-            </div>
-            <div className={styles.aplicationCard__dateContainer}>
-              <Clock />
-              <Text children={time} size={'24'} color={'#2E3192'} />
-            </div>
-            <div className={styles.aplicationCard__dateContainer}>
-              <LocationIcon />
-              <Text children={location} size={'16'} color={'#2E3192'} />
-            </div>
-          </div>
-          <div className={styles.aplicationCard__dateTimeLocation_type_smallScreen}>
-            <div className={styles.aplicationCard__dateContainer}>
-              <Calendar />
-              <Text children={date} size={'16'} weight={'700'} color={'#2E3192'} />
-            </div>
-            <div className={styles.aplicationCard__timeContainer}>
-              <Clock />
-              <Text children={time} size={'16'} weight={'700'} color={'#2E3192'} />
-            </div>
-            <div className={styles.aplicationCard__locationContainer}>
-              <LocationIcon />
-              <Text children={location} size={'16'} weight={'700'} color={'#2E3192'} />
-            </div>
-          </div>
-          <div className={styles.aplicationCard__about}>
-            <Text children={'Заголовок'} size={'24'} color={'#2E3192'} />
-            <div className={styles.aplicationCard__textContainer}>
-              <p className={styles.aplicationCard__textAbout}>{about}</p>
-              <p><a className={styles.aplicationCard__textAboutLink} href='*'>читать</a></p>
-            </div>
-            <div className={styles.aplicationCard__completedQuantity}>
-              <ComplitedAplications width={'32px'} height={'32px'}/>
-              <Text children={complitedAppQuantity} color={'#2E3192'}/>
-            </div>
-          </div>
+      <div className={styles.aplicationCard__dateTimeLocation}>
+        <div className={styles.aplicationCard__dateContainer}>
+          <Calendar />
+          <Text children={date} size={'24'} color={'#2E3192'} />
+        </div>
+        <div className={styles.aplicationCard__dateContainer}>
+          <Clock />
+          <Text children={time} size={'24'} color={'#2E3192'} />
+        </div>
+        <div className={styles.aplicationCard__dateContainer}>
+          <LocationIcon />
+          <Text children={location} size={'16'} color={'#2E3192'} />
+        </div>
+      </div>
+      <div className={styles.aplicationCard__about}>
+        <Text children={'Заголовок'} size={'24'} color={'#2E3192'} />
+        <div className={styles.aplicationCard__textContainer}>
+          <p className={styles.aplicationCard__textAbout}>{about}</p>
+          <p><a className={styles.aplicationCard__textAboutLink} href='*'>читать</a></p>
+        </div>
+        <div className={styles.aplicationCard__completedQuantity}>
+          <ComplitedAplications width={'32px'} height={'32px'}/>
+          <Text children={complitedAppQuantity} color={'#2E3192'}/>
         </div>
       </div>
       <div className={styles.aplicationCard__userColumn}>
         <UserAvatar src={ userAvatar } />
         <Text children={userName} align={'center'} />
         <Text children={userPhone} />
-      </div>
-      <div className={styles.aplicationCard__completedQuantity_type_smallScreen}>
-        <ComplitedAplications width={'32px'} height={'32px'}/>
-        <Text children={complitedAppQuantity} color={'#2E3192'}/>
       </div>
       <div className={styles.aplicationCard__buttonsColumn}>
         <ServiceButton />
