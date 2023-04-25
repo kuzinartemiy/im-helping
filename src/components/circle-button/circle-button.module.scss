@@ -10,9 +10,10 @@
     border: 0;
     transition: background-color 0.2s ease-in-out;
     padding: 8px 0;
+    background-color: var(--color-primary);
 
     &:hover {
-        background-color: var(--bg-button-wave) !important;
+        background-color: var(--bg-button-wave);
     }
 
     &:disabled {
@@ -24,13 +25,23 @@
         height: 100%;
     }
 
-    &__small {
+    &__large {
         width: 53px;
         height: 53px;
+
+        &:active,
+        &:focus {
+            background-color: var(--bg-button-wave);
+        }
     }
 
-    &__large {
+    &__small {
         width: 32px;
         height: 32px;
+
+        &:active,
+        &:focus {
+            background-color: var(--color-primary);
+        }
     }
 }
