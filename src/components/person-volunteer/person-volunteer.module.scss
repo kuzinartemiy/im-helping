@@ -75,15 +75,18 @@
 .editButton path {
   fill: white;
   z-index: 5;
+  transition: all 0.2s ease-in-out;
 }
 
 .editIconWrapper {
   position: relative;
-  background-color: var(--color-primary);
+  background: url('../../assets/images/edit-btn-bg.svg');
   z-index: 5;
   width: 32px;
-  height: 32px;
+  height: 33px;
   overflow: hidden;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
 }
 
 .editIcon {
@@ -92,4 +95,23 @@
   left: -9px;
   width: 35px;
   height: 35px;
+  transition: all 0.5s ease-in-out;
+}
+
+// ховер на кнопку редактирования
+.editButton:hover path {
+  fill: var(--color-primary)
+}
+
+.editButton:hover .editIconWrapper {
+  background-color: transparent;
+  background-image: none;
+  overflow: visible;
+}
+
+.editButton:hover .editIcon {
+  transform: rotate(90deg);
+  left:3px;
+  bottom: 3px;
+
 }
