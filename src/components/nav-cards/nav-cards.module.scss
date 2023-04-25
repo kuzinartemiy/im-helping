@@ -22,3 +22,33 @@
     margin-bottom: 10px;
   }
 }
+
+.linkCard {
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  max-width: 274px;
+  max-height: 113px;
+
+  cursor: pointer;
+
+  border: 1px solid var(--color-black);
+  background-color: var(--color-primary);
+  transition: .3s;
+    &:visited {
+      background-color: var(--bg-button-sea);
+    }
+    &:hover {
+      opacity: 0.7;
+      background-color: var(--bg-button-sea);
+    }
+    &:disabled {
+      background-color: var(--bg-button-disabled);
+    }
+}
+
+.colorIcon path {
+  fill: var(--background-popup);
+}
