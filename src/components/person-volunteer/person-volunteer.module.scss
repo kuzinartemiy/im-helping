@@ -8,7 +8,7 @@
   justify-content: flex-end;
   box-sizing: border-box;
   position: relative;
-  padding-top: 93px;
+  padding-top: 83px;
 }
 
 .personAvatar {
@@ -16,6 +16,7 @@
   top:0;
   left: calc(50% - 175px/2);
   border-radius: 50%;
+  border: 1px solid #B8E4FA;
   width: 175px;
   height: 175px;
   object-fit: cover;
@@ -23,7 +24,7 @@
 }
 
 .personInfo {
-  padding-top: 93px;
+  padding: 93px 46px 35px 30px;
   box-sizing: border-box;
   width: 100%;
   border: 4px solid;
@@ -35,18 +36,25 @@
 .personName {
  font-size: 16px;
  line-height: 19.2px;
+ margin-bottom: 5px;
 }
 
 .personId {
-  color: var(--color-secondary)
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+  
 }
 
 .personProp {
-
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  margin-bottom: 10px;
+  grid-gap: 6px;
 }
 
 .propKey {
   font-weight: 700;
+
 }
 
 .propValue {
@@ -58,18 +66,22 @@
   flex-direction: row;
   align-items: center;
   justify-content: end;
+  margin-top: 10px;
+  gap: 10px;
 }
 
 .counter {
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 5px;
 }
 
 .editButton {
   position: absolute;
   bottom: -2px;
   left: -2px;
+  cursor: pointer;
 }
 
 .editButton path {
@@ -113,5 +125,18 @@
   transform: rotate(90deg);
   left:3px;
   bottom: 3px;
+}
+
+.progressBar {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  align-items: center;
+  gap: 5px;
+}
+
+.progressTitle {
 
 }
