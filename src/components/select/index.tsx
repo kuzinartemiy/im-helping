@@ -78,9 +78,9 @@ const Select: React.FC<ISelect> = ({
       {isError && <p className={styles.error}>{errorText}</p>}
       {isOpen && (
         <ul className={styles.dropdownList}>
-          {elementsList.map((el) => (
+          {elementsList.map((el, index) => (
             <li
-              key={el}
+              key={index}
               className={styles.dropdownItem}
               onClick={handleClickLi}
             >
