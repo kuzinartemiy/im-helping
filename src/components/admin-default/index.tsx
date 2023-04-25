@@ -1,5 +1,6 @@
 import styles from './admin-default.module.scss';
 import testImg1 from '../../../src/assets/images/logo192.png';
+import Button from '../button/button';
 
 interface IAdminDefaultProps {
   children?: React.ReactNode
@@ -8,25 +9,26 @@ interface IAdminDefaultProps {
   userId: string
   userTel: string
   userPoints: string
-  userKey: string
+  userKey?: string
   userHelps: string
   lineColor: string
 }
 
 const AdminDefault = (props: IAdminDefaultProps) => {
+  const isKey = props.userKey;
   let lineItemsColor;
   switch (props.lineColor) {
     case 'green':
-      lineItemsColor = 'lineItemsGreen';
+      lineItemsColor = styles.lineItemsGreen;
       break;
     case 'orange':
-      lineItemsColor = 'lineItemsOrange';
+      lineItemsColor = styles.lineItemsOrange;
       break;
     case 'grey':
-      lineItemsColor = 'lineItemsGrey';
+      lineItemsColor = styles.lineItemsGrey;
       break;
     default:
-      lineItemsColor = 'lineItemsOrange';
+      lineItemsColor = styles.lineItemsOrange;
   }
   return (
     <div className={styles.adminDefault}>
@@ -38,12 +40,18 @@ const AdminDefault = (props: IAdminDefaultProps) => {
           <p className={styles.userTelChild}>Тел:</p>
           <p className={styles.userTelVar}>{props.userTel}</p>
         </div>
-        <div className={styles.lineItems + ' ' + lineItemsColor}>
+        <div className={styles.lineItems}>
           <p className={styles.userPoints}>{props.userPoints}</p>
-          <p className={styles.userKey}>{props.userKey}</p>
+          { (isKey != null) ? <p className={styles.userKey}>{props.userKey}</p> : <div className="hidden-block"></div>}
           <p className={styles.userHelps}>{props.userHelps}</p>
         </div>
+        <div className={styles.buttons}>
+          <Button viewType='secondary'>Подтвердить</Button>
+          <Button>Заблокировать</Button>
+          <Button>Дать ключи</Button>
+        </div>
       </div>
+      <div className={lineItemsColor}></div>
     </div>
   );
 };
@@ -54,9 +62,10 @@ AdminDefault.defaultProps = {
   userId: '11111114',
   userTel: '+7(000) 000-00-04',
   userPoints: '2500',
-  userKey: '1',
   userHelps: '150',
+  userKey: '1',
   lineColor: 'green',
+  confirmed: 'confirmed',
 };
 
 export default AdminDefault;
