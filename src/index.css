@@ -1,6 +1,6 @@
 @import url(./assets/fonts/fonts.css);
 
-body, button {
+body, button, h5 {
   margin: 0;
   font-family: 'Golos', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

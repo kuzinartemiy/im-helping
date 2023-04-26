@@ -1,15 +1,16 @@
 import styles from './app.module.scss';
-import Checkboxes from '../checkboxes/checkboxes';
 import Footer from '../footer';
 import Box from '../box';
 import Text from '../text';
+import DatePickerExs from '../datepicker';
+import DatePickerTime from '../datepicker_time';
 
 function App() {
   return (
     <>
       <div className={styles.app}>
         <header className={styles.appHeader}>
-          <img src={logo} className={styles.appLogo} alt="logo" />
+          <img /* src={logo} */ className={styles.appLogo} alt="logo" />
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
@@ -23,11 +24,13 @@ function App() {
           </a>
         </header>
       </div>
-      <Checkboxes title='отображать' />
-      <div className={styles.app} />
       <Box>
         <Text tag='p' size='24' weight='700'>TEST</Text>
       </Box>
+      <DatePickerTime/>
+      <DatePickerExs/>
+      <div className={styles.app} />
+
       <Footer />
     </>
   );
