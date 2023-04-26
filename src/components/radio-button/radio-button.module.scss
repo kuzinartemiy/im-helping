@@ -12,10 +12,6 @@
     color: var(--background-popup);
     background-color: var(--color-primary);
   }
-  
-  &:not(:last-of-type) {
-    margin-right: 10px;
-  }
 }
 
 .radioInput {

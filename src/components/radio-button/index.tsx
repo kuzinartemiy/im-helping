@@ -6,7 +6,7 @@ interface IRadioButton {
   value: number
   text: string | number
   onChange: ChangeEventHandler<HTMLInputElement>
-  actualValue: string | undefined
+  actualValue: string
 }
 
 const RadioButton: FC<IRadioButton> = ({ name, value, text, onChange, actualValue }) => {

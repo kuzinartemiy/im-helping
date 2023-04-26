@@ -1,4 +1,7 @@
 .radiusSearch {
-  display: flex;
-  flex-direction: row;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, max-content);
+  grid-auto-flow: column;
+  column-gap: 10px;
 }

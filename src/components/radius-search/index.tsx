@@ -4,7 +4,7 @@ import RadioButton from '../radio-button';
 import styles from './radius-search.module.scss';
 
 const RadiusSearch = () => {
-  const [value, setValue] = useState<string | undefined>('1');
+  const [value, setValue] = useState<string>('1');
 
   const onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     setValue(e.target.value);
