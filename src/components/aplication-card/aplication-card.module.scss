@@ -1,4 +1,4 @@
-.aplicationCard{
+.applicationCard{
   max-width: 889px;
   min-height: 219px;
   display: grid;
@@ -9,19 +9,19 @@
   'dateTimeLocation about user buttons';
 }
 
-.aplicationCard__categoryBarContainer {
+.applicationCard__categoryBarContainer {
   grid-area: category-bar;
   padding-top: 5px;
 }
 
-.aplicationCard__dateTimeLocation {
+.applicationCard__dateTimeLocation {
   grid-area: dateTimeLocation;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.aplicationCard__dateContainer {
+.applicationCard__dateContainer {
   max-width: 153px;
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@
   gap: 5px;
 }
 
-.aplicationCard__timeContainer {
+.applicationCard__timeContainer {
   max-width: 153px;
   display: flex;
   align-items: center;
@@ -37,7 +37,7 @@
   gap: 5px;
 }
 
-.aplicationCard__locationContainer {
+.applicationCard__locationContainer {
   max-width: 166px;
   display: flex;
   align-items: center;
@@ -45,7 +45,7 @@
   gap: 5px;
 }
 
-.aplicationCard__about {
+.applicationCard__about {
   grid-area: about;
   max-height: 149px;
   display: flex;
@@ -53,7 +53,7 @@
   padding-left: 20px;
 }
 
-.aplicationCard__textContainer {
+.applicationCard__textContainer {
   max-width: 397px;
   max-height: 65px;
   padding-top: 10px;
@@ -63,7 +63,7 @@
   box-sizing: border-box;
 }
 
-.aplicationCard__textAbout {
+.applicationCard__textAbout {
   box-sizing: border-box;
   font-size: 16px;
   font-weight: 400;
@@ -75,7 +75,7 @@
   overflow: hidden;
 }
 
-.aplicationCard__textAboutLink {
+.applicationCard__textAboutLink {
   text-decoration: none;
   font-size: 16px;
   font-weight: 400;
@@ -83,13 +83,13 @@
   text-align: left;
 }
 
-.aplicationCard__completedQuantity {
+.applicationCard__completedQuantity {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.aplicationCard__userColumn {
+.applicationCard__userColumn {
   grid-area: user;
   display: flex;
   flex-direction: column;
@@ -100,7 +100,7 @@
   padding-top: 7px;
 }
 
-.aplicationCard__buttonsColumn {
+.applicationCard__buttonsColumn {
   grid-area: buttons;
   display: flex;
   flex-direction: column;
