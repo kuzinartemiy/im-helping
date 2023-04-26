@@ -6,12 +6,12 @@ import Text from '../text';
 function App() {
   return (
     <>
-    <div className={styles.app} />
-    <Box>
-      <Text tag='p' size='24' weight='700'>TEST</Text>
-    </Box>
-    <Footer />
-  </>
+      <div className={styles.app} />
+      <Box>
+        <Text tag='p' size='24' weight='700'>TEST</Text>
+      </Box>
+      <Footer />
+    </>
   );
 }
 
