@@ -1,13 +1,8 @@
 import { /* React, */ useState } from 'react';
 import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import es from 'date-fns/locale/es';
 import styles from './datepicker.module.scss';
-
 registerLocale('es', es);
-
-// CSS Modules, react-datepicker-cssmodules.css
-// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 setDefaultLocale('es');
 
 const DatePickerExs = () => {

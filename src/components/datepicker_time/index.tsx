@@ -1,12 +1,8 @@
 import { /* React, */ useState } from 'react';
 import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import ru from 'date-fns/locale/ru';
 import styles from './datepicker_time.module.scss';
-import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 registerLocale('ru', ru);
-
-// CSS Modules, react-datepicker-cssmodules.css
 
 setDefaultLocale('ru');
 
