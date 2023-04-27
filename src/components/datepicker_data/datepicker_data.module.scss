@@ -1,7 +1,0 @@
-@import "../../styles/mixins/index.scss";
-@import "../../styles/colors.scss";
-
-.name {
-    @include font-source-sans(12px, var(--text-color-black), 400, 14px);
-    margin-bottom: 5px;
-}

@@ -2,8 +2,7 @@ import styles from './app.module.scss';
 import Footer from '../footer';
 import Box from '../box';
 import Text from '../text';
-import DatePickerExs from '../datepicker_data';
-import DatePickerTime from '../datepicker_time';
+import DatePickerProd from '../datepicker_prod';
 
 function App() {
   return (
@@ -27,8 +26,6 @@ function App() {
       <Box>
         <Text tag='p' size='24' weight='700'>TEST</Text>
       </Box>
-      <DatePickerTime/>
-      <DatePickerExs/>
       <div className={styles.app} />
 
       <Footer />
