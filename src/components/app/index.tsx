@@ -2,32 +2,16 @@ import styles from './app.module.scss';
 import Footer from '../footer';
 import Box from '../box';
 import Text from '../text';
-import DatePickerProd from '../datepicker_prod';
+import RadiusSearch from '../radius-search';
 
 function App() {
   return (
     <>
-      <div className={styles.app}>
-        <header className={styles.appHeader}>
-          <img /* src={logo} */ className={styles.appLogo} alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className={styles.appLink}
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <div className={styles.app} />
       <Box>
         <Text tag='p' size='24' weight='700'>TEST</Text>
       </Box>
-      <div className={styles.app} />
-
+      <RadiusSearch />
       <Footer />
     </>
   );
