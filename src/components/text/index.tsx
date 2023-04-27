@@ -14,7 +14,7 @@ const Text = ({ children, tag = 'p', weight = '400', size = '12', color = 'black
     <Component style={{
       color,
       textAlign: align,
-      fontSize: size,
+      fontSize: `${size}px`,
       fontWeight: weight,
     }}>
       {children}
