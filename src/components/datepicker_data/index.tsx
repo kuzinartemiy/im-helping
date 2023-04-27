@@ -1,7 +1,7 @@
 import { /* React, */ useState } from 'react';
 import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker';
 import es from 'date-fns/locale/es';
-import styles from './datepicker.module.scss';
+import styles from './datepicker_data.module.scss';
 registerLocale('es', es);
 setDefaultLocale('es');
 
@@ -13,9 +13,8 @@ const DatePickerExs = () => {
       <div className={styles.data}>
       <DatePicker
         selected={startDate}
-        onChange={(date) => setStartDate(date)}
+        onChange={(date: any) => { setStartDate(date); } }
         inline
-        /* showDisabledMonthNavigation */
         dateFormat="MM"
         dateFormatCalendar="LLLL"
       />

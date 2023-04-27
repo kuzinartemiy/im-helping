@@ -2,7 +2,7 @@ import styles from './app.module.scss';
 import Footer from '../footer';
 import Box from '../box';
 import Text from '../text';
-import DatePickerExs from '../datepicker';
+import DatePickerExs from '../datepicker_data';
 import DatePickerTime from '../datepicker_time';
 
 function App() {
