@@ -4,6 +4,7 @@ import Box from '../box';
 import Text from '../text';
 import AplicationCard from '../aplication-card/aplication-card';
 import { store } from '../aplication-card/application-card.constans';
+import RadiusSearch from '../radius-search';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <section className={styles.app__aplicationCards}>
         { store.aplicationCardData.map(aplicationCard => <AplicationCard key={ aplicationCard.id } cardData={ aplicationCard } />) }
       </section>
+      <RadiusSearch />
       <Footer />
     </>
   );
