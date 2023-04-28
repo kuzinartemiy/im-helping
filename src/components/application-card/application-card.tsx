@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import styles from './aplication-card.module.scss';
+import styles from './application-card.module.scss';
 import { ReactComponent as Calendar } from '../../assets/icons/calendar.svg';
 import { ReactComponent as Clock } from '../../assets/icons/clock.svg';
 import { ReactComponent as LocationIcon } from '../../assets/icons/location-transparent.svg';
