@@ -10,7 +10,7 @@ import Modal from '../modal';
 import Button from '../button';
 import { useState } from 'react';
 import NavCards from '../nav-cards';
-import { TopPanel } from '../top-panel';
+import TopPanel from '../top-panel';
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
