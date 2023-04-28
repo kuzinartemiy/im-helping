@@ -13,7 +13,7 @@ type TTopPanel = {
   filterImageStyle?: string
 } & React.HTMLProps<HTMLDivElement>;
 
-export const TopPanel = ({
+const TopPanel = ({
   title,
   titleIcon,
   titleImageStyle = style.title_image,
@@ -34,3 +34,5 @@ export const TopPanel = ({
     </div>
   );
 };
+
+export default TopPanel;
