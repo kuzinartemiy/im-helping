@@ -100,6 +100,12 @@
   padding-top: 7px;
 }
 
+.applicationCard__userColumnBtns {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}
+
 .applicationCard__buttonsColumn {
   grid-area: buttons;
   display: flex;
