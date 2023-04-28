@@ -5,7 +5,7 @@ import Box from '../box';
 import Text from '../text';
 import RadiusSearch from '../radius-search';
 import Modal from '../modal';
-import Button from '../button/button';
+import Button from '../button';
 import { useState } from 'react';
 import NavCards from '../nav-cards';
 

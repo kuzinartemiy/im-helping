@@ -1,8 +1,7 @@
-/* import React, { FC, ReactNode, useCallback, useEffect } from "react"; */
 import ReactDOM from 'react-dom';
 import { type FC, useCallback, useEffect } from 'react';
 import styles from './modal.module.scss';
-import ServiceButton from '../service-button/service-button';
+import ServiceButton from '../service-button';
 import ModalOverlay from '../modal-overlay';
 
 const modalRoot = document.getElementById('root') as HTMLElement;
@@ -29,13 +28,14 @@ const Modal: FC<IModal> = ({ onClose, children }) => {
       document.removeEventListener('keydown', onEscDown);
     };
   }, [onEscDown]);
+
   return ReactDOM.createPortal(
     <>
-      <div className={`${styles.modal}`}>
-        <div className={`${styles.modalHeader}`}>
-          <button className={`${styles.modalCloseButton}`}>
+      <div className={styles.modal}>
+        <div className={styles.modalHeader}>
+          <div className={styles.modalCloseButton}>
             <ServiceButton viewType="close" onClick={onClose} />
-          </button>
+          </div>
         </div>
         {children}
       </div>
