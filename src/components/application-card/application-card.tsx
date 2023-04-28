@@ -9,7 +9,7 @@ import { ReactComponent as Phone } from '../../assets/icons/phone.svg';
 import CategoryBar from '../category-bar';
 import Text from '../text';
 import UserAvatar from '../user-avatar/user-avatar';
-import ServiceButton from '../service-button/service-button';
+import ServiceButton from '../service-button';
 import CircleButton from '../circle-button';
 
 interface IApplicationCard {
