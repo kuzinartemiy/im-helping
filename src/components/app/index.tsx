@@ -7,6 +7,7 @@ import Text from '../text';
 import AplicationCard from '../application-card/application-card';
 import { store } from '../application-card/application-card.constans';
 import RadiusSearch from '../radius-search';
+import MapProd from '../map';
 import Modal from '../modal';
 import Button from '../button';
 import { useState } from 'react';
@@ -47,6 +48,7 @@ function App() {
         {store.aplicationCardData.map(aplicationCard => <AplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
       </section>
       <RadiusSearch />
+      <MapProd/>
       <Button viewType='primary' onClick={() => { setOpenPopup(true); }}>Открыть попап</Button>
       {openPopup && <Modal
         onClose={() => { handleClose(); }}
