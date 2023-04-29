@@ -60,15 +60,15 @@ const PersonVolunteer = ({
         </p>
       </div>
 
-          {counters
+          {(counters != null)
             ? <ul className={styles.countersWrapper}>
-      {counters.faces && <li className={styles.counter}>
+      {(counters.faces != null) && <li className={styles.counter}>
         <FaceIcon/> {counters.faces}
       </li>}
-      {counters.keys && <li className={styles.counter}>
+      {(counters.keys != null) && <li className={styles.counter}>
         <KeyIcon/> {counters.keys}
       </li>}
-      { counters.hands && <li className={styles.counter}>
+      { (counters.hands != null) && <li className={styles.counter}>
         <HandsIcon/> {counters.hands}
       </li>}
 
@@ -81,7 +81,7 @@ const PersonVolunteer = ({
         </div>
       </div>
 
-    { progress &&
+    { (progress != null) &&
       <div className={styles.progressBar}>
         <p className={styles.progressTitle}> {progress} из 5</p>
         <ProgressBarIcon/>
