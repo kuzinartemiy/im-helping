@@ -16,8 +16,8 @@ const WriteAdminButton = ({ onClick, viewType = 'visible', ...props }: IWriteAdm
       onClick={onClick}
       {...props}
     >
-      <CircleButton size="small" extraClass={styles.сircleButton}>
-        <ChatIcon className={styles.icon} />
+      <CircleButton size="small" border='secondary'>
+        <ChatIcon />
       </CircleButton>
       <div className={styles.textWrapper}>
         <Text tag="p" weight="400" size="16" color="white">

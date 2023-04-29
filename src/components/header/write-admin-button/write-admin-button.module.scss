@@ -1,9 +1,9 @@
-@import url(../../../styles/colors.scss);
+@import '../../../styles/colors.scss';
 
 .wrapper {
   width: 283px;
   height: 88px;
-  background-color: var(--color-secondary);
+  background-color: $color-secondary;
   clip-path: polygon(8px 31px, 283px 0, 283px 88px, 0 78px);
   padding-left: 22px;
   padding-top: 36px;
@@ -15,16 +15,8 @@
   margin-left: 5px;
 }
 
-.сircleButton {
-  box-shadow: 0px 0px 0px 1px var(--bg-button-disabled) inset;
-}
-
 .button {
   all: unset;
   display: flex;
   cursor: pointer;
-}
-
-.icon > path {
-  fill: var(--background-popup);
 }

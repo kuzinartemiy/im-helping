@@ -1,4 +1,4 @@
-@import url(../../styles/colors.scss);
+@import '../../styles/colors.scss';
 
 .header {
   position: relative;
@@ -6,7 +6,7 @@
   align-items: flex-end;
   justify-content: space-between;
   border-bottom: 1px solid;
-  border-color: var(--pickerdate-border);
+  border-color: $pickerdate-border;
 }
 
 .navLogo {

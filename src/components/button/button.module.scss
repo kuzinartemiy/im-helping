@@ -1,4 +1,4 @@
-@import url(../../styles/colors.scss);
+@import '../../styles/colors.scss';
 
 .button {
   cursor: pointer;
@@ -8,27 +8,27 @@
   transition: .3s;
   &_viewType_primary {
     border: none;
-    color: var(--background-popup);
-    background-color: var(--color-primary);
+    color: $background-popup;
+    background-color: $color-primary;
     &:hover {
-      background-color: var(--bg-button-sea);
+      background-color: $bg-button-sea;
     }
     &:disabled {
-      background-color: var(--bg-button-disabled);
+      background-color: $bg-button-disabled;
     }
   }
   &_viewType_secondary {
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    background-color: var(--background-popup);
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    background-color: $background-popup;
     &:hover {
-      color: var(--background-popup);
-      background-color: var(--bg-button-sea);
+      color: $background-popup;
+      background-color: $bg-button-sea;
     }
     &:disabled {
-      color: var(--bg-button-disabled);
-      border: 1px solid var(--bg-button-disabled);
-      background-color: var(--background-popup);
+      color: $bg-button-disabled;
+      border: 1px solid $bg-button-disabled;
+      background-color: $background-popup;
     }
   }
 }
