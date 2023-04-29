@@ -1,0 +1,47 @@
+@import '../../styles/colors.scss';
+
+.wrapper {
+  padding: 26px;
+  border: 2px solid var(--bg-button-sea);
+  min-width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contentWrapperTemplate {
+  color: var(--color-primary);
+
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.imageTemplate {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.title {
+  @extend .contentWrapperTemplate;
+  gap: 15px;
+
+  &_image {
+    @extend .imageTemplate;
+  }
+}
+
+.filter {
+  @extend .contentWrapperTemplate;
+  cursor: pointer;
+
+  gap: 10px;
+
+  &_image {
+    @extend .imageTemplate;
+  }
+}
