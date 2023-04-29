@@ -1,12 +1,12 @@
-@import '../../styles/mixins/index.scss';
+@import '../../styles/mixins';
 @import '../../styles/colors.scss';
 
-.name{
+.name {
     @include font-source-sans(12px, $text-color-black, 400, 14px);
     margin-bottom: 5px;
 }
 
-.time{
+.time {
     padding: 10px;
     border: 0.5px solid $pickerdate-border;
     width: 96px;

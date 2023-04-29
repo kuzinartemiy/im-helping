@@ -1,13 +1,21 @@
 @import 'font-variables';
 @import 'mixins';
 @import 'color-variables';
+@import './react-datepicker.scss';
 
 
 .color_gradient {
   background-image: linear-gradient(to right, $background-popup) 0%, $color-primary 50%, $background-popup 100%;
 }
 
-body, button, h1, h2, h3, h4, h5, p {
+body,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   margin: 0;
   font-family: $mainFont;
   -webkit-font-smoothing: antialiased;

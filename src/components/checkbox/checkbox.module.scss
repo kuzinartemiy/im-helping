@@ -1,4 +1,4 @@
-@import '../../styles/mixins/index.scss';
+@import '../../styles/mixins';
 @import '../../styles/colors.scss';
 
 .checkbox_invisible {
@@ -9,22 +9,25 @@
   clip-path: inset(0 0 0 0);
   margin: 0;
   cursor: pointer;
+
   &:checked {
-    & + .checkbox_visible {
+    &+.checkbox_visible {
       background-color: $color-primary;
       border: none;
       background-image: url(../../assets/icons/check.svg);
       background-repeat: no-repeat;
       background-position: center;
     }
+
     &:disabled {
-      & + .checkbox_visible {
+      &+.checkbox_visible {
         opacity: 0.4;
       }
     }
   }
+
   &:disabled {
-    & + .checkbox_visible {
+    &+.checkbox_visible {
       opacity: 0.4;
     }
   }
@@ -44,10 +47,5 @@
 
 .checkbox_label {
   @include font-source-sans(12px, $text-color-black, 400, 14px);
-  cursor: pointer; 
+  cursor: pointer;
 }
-
-
-
-
-
