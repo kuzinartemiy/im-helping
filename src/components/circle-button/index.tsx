@@ -4,12 +4,13 @@ interface ICircleButtonProps extends React.PropsWithChildren<Omit<React.HTMLProp
   children?: React.ReactNode
   onClick?: () => void
   size?: 'small' | 'medium' | 'large'
+  extraClass?: string
 }
 
-const CircleButton: React.FC<ICircleButtonProps> = ({ children, size = 'small', ...props }) => {
+const CircleButton: React.FC<ICircleButtonProps> = ({ children, size = 'small', extraClass = '', ...props }) => {
   return (
     <button
-      className={`${styles.button} ${styles[`button__${size}`]}`}
+      className={`${styles.button} ${styles[`button__${size}`]} ${extraClass}`}
       {...props}
     >
       {children}
