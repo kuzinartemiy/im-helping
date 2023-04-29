@@ -11,23 +11,7 @@ import Text from '../text';
 import UserAvatar from '../user-avatar/user-avatar';
 import ServiceButton from '../service-button';
 import CircleButton from '../circle-button';
-
-interface IApplicationCard {
-  cardData: any
-  id?: string
-  date?: string
-  time?: string
-  location?: string
-  about?: string
-  completedAppQuantity?: string
-  owner?: IOwner
-}
-
-interface IOwner {
-  name?: string
-  avatar?: string
-  phone?: string
-}
+import { type IApplicationCard } from '../../utils/types/dataTypes';
 
 const ApplicationCard: FC<IApplicationCard> = ({ cardData }) => {
   return (
