@@ -1,4 +1,4 @@
-@import url(../../styles/colors.scss);
+@import '../../styles/colors.scss';
 
 .textareaContainer {
   display: flex;
@@ -17,10 +17,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    border: 0.5px solid var(--bg-button-disabled);
+    border: 0.5px solid $bg-button-disabled;
 
     &:focus-within {
-      border-color: var(--bg-button-wave);
+      border-color: $bg-button-wave;
       border-width: 1px;
     }
 
@@ -29,14 +29,14 @@
       resize: none;
       padding: 15px 15px 30px 12px;
       box-sizing: border-box;
-      background: var(--background-popup);
+      background: $background-popup;
       border: none;
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
       line-height: 20px;
       letter-spacing: -0.32px;
-      color: var(--text-color-black);
+      color: $text-color-black;
 
       &:focus {
         outline: none;    
@@ -45,7 +45,7 @@
       &::placeholder {
         font-size: 12px;
         line-height: 15px;
-        color: var(--bg-button-disabled);
+        color: $bg-button-disabled;
       }
     }
 
@@ -56,7 +56,7 @@
       font-size: 10px;
       line-height: 12px;
       text-align: right;
-      color: var(--bg-button-disabled);
+      color: $bg-button-disabled;
       border: none;
     }
   }

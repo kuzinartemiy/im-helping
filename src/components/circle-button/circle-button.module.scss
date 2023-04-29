@@ -10,14 +10,14 @@
     border: 0;
     transition: background-color 0.2s ease-in-out;
     padding: 8px 0;
-    background-color: var(--color-primary);
+    background-color: $color-primary;
 
     &:hover {
         cursor: pointer;
     }
 
     &:disabled {
-        background-color: var(--bg-button-disabled) !important;
+        background-color: $bg-button-disabled !important;
     }
 
     &__large {
@@ -25,12 +25,12 @@
         height: 82px;
 
         &:hover {
-            background-color: var(--bg-button-sea);
+            background-color: $bg-button-sea;
         }
 
         &:active,
         &:focus {
-            background-color: var(--bg-button-sea);
+            background-color: $bg-button-sea;
         }
     }
 
@@ -39,12 +39,12 @@
         height: 53px;
 
         &:hover {
-            background-color: var(--bg-button-wave);
+            background-color: $bg-button-wave;
         }
 
         &:active,
         &:focus {
-            background-color: var(--bg-button-wave);
+            background-color: $bg-button-wave;
         }
     }
 
@@ -53,12 +53,12 @@
         height: 32px;
 
         &:hover {
-            background-color: var(--bg-button-wave);
+            background-color: $bg-button-wave;
         }
 
         &:active,
         &:focus {
-            background-color: var(--color-primary);
+            background-color: $color-primary;
         }
     }
 }

@@ -1,4 +1,4 @@
-@import url(../../styles/colors.scss);
+@import '../../styles/colors.scss';
 
 .link {
   box-sizing: border-box;
@@ -12,7 +12,7 @@
   padding-right: 30px;
   gap: 10px;
 
-  color: var(--background-popup);
+  color: $background-popup;
   text-decoration: none;
   line-height: 19px;
 }
