@@ -1,4 +1,5 @@
 @import '../../styles/mixins/index.scss';
+@import '../../styles/colors.scss';
 
 .checkbox_invisible {
   position: absolute;
@@ -10,7 +11,7 @@
   cursor: pointer;
   &:checked {
     & + .checkbox_visible {
-      background-color: var(--color-primary);
+      background-color: $color-primary;
       border: none;
       background-image: url(../../assets/icons/check.svg);
       background-repeat: no-repeat;
@@ -42,7 +43,7 @@
 }
 
 .checkbox_label {
-  @include font-source-sans(12px, var(--text-color-black), 400, 14px);
+  @include font-source-sans(12px, $text-color-black, 400, 14px);
   cursor: pointer; 
 }
 
