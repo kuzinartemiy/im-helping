@@ -8,7 +8,7 @@ function NavCards() {
       {data.map((item, index) => {
         return <li key={index} className={styles.linkCard}>
           <NavCard text={item.text} icon={item.icon} path={item.path}/>
-        </li>
+        </li>;
       })}
     </ul>
   );
