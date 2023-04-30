@@ -18,6 +18,7 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
+import DocumentsPoupup from '../documents-poupup/documents-poupup';
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
@@ -53,6 +54,9 @@ function App() {
       >
       </Modal>}
       <TopPanel title='TEST' />
+      {<Modal children={<DocumentsPoupup data={store.aplicationCardData[0]} id={store.aplicationCardData[0].id} />} onClose={function (): void {
+        throw new Error('Function not implemented.');
+      } } />}
       <Footer />
     </>
   );
