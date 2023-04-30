@@ -1,4 +1,4 @@
-@import url(../../styles/colors.scss);
+@import '../../styles/colors.scss';
 
 .linkCardContainer {
   box-sizing: border-box;
@@ -11,7 +11,7 @@
   max-width: 295px;
   height: 426px;
 
-  border: 2px solid var(--color-primary);
+  border: 2px solid $color-primary;
 
   padding-top: 30px;
   padding-left: 10px;
@@ -34,21 +34,21 @@
 
   cursor: pointer;
 
-  border: 1px solid var(--text-color-black);
-  background-color: var(--color-primary);
+  border: 1px solid $text-color-black;
+  background-color: $color-primary;
   transition: .3s;
     &:visited {
-      background-color: var(--bg-button-sea);
+      background-color: $bg-button-sea;
     }
     &:hover {
       opacity: 0.7;
-      background-color: var(--bg-button-sea);
+      background-color: $bg-button-sea;
     }
     &:disabled {
-      background-color: var(--bg-button-disabled);
+      background-color: $bg-button-disabled;
     }
 }
 
 .colorIcon path {
-  fill: var(--background-popup);
+  fill: $background-popup;
 }

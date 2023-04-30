@@ -2,7 +2,7 @@
 
 .wrapper {
   padding: 26px;
-  border: 2px solid var(--bg-button-sea);
+  border: 2px solid $bg-button-sea;
   min-width: 100%;
   box-sizing: border-box;
 
@@ -12,7 +12,7 @@
 }
 
 .contentWrapperTemplate {
-  color: var(--color-primary);
+  color: $color-primary;
 
   display: flex;
   align-items: center;

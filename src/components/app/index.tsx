@@ -1,4 +1,5 @@
 /* import { useNavigate } from 'react-router-dom'; */
+import { Route, Routes } from 'react-router-dom';
 import styles from './app.module.scss';
 import Footer from '../footer';
 import Box from '../box';
@@ -9,8 +10,14 @@ import RadiusSearch from '../radius-search';
 import Modal from '../modal';
 import Button from '../button';
 import { useCallback, useState } from 'react';
-import NavCards from '../nav-cards';
 import TopPanel from '../top-panel';
+import {
+  HomePage,
+  SuperAdminPage,
+  AdminPage,
+  VolunteerPage,
+  RecipientPage,
+} from '../../pages';
 import CompletedFilterPopup from '../completed-filter-popup';
 
 function App() {
@@ -38,6 +45,13 @@ function App() {
   return (
     <>
       <div className={styles.app} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/superadmin" element={<SuperAdminPage />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/recipient" element={<RecipientPage />} />
+        <Route path="/volunteer" element={<VolunteerPage />} />
+      </Routes>
       <Box>
         <Text tag='p' size='24' weight='700'>TEST</Text>
       </Box>
@@ -49,7 +63,6 @@ function App() {
       {openPopup && <Modal
         onClose={() => { handleClose(); }}
       >
-        <NavCards></NavCards>
       </Modal>}
       <TopPanel title='TEST' onFilterClick={(e) => onFilterClick(e)} />
       {isVisible && <CompletedFilterPopup marginRight={114} marginTop={50} styled={styled} setVisible={setVisible}></CompletedFilterPopup>}

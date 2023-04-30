@@ -1,8 +1,8 @@
-@import url(../../styles/colors.scss);
+@import '../../styles/colors.scss';
 
 .navButton {
   clip-path: path('M0 0L169 9.24L155 33H0V0Z');
-  background-color: var(--color-primary);
+  background-color: $color-primary;
   border: none;
   cursor: pointer;
   box-sizing: border-box;
@@ -16,10 +16,10 @@
   padding: 11px 9px;
 
   &:hover {
-    background-color: var(--bg-button-sea);
+    background-color: $bg-button-sea;
   }
 
   &:disabled {
-    background-color: var(--bg-button-disabled);
+    background-color: $bg-button-disabled;
   }
 }
