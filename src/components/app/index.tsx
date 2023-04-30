@@ -43,6 +43,7 @@ function App() {
       <Box>
         <Text tag='p' size='24' weight='700'>TEST</Text>
       </Box>
+      <TopPanel title='TEST' />
       <section className={styles.app__aplicationCards}>
         {store.aplicationCardData.map(aplicationCard => <AplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
       </section>
@@ -52,7 +53,6 @@ function App() {
         onClose={() => { handleClose(); }}
       >
       </Modal>}
-      <TopPanel title='TEST' />
       <Footer />
     </>
   );
