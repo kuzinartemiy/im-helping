@@ -8,8 +8,7 @@ interface InputProps {
   value: string
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   placeholder?: string
-  className?: string
-  error?: boolean
+  isError?: boolean
   errorMessage?: string
 }
 
@@ -20,7 +19,7 @@ const Input: React.FC<InputProps> = ({
   value,
   onChange,
   placeholder,
-  error = false,
+  isError = false,
   errorMessage,
 }) => {
   return (
@@ -39,7 +38,7 @@ const Input: React.FC<InputProps> = ({
           className={styles.input}
         />
       </div>
-      {error && <span className={styles.errorMessage}>{errorMessage}</span>}
+      {isError && <span className={styles.errorMessage}>{errorMessage}</span>}
     </div>
   );
 };
