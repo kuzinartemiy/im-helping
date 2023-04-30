@@ -10,7 +10,6 @@ import RadiusSearch from '../radius-search';
 import Modal from '../modal';
 import Button from '../button';
 import { useState } from 'react';
-import TopPanel from '../top-panel';
 import {
   HomePage,
   SuperAdminPage,
@@ -18,9 +17,10 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
+import DeletePopup from '../delete-popup/delete-popup';
 
 function App() {
-  const [openPopup, setOpenPopup] = useState(false);
+  const [openPopup, setOpenPopup] = useState(true);
   /*   const navigate = useNavigate(); */
   /*   const handleCloseIngredientInModal = () => {
     console.log(close);
@@ -51,8 +51,9 @@ function App() {
       {openPopup && <Modal
         onClose={() => { handleClose(); }}
       >
+        <DeletePopup />
       </Modal>}
-      <TopPanel title='TEST' />
+
       <Footer />
     </>
   );
