@@ -1,0 +1,16 @@
+@import '../../styles/colors.scss';
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  border-color: $pickerdate-border;
+}
+
+.navLogo {
+  padding-left: 93px;
+  padding-right: 124px;
+  padding-bottom: 8px;
+}
