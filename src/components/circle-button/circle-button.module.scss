@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 0;
+    box-sizing: border-box;
     transition: background-color 0.2s ease-in-out;
     padding: 8px 0;
     background-color: $color-primary;
@@ -60,5 +60,15 @@
         &:focus {
             background-color: $color-primary;
         }
+    }
+    }
+    
+
+    .border {
+    &__primary {
+        border: 0;
+    }
+    &__secondary {
+        border: 1px solid $bg-button-disabled;   
     }
 }

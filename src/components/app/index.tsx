@@ -7,6 +7,7 @@ import Text from '../text';
 import AplicationCard from '../application-card/application-card';
 import { store } from '../application-card/application-card.constans';
 import RadiusSearch from '../radius-search';
+import Header from '../header';
 import Modal from '../modal';
 import Button from '../button';
 import { useState } from 'react';
@@ -33,6 +34,7 @@ function App() {
   return (
     <>
       <div className={styles.app} />
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/superadmin" element={<SuperAdminPage />} />
