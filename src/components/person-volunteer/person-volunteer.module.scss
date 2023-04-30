@@ -1,7 +1,8 @@
 @import '../../styles/mixins/index.scss';
+@import '../../styles/colors.scss';
 
 .personWrapper {
-  @include font-source-sans(12px, var(--color-primary), 400, 14.4px);
+  @include font-source-sans(12px, $color-primary, 400, 14.4px);
   max-width: 295px;
   display: flex;
   flex-direction: column;
@@ -16,7 +17,7 @@
   top:0;
   left: calc(50% - 175px/2);
   border-radius: 50%;
-  border: 1px solid #B8E4FA;
+  border: 1px solid $color-blue;
   width: 175px;
   height: 175px;
   object-fit: cover;
@@ -40,7 +41,7 @@
 }
 
 .personId {
-  color: var(--color-secondary);
+  color: $color-secondary;
   margin-bottom: 10px;
   
 }
@@ -54,11 +55,6 @@
 
 .propKey {
   font-weight: 700;
-
-}
-
-.propValue {
-  
 }
 
 .countersWrapper {
@@ -112,7 +108,7 @@
 
 // ховер на кнопку редактирования
 .editButton:hover path {
-  fill: var(--color-primary)
+  fill: $color-primary;
 }
 
 .editButton:hover .editIconWrapper {
@@ -135,8 +131,4 @@
   right: 5px;
   align-items: center;
   gap: 5px;
-}
-
-.progressTitle {
-
 }

@@ -2,6 +2,7 @@ import style from './top-panel.module.scss';
 import Text from '../text';
 
 import { ReactComponent as FilterIcon } from '../../assets/icons/filter.svg';
+import { COLORS } from '../../styles/colors';
 
 type TTopPanel = {
   title: string
@@ -25,11 +26,11 @@ const TopPanel = ({
     <div className={style.wrapper} {...props}>
       <div className={style.title}>
         <div className={titleImageStyle}>{titleIcon}</div>
-        <Text size='24' color='#2E3192'>{title}</Text>
+        <Text size='24' color={COLORS.get('color-primary')}>{title}</Text>
       </div>
       <div className={style.filter} onClick={onFilterClick}>
-        <Text size='16' color='#2E3192'>Фильтр</Text>
-        <div className={filterImageStyle}><FilterIcon fill='#2E3192' /></div>
+        <Text size='16' color={COLORS.get('color-primary')}>Фильтр</Text>
+        <div className={filterImageStyle}><FilterIcon fill={COLORS.get('color-primary')} /></div>
       </div>
     </div>
   );
