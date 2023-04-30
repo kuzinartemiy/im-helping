@@ -4,13 +4,15 @@ import styles from './app.module.scss';
 import Footer from '../footer';
 import Box from '../box';
 import Text from '../text';
-import AplicationCard from '../application-card/application-card';
-import { store } from '../application-card/application-card.constans';
+/* import AplicationCard from '../application-card/application-card';
+import { store } from '../application-card/application-card.constans'; */
 import RadiusSearch from '../radius-search';
+import Header from '../header';
 import Modal from '../modal';
 import Button from '../button';
 import { useState } from 'react';
 import TopPanel from '../top-panel';
+import Volunteer from '../../pages/volunteer/volunteer';
 import {
   HomePage,
   SuperAdminPage,
@@ -33,6 +35,7 @@ function App() {
   return (
     <>
       <div className={styles.app} />
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/superadmin" element={<SuperAdminPage />} />
@@ -53,6 +56,7 @@ function App() {
         onClose={() => { handleClose(); }}
       >
       </Modal>}
+      <Volunteer></Volunteer>
       <Footer />
     </>
   );
