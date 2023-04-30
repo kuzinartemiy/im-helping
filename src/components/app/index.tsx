@@ -9,7 +9,7 @@ import { store } from '../application-card/application-card.constans';
 import RadiusSearch from '../radius-search';
 import Modal from '../modal';
 import Button from '../button';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import TopPanel from '../top-panel';
 import {
   HomePage,
@@ -23,7 +23,7 @@ import CompletedFilterPopup from '../completed-filter-popup';
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
   const [isVisible, setVisible] = useState(false); // флаг для отображения попапа c фильтрацией
-  const [styled, setStyled] = useState<{ right?: number, top?: number }>({}); // стили для определения местоположения CompletedFilterPopup
+  const [styled, setStyled] = useState<{ right: number, top: number }>({ right: 0, top: 0 }); // стили для определения местоположения CompletedFilterPopup
   /*   const navigate = useNavigate(); */
   /*   const handleCloseIngredientInModal = () => {
     console.log(close);
@@ -33,14 +33,12 @@ function App() {
     setOpenPopup(false);
   };
 
-  const onFilterClick = useCallback((e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const onFilterClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     setVisible(true);
-    const right = e.currentTarget.getBoundingClientRect().right;
-    const top = e.currentTarget.getBoundingClientRect().top;
-    const numRight = Number(right.toString().replace(/[^\d.]/gi, ''));
-    const numTop = Number(top.toString().replace(/[^\d.]/gi, ''));
-    setStyled({ right: numRight, top: numTop });
-  }, []);
+    const x = e.currentTarget.getBoundingClientRect().x;
+    const y = e.currentTarget.getBoundingClientRect().y;
+    setStyled({ right: x, top: y });
+  };
 
   return (
     <>
@@ -65,7 +63,7 @@ function App() {
       >
       </Modal>}
       <TopPanel title='TEST' onFilterClick={(e) => onFilterClick(e)} />
-      {isVisible && <CompletedFilterPopup marginRight={114} marginTop={50} styled={styled} setVisible={setVisible}></CompletedFilterPopup>}
+      {isVisible && <CompletedFilterPopup styled={styled} setVisible={setVisible}></CompletedFilterPopup>}
       <Footer />
     </>
   );

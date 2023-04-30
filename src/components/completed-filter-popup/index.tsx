@@ -6,12 +6,10 @@ import Button from '../button';
 interface ICompletedFilterPopup {
   title?: string
   setVisible: React.Dispatch<React.SetStateAction<boolean>>
-  styled: { right?: number, top?: number }
-  marginRight: number // отступ от края экрана справа до места клика
-  marginTop: number // отступ сверху в месте клика (согласно макета ничего не указано)
+  styled: { right: number, top: number }
 }
 
-const CompletedFilterPopup: React.FC<ICompletedFilterPopup> = ({ title, setVisible, styled, marginRight, marginTop }) => {
+const CompletedFilterPopup: React.FC<ICompletedFilterPopup> = ({ title, setVisible, styled }) => {
   const onSetFilter = () => {
     console.log('данные об инпутах отправляются на сервер');
     setVisible(false);
@@ -19,8 +17,8 @@ const CompletedFilterPopup: React.FC<ICompletedFilterPopup> = ({ title, setVisib
 
   return (
     <CoordsPopup
-      pageX={styled?.right !== undefined ? (styled?.right - marginRight) : marginRight}
-      pageY={styled?.top !== undefined ? (styled.top + marginTop) : marginTop}
+      pageX={styled.right}
+      pageY={styled.top + 365}
       onOverlayClick={() => { setVisible(false); }}
     >
       <div className={styles.popup}>
