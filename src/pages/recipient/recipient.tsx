@@ -26,3 +26,12 @@ const Recipient = () => {
 };
 
 export default Recipient;
+function RecipientPage() {
+  return (
+    <>
+      <p>Жду компонент рецепиента</p>
+    </>
+  );
+}
+
+export default RecipientPage;
