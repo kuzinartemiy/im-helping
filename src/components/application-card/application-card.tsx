@@ -1,5 +1,6 @@
 import { type FC } from 'react';
 import styles from './application-card.module.scss';
+import { type IApplicationCard } from '../../utils/types/dataTypes';
 import { ReactComponent as Calendar } from '../../assets/icons/calendar.svg';
 import { ReactComponent as Clock } from '../../assets/icons/clock.svg';
 import { ReactComponent as LocationIcon } from '../../assets/icons/location-transparent.svg';
@@ -11,23 +12,6 @@ import Text from '../text';
 import UserAvatar from '../user-avatar/user-avatar';
 import ServiceButton from '../service-button';
 import CircleButton from '../circle-button';
-
-interface IApplicationCard {
-  cardData: any
-  id?: string
-  date?: string
-  time?: string
-  location?: string
-  about?: string
-  completedAppQuantity?: string
-  owner?: IOwner
-}
-
-interface IOwner {
-  name?: string
-  avatar?: string
-  phone?: string
-}
 
 const ApplicationCard: FC<IApplicationCard> = ({ cardData }) => {
   return (

@@ -1,4 +1,58 @@
+@import url(../../styles//colors.scss);
+
 .tolltipMap {
-  width: 370;
+  margin: 0 auto;
+  width: 370px;
   height: 292px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, var(--background-popup) 10%, var(--color-primary) 50%, var(--background-popup) 90%);
+}
+
+.tolltipMap__userInfo {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.tolltipMap__userInfoText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tolltipMap__about {
+  max-width: 310px;
+  max-height: 77px;
+  align-self: center;
+}
+
+.tolltipMap__textAbout {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  text-align: left;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tolltipMap__textAboutLink {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  text-align: left;
+}
+
+.tolltipMap__status {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
