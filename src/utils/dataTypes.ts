@@ -1,7 +1,7 @@
 export interface IApplicationCard {
   cardData: any
   id?: string
-  date: number // обязательный параметр для фильтрации по нему
+  date?: number
   time?: string
   location?: string
   about?: string
@@ -21,9 +21,4 @@ export interface IToolTipMap {
   name?: string
   phone?: string
   avatar?: string
-}
-
-export interface ICheckboxesCompletedFilterPopup {
-  id: number
-  label: string
 }
