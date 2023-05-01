@@ -6,12 +6,16 @@ import Box from '../box';
 import Text from '../text';
 import AplicationCard from '../application-card/application-card';
 import { store } from '../../utils/types/data/data';
+/* import AplicationCard from '../application-card/application-card';
+import { store } from '../application-card/application-card.constans'; */
 import RadiusSearch from '../radius-search';
+import Header from '../header';
 import Modal from '../modal';
 import Button from '../button';
 import { useState } from 'react';
 import TopPanel from '../top-panel';
 import TooltipMap from '../tooltip-map/tooltip-map';
+import Volunteer from '../../pages/volunteer/volunteer';
 import {
   HomePage,
   SuperAdminPage,
@@ -34,6 +38,7 @@ function App() {
   return (
     <>
       <div className={styles.app} />
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/superadmin" element={<SuperAdminPage />} />
@@ -55,6 +60,7 @@ function App() {
       </Modal>}
       <TopPanel title='TEST' />
       <TooltipMap cardData={store.aplicationCardData[0]} id={ store.aplicationCardData[0].id }/>
+      <Volunteer></Volunteer>
       <Footer />
     </>
   );
