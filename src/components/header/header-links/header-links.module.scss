@@ -1,0 +1,30 @@
+@import '../../../styles/colors.scss';
+
+.navBox {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 2;
+  justify-content: space-between;
+}
+
+.navItem {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  height: 100%;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0 20px;
+  padding-bottom: 15px;
+  &:hover {
+    box-shadow: inset 0 -4px 0 0 $color-primary;
+  }
+}

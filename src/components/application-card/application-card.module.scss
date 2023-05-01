@@ -1,3 +1,5 @@
+@import url(../../styles/colors.scss);
+
 .applicationCard{
   max-width: 889px;
   min-height: 219px;
@@ -7,6 +9,10 @@
   grid-template-areas:
   'category-bar category-bar user buttons'
   'dateTimeLocation about user buttons';
+  border-bottom: 2px solid ;
+  border-image: linear-gradient(to right, var(--background-popup) 10%, var(--color-primary) 50%, var(--background-popup) 90%);
+  border-image-slice: 1;
+  box-sizing: border-box;
 }
 
 .applicationCard__categoryBarContainer {

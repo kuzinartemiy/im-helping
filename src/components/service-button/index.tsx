@@ -2,7 +2,7 @@ import { type SyntheticEvent, type DetailedHTMLProps } from 'react';
 import styles from './service-button.module.scss';
 
 interface IServiceButtonProps extends DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  viewType?: 'close' | 'edit'
+  viewType?: 'close' | 'edit' | 'approved'
   onClick?: (() => void) | ((e: SyntheticEvent) => void)
 }
 

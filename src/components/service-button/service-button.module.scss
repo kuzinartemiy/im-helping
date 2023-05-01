@@ -34,5 +34,20 @@
   &:disabled {
     background-color: $bg-button-disabled;
   }
+  }
+&_viewType_approved {
+  clip-path: polygon(0 0, 32px 0, 30.5px 32px, 0 27px);
+  background-image: url('../../assets/icons/approved.svg');
+  background-color: $bg-button-seaweed;
+  background-position: 4px 4px;
+  &:hover {
+    background-color: $bg-button-grass;
+  }
+  &:active {
+    background-color: $bg-button-sea;
+  }
+  &:disabled {
+    background-color: $bg-button-disabled;
+    }  
 }
 }
