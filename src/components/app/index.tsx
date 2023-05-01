@@ -21,7 +21,7 @@ import {
 import DocumentsPoupup from '../documents-poupup/documents-poupup';
 
 function App() {
-  const [openPopup, setOpenPopup] = useState(false);
+  const [openPopup, setOpenPopup] = useState(true);
   /*   const navigate = useNavigate(); */
   /*   const handleCloseIngredientInModal = () => {
     console.log(close);
@@ -49,14 +49,12 @@ function App() {
       </section>
       <RadiusSearch />
       <Button viewType='primary' onClick={() => { setOpenPopup(true); }}>Открыть попап</Button>
-      {openPopup && <Modal
-        onClose={() => { handleClose(); }}
-      >
-      </Modal>}
       <TopPanel title='TEST' />
-      {<Modal children={<DocumentsPoupup data={store.aplicationCardData[0]} id={store.aplicationCardData[0].id} />} onClose={function (): void {
-        throw new Error('Function not implemented.');
-      } } />}
+      {
+      openPopup && <Modal
+        children={<DocumentsPoupup data={ store.aplicationCardData[0] } id={ store.aplicationCardData[0].id } />}
+        onClose={handleClose} />
+      }
       <Footer />
     </>
   );

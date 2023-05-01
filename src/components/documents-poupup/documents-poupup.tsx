@@ -1,5 +1,6 @@
 import { type FC } from 'react';
 import styles from './documents-poupup.module.scss';
+import { COLORS } from '../../styles/colors';
 import UserAvatar from '../user-avatar/user-avatar';
 import Text from '../text';
 import Textarea from '../textarea/textarea';
@@ -38,7 +39,7 @@ export const DocumentsPoupup: FC<IDocumentsPoupup> = ({ data }) => {
             children={
               <div className={styles.documentsPoupup__buttonInner}>
                 <AttachIcon />
-                <Text children={'Прикрепить'} color={'#FFFFFF'} align={'center'} />
+                <Text children={'Прикрепить'} color={COLORS.get('background-popup')} align={'center'} />
               </div>
             }
           />
