@@ -20,6 +20,7 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
+import { YMaps } from '@pbe/react-yandex-maps';
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
@@ -50,7 +51,7 @@ function App() {
         {store.aplicationCardData.map(aplicationCard => <AplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
       </section>
       <RadiusSearch />
-      <MapProd/>
+      <YMaps><MapProd/></YMaps>
       <Button viewType='primary' onClick={() => { setOpenPopup(true); }}>Открыть попап</Button>
       {openPopup && <Modal
         onClose={() => { handleClose(); }}

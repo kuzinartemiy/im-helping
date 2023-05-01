@@ -1,5 +1,5 @@
 export const requests = [{
-  city: 'Москва',
+  city: { name: 'Москва', coords: [55.755864, 37.617698] },
   requests: [
     {
       user: {
@@ -65,7 +65,7 @@ export const requests = [{
 },
 
 {
-  city: 'Санкт-Петербург',
+  city: { name: 'Санкт-Петербург', coords: [59.939099, 30.315877] },
   requests: [
     {
       user: {
