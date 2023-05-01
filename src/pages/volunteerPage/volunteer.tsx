@@ -6,7 +6,7 @@ import { store } from '../../utils/application-card.constans';
 import { personVolunteer } from '../../utils/person-voluteer.constants';
 import ApplicationCards from '../../components/application-cards/application-cards';
 
-const Recipient = () => {
+const VolunteerPage = () => {
   return (
     <>
       <h1>HEADER</h1>
@@ -25,13 +25,4 @@ const Recipient = () => {
   );
 };
 
-export default Recipient;
-function RecipientPage() {
-  return (
-    <>
-      <p>Жду компонент рецепиента</p>
-    </>
-  );
-}
-
-export default RecipientPage;
+export default VolunteerPage;

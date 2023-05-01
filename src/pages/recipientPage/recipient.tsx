@@ -1,4 +1,4 @@
-import styles from './volunteer.module.scss';
+import styles from './recipient.module.scss';
 import NavCards from '../../components/nav-cards';
 import PersonVolunteer from '../../components/person-volunteer';
 import TopPanel from '../../components/top-panel';
@@ -6,7 +6,7 @@ import { store } from '../../utils/application-card.constans';
 import { personVolunteer } from '../../utils/person-voluteer.constants';
 import ApplicationCards from '../../components/application-cards/application-cards';
 
-const Volunteer = () => {
+const RecipientPage = () => {
   return (
     <>
       <h1>HEADER</h1>
@@ -25,13 +25,4 @@ const Volunteer = () => {
   );
 };
 
-export default Volunteer;
-function VolunteerPage() {
-  return (
-    <>
-      <p>Жду компонент волонтера</p>
-    </>
-  );
-}
-
-export default VolunteerPage;
+export default RecipientPage;
