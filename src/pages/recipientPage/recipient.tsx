@@ -1,27 +1,28 @@
 import styles from './recipient.module.scss';
-import NavCards from '../../components/nav-cards';
+import navCardsStyles from '../../components/nav-cards/nav-cards.module.scss';
 import PersonVolunteer from '../../components/person-volunteer';
-import TopPanel from '../../components/top-panel';
-import { store } from '../../utils/application-card.constans';
 import { personVolunteer } from '../../utils/person-voluteer.constants';
-import ApplicationCards from '../../components/application-cards/application-cards';
+import { Outlet } from 'react-router-dom';
+import { recipientData } from './recipientPage.constans';
+import NavCard from '../../components/nav-card';
 
 const RecipientPage = () => {
   return (
-    <>
-      <h1>HEADER</h1>
-      <div className={styles.container}>
-        <section>
-          <PersonVolunteer {...personVolunteer}></PersonVolunteer>
-          <NavCards></NavCards>
-        </section>
-        <section>
-          <TopPanel title="TEST" />
-          <ApplicationCards cardData={store} ></ApplicationCards>
-          <div className={styles.opacity}></div>
-        </section>
-      </div>
-    </>
+    <main className={styles.recipientPage}>
+      <section>
+        <PersonVolunteer {...personVolunteer}></PersonVolunteer>
+        <ul className={navCardsStyles.linkCardContainer}>
+          {recipientData.map((item, index) => {
+            return <li key={index} className={navCardsStyles.linkCard}>
+              <NavCard text={item.text} icon={item.icon} path={item.path}/>
+            </li>;
+          })}
+        </ul>
+      </section>
+      <section className={styles.recipientPage__applications}>
+        <Outlet />
+      </section>
+    </main>
   );
 };
 
