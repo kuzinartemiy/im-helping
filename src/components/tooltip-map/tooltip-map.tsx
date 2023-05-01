@@ -1,5 +1,6 @@
 import { type FC } from 'react';
 import styles from './tooltip-map.module.scss';
+import { COLORS } from '../../styles/colors';
 import { type IToolTipMap } from '../../utils/types/dataTypes';
 import { hideNumber } from './utils/hideNumber';
 import UserAvatar from '../user-avatar/user-avatar';
@@ -25,7 +26,7 @@ const TooltipMap: FC<IToolTipMap> = ({ cardData }) => {
         <Text children={ cardData.completedAppQuantity } color={'#2E3192' } size={ '24' } lineHeight={ '29px' } />
         <Status width='42px' height='30px' />
       </div>
-        <Button children={ <Text children={ 'Откликнуться' } color={ '#FFFFFF' } align={ 'center' } />} />
+        <Button children={ <Text children={ 'Откликнуться' } color={ COLORS.get('background-popup') } align={ 'center' } />} />
     </div>
   );
 };
