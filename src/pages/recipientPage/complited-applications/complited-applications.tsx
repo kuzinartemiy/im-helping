@@ -10,7 +10,7 @@ const ComplitedApplications = () => {
         titleIcon={<ComplitedApplicationsIcon />}
         title="Завершенные заявки"
       />
-      <ApplicationCards cardData={store}></ApplicationCards>
+      <ApplicationCards cardData={store} type = {'complited'}></ApplicationCards>
     </>
   );
 };

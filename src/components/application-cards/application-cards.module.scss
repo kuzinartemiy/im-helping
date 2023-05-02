@@ -13,12 +13,28 @@
     max-height: 700px;
   }
   &__small{
-    max-height: 500px;
+    max-height: 550px;
   }
+}
+
+.applicationCards__large {
+
 }
 
 .applicationCards__empty {
   display: flex;
   justify-content: center;
   padding-top: 126px;
+}
+
+.applicationCards__addAplicationContainer {
+  display: flex;
+  align-items: center;
+  gap: 59px;
+  padding-left: 64px;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, #ffffff 10%, #2e3192 50%, #ffffff 90%);
+  border-image-slice: 1;
+  padding: 23px 64px ;
+  margin-bottom: 20px;
 }

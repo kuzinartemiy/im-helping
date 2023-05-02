@@ -8,6 +8,7 @@ export interface IApplicationCard {
   completedAppQuantity?: string
   owner?: IOwner
   size?: 'small' | 'large'
+  type?: 'active' | 'complited'
 }
 
 export interface IOwner {

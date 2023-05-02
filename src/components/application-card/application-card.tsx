@@ -14,7 +14,7 @@ import CircleButton from '../circle-button';
 import { type IApplicationCard } from '../../utils/types/dataTypes';
 import { COLORS } from '../../styles/colors';
 
-const ApplicationCard: FC<IApplicationCard> = ({ cardData }) => {
+const ApplicationCard: FC<IApplicationCard> = ({ cardData, type = 'active' }) => {
   return (
     <div className={styles.applicationCard} id={cardData.id}>
       <div className={styles.applicationCard__categoryBarContainer}>
@@ -52,12 +52,18 @@ const ApplicationCard: FC<IApplicationCard> = ({ cardData }) => {
         <div className={ styles.applicationCard__userColumn_name }><Text children={ cardData.owner.name } align='center' size='16' lineHeight='19px'/></div>
         <Text children={ cardData.owner.phone } color={COLORS.get('color-primary')} size='16'/>
         <div className={ styles.applicationCard__userColumnBtns }>
-          <CircleButton>
-            <Message />
-          </CircleButton>
-          <CircleButton>
-            <Phone />
-          </CircleButton>
+          { type === 'active'
+            ? (
+          <><CircleButton >
+              <Message />
+            </CircleButton><CircleButton>
+                <Phone />
+              </CircleButton></>)
+            : (<><CircleButton disabled = {true}>
+              <Message />
+            </CircleButton><CircleButton disabled = {true}>
+                <Phone />
+              </CircleButton></>)}
         </div>
       </div>
       <div className={ styles.applicationCard__buttonsColumn}>
