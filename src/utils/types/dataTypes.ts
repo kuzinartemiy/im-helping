@@ -7,6 +7,7 @@ export interface IApplicationCard {
   about?: string
   completedAppQuantity?: string
   owner?: IOwner
+  size?: 'small' | 'large'
 }
 
 export interface IOwner {

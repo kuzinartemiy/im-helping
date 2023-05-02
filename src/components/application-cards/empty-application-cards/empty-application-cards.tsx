@@ -3,7 +3,8 @@ import { COLORS } from '../../../styles/colors';
 import { ReactComponent as ComplitedApplicationsIcon } from '../../../assets/icons/completed applications-grey.svg';
 import { ReactComponent as Arrow } from '../../../assets/icons/Vector 2.svg';
 import Text from '../../text';
-import AddApplication from '../../circle-button/add-application/add-application';
+import { ReactComponent as Plus } from '../../../assets/icons/plus12.svg';
+import CircleButton from '../../circle-button';
 
 const EmptyApplicationsCards = () => {
   return (
@@ -15,7 +16,7 @@ const EmptyApplicationsCards = () => {
       <div className={styles.emptyApplicationsCards__info}>
         <Text children={ 'Хотите создать заявку?' } size={ '24' } color={ COLORS.get('color-primary') } />
         <div className={styles.emptyApplicationsCards__button}>
-          <AddApplication />
+          <div><CircleButton size={ 'large' }><Plus/></CircleButton></div>
           <Arrow />
         </div>
       </div>
