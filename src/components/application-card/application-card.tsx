@@ -66,10 +66,11 @@ const ApplicationCard: FC<IApplicationCard> = ({ cardData, type = 'active' }) =>
               </CircleButton></>)}
         </div>
       </div>
+      { type === 'active' &&
       <div className={ styles.applicationCard__buttonsColumn}>
         <ServiceButton />
         <ServiceButton viewType='edit' />
-      </div>
+      </div>}
     </div>
   );
 };
