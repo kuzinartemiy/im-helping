@@ -4,8 +4,7 @@ import styles from './app.module.scss';
 import Footer from '../footer';
 import Box from '../box';
 import Text from '../text';
-/* import AplicationCard from '../application-card/application-card';
-import { store } from '../application-card/application-card.constans'; */
+import AplicationCard from '../application-card/application-card';
 import RadiusSearch from '../radius-search';
 import Header from '../header';
 import Modal from '../modal';
@@ -20,6 +19,7 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
+import { store } from '../../utils/application-card.constans';
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
