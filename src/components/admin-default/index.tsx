@@ -1,6 +1,6 @@
 import styles from './admin-default.module.scss';
 import testImg1 from '../../../src/assets/images/logo192.png';
-import Button from '../button/button';
+import Button from '../button';
 
 interface IAdminDefaultProps {
   children?: React.ReactNode
