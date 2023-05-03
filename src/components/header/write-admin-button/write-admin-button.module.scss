@@ -1,0 +1,22 @@
+@import '../../../styles/colors.scss';
+
+.wrapper {
+  width: 283px;
+  height: 88px;
+  background-color: $color-secondary;
+  clip-path: polygon(8px 31px, 283px 0, 283px 88px, 0 78px);
+  padding-left: 22px;
+  padding-top: 36px;
+  box-sizing: border-box;
+}
+
+.textWrapper {
+  width: 140px;
+  margin-left: 5px;
+}
+
+.button {
+  all: unset;
+  display: flex;
+  cursor: pointer;
+}
