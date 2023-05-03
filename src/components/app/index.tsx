@@ -4,8 +4,7 @@ import styles from './app.module.scss';
 import Footer from '../footer';
 import Box from '../box';
 import Text from '../text';
-/* import AplicationCard from '../application-card/application-card';
-import { store } from '../application-card/application-card.constans'; */
+import AplicationCard from '../application-card/application-card';
 import RadiusSearch from '../radius-search';
 import Header from '../header';
 import Modal from '../modal';
@@ -20,6 +19,8 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
+import { store } from '../../utils/application-card.constans';
+import ActiveFilterPopup from '../active-filter-popup';
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
@@ -46,6 +47,7 @@ function App() {
       <Box>
         <Text tag='p' size='24' weight='700'>TEST</Text>
       </Box>
+      <TopPanel title='TEST' />
       <section className={styles.app__aplicationCards}>
         {store.aplicationCardData.map(aplicationCard => <AplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
       </section>
@@ -53,9 +55,8 @@ function App() {
       <Button viewType='primary' onClick={() => { setOpenPopup(true); }}>Открыть попап</Button>
       {openPopup && <Modal
         onClose={() => { handleClose(); }}
-      >
+      ><ActiveFilterPopup />
       </Modal>}
-      <TopPanel title='TEST' />
       <Volunteer></Volunteer>
       <Footer />
     </>
