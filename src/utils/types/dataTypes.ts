@@ -14,3 +14,11 @@ export interface IOwner {
   avatar?: string
   phone?: string
 }
+
+export interface IToolTipMap {
+  cardData: any
+  id: string
+  name?: string
+  phone?: string
+  avatar?: string
+}
