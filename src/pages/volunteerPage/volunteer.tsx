@@ -6,7 +6,7 @@ import { store } from '../../utils/application-card.constans';
 import { personVolunteer } from '../../utils/person-voluteer.constants';
 import ApplicationCards from '../../components/application-cards/application-cards';
 
-const Volunteer = () => {
+const VolunteerPage = () => {
   return (
     <>
       <h1>HEADER</h1>
@@ -17,7 +17,7 @@ const Volunteer = () => {
         </section>
         <section>
           <TopPanel title="TEST" />
-          <ApplicationCards cardData={store} ></ApplicationCards>
+          <ApplicationCards cardData={store} size={'large'}></ApplicationCards>
           <div className={styles.opacity}></div>
         </section>
       </div>
@@ -25,4 +25,4 @@ const Volunteer = () => {
   );
 };
 
-export default Volunteer;
+export default VolunteerPage;
