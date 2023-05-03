@@ -19,7 +19,6 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
-import DocumentsPopup from '../documents-popup/documents-popup';
 import CompletedFilterPopup from '../completed-filter-popup';
 import { YMaps } from '@pbe/react-yandex-maps';
 import { store } from '../../utils/application-card.constans';
