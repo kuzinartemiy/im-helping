@@ -23,7 +23,6 @@ import {
 import DeletePopup from '../delete-popup/delete-popup';
 import { YMaps } from '@pbe/react-yandex-maps';
 import { store } from '../../utils/application-card.constans';
-import ActiveFilterPopup from '../active-filter-popup';
 
 function App() {
   const [openPopup, setOpenPopup] = useState(true);
