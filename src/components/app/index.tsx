@@ -5,7 +5,6 @@ import Footer from '../footer';
 import Box from '../box';
 import Text from '../text';
 import ApplicationCard from '../application-card/application-card';
-import { store } from '../../utils/types/data/data';
 import RadiusSearch from '../radius-search';
 import MapProd from '../map';
 import Header from '../header';
