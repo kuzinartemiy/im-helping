@@ -1,0 +1,54 @@
+@import '../../styles/colors.scss';
+
+.linkCardContainer {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  list-style: none;
+
+  max-width: 295px;
+  height: 426px;
+
+  border: 2px solid $color-primary;
+
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+
+  & li {
+    margin-bottom: 10px;
+  }
+}
+
+.linkCard {
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  max-width: 274px;
+  max-height: 113px;
+
+  cursor: pointer;
+
+  border: 1px solid $text-color-black;
+  background-color: $color-primary;
+  transition: .3s;
+    &:visited {
+      background-color: $bg-button-sea;
+    }
+    &:hover {
+      opacity: 0.7;
+      background-color: $bg-button-sea;
+    }
+    &:disabled {
+      background-color: $bg-button-disabled;
+    }
+}
+
+.colorIcon path {
+  fill: $background-popup;
+}
