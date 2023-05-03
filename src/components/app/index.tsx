@@ -3,8 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import styles from './app.module.scss';
 import Footer from '../footer';
 import Box from '../box';
+import AdminDefault from '../admin-default';
 import AdminPrivilegesCard from '../admin-privileges-card';
-import Text from '../text';
 import ApplicationCard from '../application-card/application-card';
 import RadiusSearch from '../radius-search';
 import MapProd from '../map';
@@ -12,7 +12,6 @@ import Header from '../header';
 import Modal from '../modal';
 import Button from '../button';
 import { useState } from 'react';
-// import TopPanel from '../top-panel';
 import TooltipMap from '../tooltip-map/tooltip-map';
 import Volunteer from '../../pages/volunteer/volunteer';
 import {
@@ -62,7 +61,7 @@ function App() {
         <Route path="/volunteer" element={<VolunteerPage />} />
       </Routes>
       <Box>
-        <Text tag='p' size='24' weight='700'>TEST</Text>
+        <AdminDefault />
       </Box>
       <TopPanel title='TEST' />
       <section className={styles.app__aplicationCards}>
