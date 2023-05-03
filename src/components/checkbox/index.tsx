@@ -2,7 +2,7 @@ import * as React from 'react';
 import { type FC } from 'react';
 import styles from '../checkbox/checkbox.module.scss';
 
-interface ICheckboxProps {
+export interface ICheckboxProps {
   id?: string
   children?: React.ReactNode
   disabled?: boolean
