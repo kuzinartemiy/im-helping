@@ -12,7 +12,6 @@ import Modal from '../modal';
 import Button from '../button';
 import { useState } from 'react';
 import TopPanel from '../top-panel';
-import Volunteer from '../../pages/volunteer/volunteer';
 import {
   HomePage,
   SuperAdminPage,
@@ -20,12 +19,14 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
-import DocumentsPopup from '../documents-popup/documents-popup';
+import CompletedFilterPopup from '../completed-filter-popup';
 import { YMaps } from '@pbe/react-yandex-maps';
 import { store } from '../../utils/application-card.constans';
 
 function App() {
-  const [openPopup, setOpenPopup] = useState(true);
+  const [openPopup, setOpenPopup] = useState(false);
+  const [isVisible, setVisible] = useState(false); // флаг для отображения попапа c фильтрацией
+  const [styled, setStyled] = useState<{ right: number, top: number }>({ right: 0, top: 0 }); // стили для определения местоположения CompletedFilterPopup
   /*   const navigate = useNavigate(); */
   /*   const handleCloseIngredientInModal = () => {
     console.log(close);
@@ -33,6 +34,13 @@ function App() {
   }; */
   const handleClose = () => {
     setOpenPopup(false);
+  };
+
+  const onFilterClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    setVisible(true);
+    const x = e.currentTarget.getBoundingClientRect().x;
+    const y = e.currentTarget.getBoundingClientRect().y;
+    setStyled({ right: x, top: y });
   };
 
   return (
@@ -56,12 +64,12 @@ function App() {
       <RadiusSearch />
       <YMaps><MapProd/></YMaps>
       <Button viewType='primary' onClick={() => { setOpenPopup(true); }}>Открыть попап</Button>
-      <TopPanel title='TEST' />
       {openPopup && <Modal
-        children={<DocumentsPopup data={ store.aplicationCardData[0] } id={ store.aplicationCardData[0].id } />}
-        onClose={handleClose} />
-      }
-      <Volunteer></Volunteer>
+        onClose={() => { handleClose(); }}
+      >
+      </Modal>}
+      <TopPanel title='TEST' onFilterClick={(e) => onFilterClick(e)} />
+      {isVisible && <CompletedFilterPopup styled={styled} setVisible={setVisible}></CompletedFilterPopup>}
       <Footer />
     </>
   );
