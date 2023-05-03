@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import styles from './app.module.scss';
 import Footer from '../footer';
 import Box from '../box';
+import AdminPrivilegesCard from '../admin-privileges-card';
 import Text from '../text';
 import ApplicationCard from '../application-card/application-card';
 import RadiusSearch from '../radius-search';
@@ -11,7 +12,7 @@ import Header from '../header';
 import Modal from '../modal';
 import Button from '../button';
 import { useState } from 'react';
-import TopPanel from '../top-panel';
+// import TopPanel from '../top-panel';
 import TooltipMap from '../tooltip-map/tooltip-map';
 import Volunteer from '../../pages/volunteer/volunteer';
 import {
@@ -25,6 +26,7 @@ import { YMaps } from '@pbe/react-yandex-maps';
 import { store } from '../../utils/application-card.constans';
 import AdminFilterPopup from '../adminFilterPopup';
 import CompletedFilterPopup from '../completed-filter-popup';
+import TopPanel from '../top-panel';
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
@@ -73,6 +75,7 @@ function App() {
         onClose={() => { handleClose(); }}
       >
       </Modal>}
+      <AdminPrivilegesCard name={'Петров Петр Петрович'} id={'11111114'} phone={'+7(000) 000-00-04'}></AdminPrivilegesCard>
       {isAdminPopupOpen && <AdminFilterPopup onClick={handleClose} />}
       <TooltipMap cardData={store.aplicationCardData[0]} id={ store.aplicationCardData[0].id }/>
       <Volunteer></Volunteer>
