@@ -5,7 +5,7 @@ interface ITextProps extends DetailedHTMLProps<React.HTMLAttributes<HTMLParagrap
   color?: string
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p'
   weight?: '400' | '700'
-  size?: '12' | '16' | '24'
+  size?: '12' | '16' | '20' | '24'
   align?: 'right' | 'left' | 'center' | 'justify' | 'start'
   lineHeight?: string | number
 }

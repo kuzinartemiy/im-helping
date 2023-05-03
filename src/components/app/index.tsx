@@ -4,8 +4,9 @@ import styles from './app.module.scss';
 import Footer from '../footer';
 import Box from '../box';
 import Text from '../text';
-import AplicationCard from '../application-card/application-card';
+import ApplicationCard from '../application-card/application-card';
 import RadiusSearch from '../radius-search';
+import MapProd from '../map';
 import Header from '../header';
 import Modal from '../modal';
 import Button from '../button';
@@ -18,7 +19,9 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
+import DocumentsPopup from '../documents-popup/documents-popup';
 import CompletedFilterPopup from '../completed-filter-popup';
+import { YMaps } from '@pbe/react-yandex-maps';
 import { store } from '../../utils/application-card.constans';
 
 function App() {
@@ -55,10 +58,12 @@ function App() {
       <Box>
         <Text tag='p' size='24' weight='700'>TEST</Text>
       </Box>
+      <TopPanel title='TEST' />
       <section className={styles.app__aplicationCards}>
-        {store.aplicationCardData.map(aplicationCard => <AplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
+        {store.aplicationCardData.map(aplicationCard => <ApplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
       </section>
       <RadiusSearch />
+      <YMaps><MapProd/></YMaps>
       <Button viewType='primary' onClick={() => { setOpenPopup(true); }}>Открыть попап</Button>
       {openPopup && <Modal
         onClose={() => { handleClose(); }}
