@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import styles from './documents-poupup.module.scss';
+import styles from './documents-popup.module.scss';
 import { COLORS } from '../../styles/colors';
 import UserAvatar from '../user-avatar/user-avatar';
 import Text from '../text';
@@ -7,7 +7,7 @@ import Textarea from '../textarea/textarea';
 import Button from '../button';
 import { ReactComponent as AttachIcon } from '../../assets/icons/attach.svg';
 
-interface IDocumentsPoupup {
+interface IDocumentsPopup {
   data: any
   id: string
   name?: string
@@ -15,7 +15,7 @@ interface IDocumentsPoupup {
   avatar?: string
 }
 
-export const DocumentsPoupup: FC<IDocumentsPoupup> = ({ data }) => {
+export const DocumentsPopup: FC<IDocumentsPopup> = ({ data }) => {
   return (
     <div className={styles.documentsPoupup}>
       <div className={styles.documentsPoupup__avatar}><UserAvatar src={data.owner.avatar} width={ '52' } height={ '52' } /></div>
@@ -49,4 +49,4 @@ export const DocumentsPoupup: FC<IDocumentsPoupup> = ({ data }) => {
   );
 };
 
-export default DocumentsPoupup;
+export default DocumentsPopup;

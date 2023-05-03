@@ -14,23 +14,6 @@ import CircleButton from '../circle-button';
 import { type IApplicationCard } from '../../utils/types/dataTypes';
 import { COLORS } from '../../styles/colors';
 
-interface IApplicationCard {
-  cardData: any
-  id?: string
-  date?: string
-  time?: string
-  location?: string
-  about?: string
-  completedAppQuantity?: string
-  owner?: IOwner
-}
-
-interface IOwner {
-  name?: string
-  avatar?: string
-  phone?: string
-}
-
 const ApplicationCard: FC<IApplicationCard> = ({ cardData }) => {
   return (
     <div className={styles.applicationCard} id={cardData.id}>
