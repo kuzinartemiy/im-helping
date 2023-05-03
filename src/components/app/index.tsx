@@ -6,6 +6,7 @@ import Box from '../box';
 import Text from '../text';
 import ApplicationCard from '../application-card/application-card';
 import RadiusSearch from '../radius-search';
+import MapProd from '../map';
 import Header from '../header';
 import Modal from '../modal';
 import Button from '../button';
@@ -20,6 +21,8 @@ import {
   RecipientPage,
 } from '../../pages';
 import DocumentsPopup from '../documents-popup/documents-popup';
+import DeletePopup from '../delete-popup/delete-popup';
+import { YMaps } from '@pbe/react-yandex-maps';
 import { store } from '../../utils/application-card.constans';
 
 function App() {
@@ -47,14 +50,15 @@ function App() {
       <Box>
         <Text tag='p' size='24' weight='700'>TEST</Text>
       </Box>
+      <TopPanel title='TEST' />
       <section className={styles.app__aplicationCards}>
         {store.aplicationCardData.map(aplicationCard => <ApplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
       </section>
       <RadiusSearch />
+      <YMaps><MapProd/></YMaps>
       <Button viewType='primary' onClick={() => { setOpenPopup(true); }}>Открыть попап</Button>
       <TopPanel title='TEST' />
-      {
-      openPopup && <Modal
+      {openPopup && <Modal
         children={<DocumentsPopup data={ store.aplicationCardData[0] } id={ store.aplicationCardData[0].id } />}
         onClose={handleClose} />
       }

@@ -3,6 +3,9 @@ import Text from '../text';
 
 import { ReactComponent as FilterIcon } from '../../assets/icons/filter.svg';
 import { COLORS } from '../../styles/colors';
+import { useState } from 'react';
+import FilterPopup from '../filter-popup';
+import ActiveFilterPopup from '../active-filter-popup';
 
 type TTopPanel = {
   title: string
@@ -18,10 +21,21 @@ const TopPanel = ({
   title,
   titleIcon,
   titleImageStyle = style.title_image,
-  onFilterClick,
   filterImageStyle = style.filter_image,
   ...props
 }: TTopPanel) => {
+  const [openFilterPopup, setOpenFilterPopup] = useState(false);
+
+  const handleClose = () => {
+    setOpenFilterPopup(false);
+  };
+  const onFilterClick = () => {
+    if (!openFilterPopup) {
+      setOpenFilterPopup(true);
+    } else {
+      setOpenFilterPopup(false);
+    }
+  };
   return (
     <div className={style.wrapper} {...props}>
       <div className={style.title}>
@@ -32,6 +46,7 @@ const TopPanel = ({
         <Text size='16' color={COLORS.get('color-primary')}>Фильтр</Text>
         <div className={filterImageStyle}><FilterIcon fill={COLORS.get('color-primary')} /></div>
       </div>
+      {openFilterPopup && <FilterPopup onClose={handleClose}><ActiveFilterPopup/></FilterPopup>}
     </div>
   );
 };
