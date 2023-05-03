@@ -4,7 +4,7 @@ import styles from './app.module.scss';
 import Footer from '../footer';
 import Box from '../box';
 import Text from '../text';
-import AplicationCard from '../application-card/application-card';
+import ApplicationCard from '../application-card/application-card';
 import RadiusSearch from '../radius-search';
 import MapProd from '../map';
 import Header from '../header';
@@ -20,7 +20,7 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
-import DeletePopup from '../delete-popup/delete-popup';
+import DocumentsPopup from '../documents-popup/documents-popup';
 import { YMaps } from '@pbe/react-yandex-maps';
 import { store } from '../../utils/application-card.constans';
 
@@ -51,16 +51,16 @@ function App() {
       </Box>
       <TopPanel title='TEST' />
       <section className={styles.app__aplicationCards}>
-        {store.aplicationCardData.map(aplicationCard => <AplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
+        {store.aplicationCardData.map(aplicationCard => <ApplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
       </section>
       <RadiusSearch />
       <YMaps><MapProd/></YMaps>
       <Button viewType='primary' onClick={() => { setOpenPopup(true); }}>Открыть попап</Button>
+      <TopPanel title='TEST' />
       {openPopup && <Modal
-        onClose={() => { handleClose(); }}
-      >
-        <DeletePopup />
-      </Modal>}
+        children={<DocumentsPopup data={ store.aplicationCardData[0] } id={ store.aplicationCardData[0].id } />}
+        onClose={handleClose} />
+      }
       <Volunteer></Volunteer>
       <Footer />
     </>
