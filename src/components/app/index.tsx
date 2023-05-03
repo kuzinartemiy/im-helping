@@ -26,6 +26,7 @@ import { YMaps } from '@pbe/react-yandex-maps';
 import { store } from '../../utils/application-card.constans';
 import AdminFilterPopup from '../adminFilterPopup';
 import CompletedFilterPopup from '../completed-filter-popup';
+import TopPanel from '../top-panel';
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
