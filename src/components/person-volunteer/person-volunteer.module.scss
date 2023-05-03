@@ -2,7 +2,6 @@
 @import "../../styles/colors.scss";
 
 .personWrapper {
-  @include font-source-sans(12px, $color-primary, 400, 14.4px);
   max-width: 295px;
   display: flex;
   flex-direction: column;

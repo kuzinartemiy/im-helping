@@ -1,14 +1,12 @@
 export interface IApplicationCard {
   cardData: any
   id?: string
-  date?: string
+  date?: number
   time?: string
   location?: string
   about?: string
   completedAppQuantity?: string
   owner?: IOwner
-  size?: 'small' | 'large'
-  type?: 'active' | 'complited'
 }
 
 export interface IOwner {
