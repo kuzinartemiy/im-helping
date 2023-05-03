@@ -88,7 +88,6 @@ const PersonVolunteer = ({
       </div>
       }
     </div>
-
   </div>
 );
 
