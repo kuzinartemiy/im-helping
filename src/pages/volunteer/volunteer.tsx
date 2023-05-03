@@ -6,7 +6,7 @@ import { store } from '../../utils/application-card.constans';
 import { personVolunteer } from '../../utils/person-voluteer.constants';
 import ApplicationCards from '../../components/application-cards/application-cards';
 
-const Volunteer = () => {
+const VolunteerPage = () => {
   return (
     <>
       <h1>HEADER</h1>
@@ -24,14 +24,5 @@ const Volunteer = () => {
     </>
   );
 };
-
-export default Volunteer;
-function VolunteerPage() {
-  return (
-    <>
-      <p>Жду компонент волонтера</p>
-    </>
-  );
-}
 
 export default VolunteerPage;

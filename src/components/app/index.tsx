@@ -20,6 +20,8 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
+/* import { store } from '../../utils/application-card.constans';
+import ApplicationCard from '../application-card/application-card'; */
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
@@ -46,9 +48,9 @@ function App() {
       <Box>
         <Text tag='p' size='24' weight='700'>TEST</Text>
       </Box>
-      <section className={styles.app__aplicationCards}>
-        {store.aplicationCardData.map(aplicationCard => <AplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
-      </section>
+      {/* <section className={styles.app__aplicationCards}>
+        {store.aplicationCardData.map(aplicationCard => <ApplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
+      </section> */}
       <RadiusSearch />
       <Button viewType='primary' onClick={() => { setOpenPopup(true); }}>Открыть попап</Button>
       {openPopup && <Modal
