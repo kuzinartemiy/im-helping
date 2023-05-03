@@ -20,6 +20,7 @@ import {
   RecipientPage,
 } from '../../pages';
 import { store } from '../../utils/application-card.constans';
+import ActiveFilterPopup from '../active-filter-popup';
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
@@ -54,7 +55,7 @@ function App() {
       <Button viewType='primary' onClick={() => { setOpenPopup(true); }}>Открыть попап</Button>
       {openPopup && <Modal
         onClose={() => { handleClose(); }}
-      >
+      ><ActiveFilterPopup />
       </Modal>}
       <Volunteer></Volunteer>
       <Footer />

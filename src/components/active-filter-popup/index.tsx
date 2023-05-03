@@ -13,32 +13,26 @@ function ActiveFilterPopup() {
         <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>{'Отображать'}</Text>
         <p className={styles.border} />
         <ul className={styles.sort}>
-          {sort?.map((item, index: number) => {
-            if (index > 2) {
-              return false;
-            }
-            return <li key={index}>
+          {sort?.map((item) => (
+            <li key={item.id}>
               <Checkbox id={item.id}>
                 {item.name}
               </Checkbox>
-            </li>;
-          })}
+            </li>
+          ))}
         </ul>
       </div>
       <div className={styles.block}>
         <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>{'Категория'}</Text>
         <p className={styles.border} />
         <ul className={styles.category}>
-          {categories?.map((item, index: number) => {
-            if (index > 5) {
-              return false;
-            }
-            return <li key={index}>
+          {categories?.map((item) => (
+            <li key={item.id}>
               <Checkbox id={item.id}>
                 {item.name}
               </Checkbox>
-            </li>;
-          })}
+            </li>
+          ))}
         </ul>
       </div>
       <div className={styles.block}>
