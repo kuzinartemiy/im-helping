@@ -4,8 +4,6 @@ import styles from './app.module.scss';
 import Footer from '../footer';
 import Box from '../box';
 import Text from '../text';
-/* import AplicationCard from '../application-card/application-card';
-import { store } from '../application-card/application-card.constans'; */
 import RadiusSearch from '../radius-search';
 import Header from '../header';
 import Modal from '../modal';
@@ -20,9 +18,13 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
+import { store } from '../../utils/application-card.constans';
+import ApplicationCard from '../application-card/application-card';
+import AdminFilterPopup from '../adminFilterPopup';
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
+  const [isAdminPopupOpen, setAdminPopupOpen] = useState(false);
   /*   const navigate = useNavigate(); */
   /*   const handleCloseIngredientInModal = () => {
     console.log(close);
@@ -30,6 +32,7 @@ function App() {
   }; */
   const handleClose = () => {
     setOpenPopup(false);
+    setAdminPopupOpen(false);
   };
 
   return (
@@ -47,7 +50,7 @@ function App() {
         <Text tag='p' size='24' weight='700'>TEST</Text>
       </Box>
       <section className={styles.app__aplicationCards}>
-        {store.aplicationCardData.map(aplicationCard => <AplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
+        {store.aplicationCardData.map(aplicationCard => <ApplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
       </section>
       <RadiusSearch />
       <Button viewType='primary' onClick={() => { setOpenPopup(true); }}>Открыть попап</Button>
@@ -55,6 +58,7 @@ function App() {
         onClose={() => { handleClose(); }}
       >
       </Modal>}
+      {isAdminPopupOpen && <AdminFilterPopup onClick={handleClose} />}
       <TopPanel title='TEST' />
       <Volunteer></Volunteer>
       <Footer />
