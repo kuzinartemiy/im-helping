@@ -21,12 +21,14 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
-import CompletedFilterPopup from '../completed-filter-popup';
 import { YMaps } from '@pbe/react-yandex-maps';
 import { store } from '../../utils/application-card.constans';
+import AdminFilterPopup from '../adminFilterPopup';
+import CompletedFilterPopup from '../completed-filter-popup';
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
+  const [isAdminPopupOpen, setAdminPopupOpen] = useState(false);
   const [isVisible, setVisible] = useState(false); // флаг для отображения попапа c фильтрацией
   const [styled, setStyled] = useState<{ right: number, top: number }>({ right: 0, top: 0 }); // стили для определения местоположения CompletedFilterPopup
   /*   const navigate = useNavigate(); */
@@ -36,6 +38,7 @@ function App() {
   }; */
   const handleClose = () => {
     setOpenPopup(false);
+    setAdminPopupOpen(false);
   };
 
   const onFilterClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -70,6 +73,7 @@ function App() {
         onClose={() => { handleClose(); }}
       >
       </Modal>}
+      {isAdminPopupOpen && <AdminFilterPopup onClick={handleClose} />}
       <TooltipMap cardData={store.aplicationCardData[0]} id={ store.aplicationCardData[0].id }/>
       <Volunteer></Volunteer>
       <TopPanel title='TEST' onFilterClick={(e) => onFilterClick(e)} />
