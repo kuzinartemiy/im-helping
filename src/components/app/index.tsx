@@ -6,6 +6,7 @@ import Box from '../box';
 import Text from '../text';
 import AplicationCard from '../application-card/application-card';
 import RadiusSearch from '../radius-search';
+import MapProd from '../map';
 import Header from '../header';
 import Modal from '../modal';
 import Button from '../button';
@@ -19,6 +20,7 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
+import { YMaps } from '@pbe/react-yandex-maps';
 import { store } from '../../utils/application-card.constans';
 import ActiveFilterPopup from '../active-filter-popup';
 
@@ -52,6 +54,7 @@ function App() {
         {store.aplicationCardData.map(aplicationCard => <AplicationCard key={aplicationCard.id} cardData={aplicationCard} />)}
       </section>
       <RadiusSearch />
+      <YMaps><MapProd/></YMaps>
       <Button viewType='primary' onClick={() => { setOpenPopup(true); }}>Открыть попап</Button>
       {openPopup && <Modal
         onClose={() => { handleClose(); }}
