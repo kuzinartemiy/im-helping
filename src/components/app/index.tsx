@@ -21,6 +21,10 @@ import {
   VolunteerPage,
   RecipientPage,
 } from '../../pages';
+import { YMaps } from '@pbe/react-yandex-maps';
+import { store } from '../../utils/application-card.constans';
+import AdminFilterPopup from '../adminFilterPopup';
+import CompletedFilterPopup from '../completed-filter-popup';
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
