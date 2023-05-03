@@ -12,7 +12,6 @@ import Text from '../text';
 import UserAvatar from '../user-avatar/user-avatar';
 import ServiceButton from '../service-button';
 import CircleButton from '../circle-button';
-import { type IApplicationCard } from '../../utils/types/dataTypes';
 import { COLORS } from '../../styles/colors';
 
 const ApplicationCard: FC<IApplicationCard> = ({ cardData }) => {
