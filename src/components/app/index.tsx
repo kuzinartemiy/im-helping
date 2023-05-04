@@ -9,6 +9,7 @@ import {
   AdminPage,
   VolunteerPage,
   RecipientPage,
+  PrivacyPage
 } from '../../pages';
 import ActiveApplications from '../../pages/recipientPage/active-applications/active-applications';
 import ComplitedApplications from '../../pages/recipientPage/complited-applications/complited-applications';
@@ -37,6 +38,7 @@ function App() {
           <Route path='complited-applications' element={<ComplitedApplications />} />
         </Route>
         <Route path="/volunteer" element={<VolunteerPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
       </Routes>
       <Footer />
     </>

@@ -3,6 +3,7 @@ import SuperAdminPage from './superAdminPage/superAdminPage';
 import AdminPage from './adminPage/adminPage';
 import VolunteerPage from './volunteerPage/volunteer';
 import RecipientPage from './recipientPage/recipient';
+import PrivacyPage from './privacyPage/privacyPage';
 
 export {
   HomePage,
@@ -10,4 +11,5 @@ export {
   AdminPage,
   VolunteerPage,
   RecipientPage,
+  PrivacyPage
 };
