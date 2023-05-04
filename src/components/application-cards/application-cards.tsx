@@ -34,10 +34,7 @@ const ApplicationCards: FC<IApplicationCard> = ({
               color={COLORS.get('color-secondary')}
             />
           </div>
-          <section
-            className={`${styles.applicationCards} ${
-              styles[`applicationCards__${size}`]
-            }`}
+          <section className={`${styles.applicationCards} ${styles[`applicationCards__${size}`]}`}
           >
             {cardData.aplicationCardData.map(
               (aplicationCard: IApplicationCard) => (

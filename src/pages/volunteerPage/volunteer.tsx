@@ -9,7 +9,6 @@ import ApplicationCards from '../../components/application-cards/application-car
 const VolunteerPage = () => {
   return (
     <>
-      <h1>HEADER</h1>
       <div className={styles.container}>
         <section>
           <PersonVolunteer {...personVolunteer}></PersonVolunteer>
