@@ -25,7 +25,9 @@ export interface IToolTipMap {
   avatar?: string
 }
 
-export interface IActiveApplications {
-  type: 'activeRecepient' | 'activeVolunteer'
+export interface ITypeApplications {
+  type: 'activeRecepient' | 'activeVolunteer' | 'complited'
   size: 'small' | 'large'
+  title: string
+  titleIcon: any
 }
