@@ -1,0 +1,165 @@
+@import url(../../styles/colors.scss);
+
+.adminDefault {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  align-items: center;
+  position: relative;
+  max-width: 276px;
+  max-height: 300px;
+  min-width: 276px;
+  min-height: 248px;
+  border: 1px solid var(--admin-default-border-sea);
+}
+.adminChild {
+  margin: 0 20px 0 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  align-self: flex-start;
+  justify-content: flex-start;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  z-index: 1;
+}
+.avatar {
+  margin-top: -30px;
+  object-fit: cover;
+  position: relative;
+  height: 62px;
+  border-radius: 100px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.userName {
+  margin: 0;
+  font-family: "Golos", serif;
+  font-size: 16px;
+  line-height: 19px;
+}
+.userId {
+  margin: 0;
+  font-family: "Golos", serif;
+  color: rgba(0, 0, 0, 0.5);
+}
+.userId::before {
+  padding-right: 5px;
+  content: "ID";
+}
+.userTel {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 12px;
+}
+.userTelChild {
+  margin: 0;
+  padding: 0;
+  font-family: "Golos", serif;
+  font-weight: 700;
+}
+.userTelVar {
+  margin: 0;
+}
+.lineItems {
+  margin: 0;
+  position: relative;
+  width: 250px;
+  padding-top: 5px;
+  color: var(--color-primary);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 15px;
+}
+.lineItemsGreen {
+  width: 250px;
+  height: 41px;
+  padding: 0;
+  position: absolute;
+  margin: 95px 30px 0 0;
+  background-image: url(../../assets/images/spriteBack.png);
+  background-size: 295px 215px;
+  background-position: -27px -27px;
+  z-index: 0;
+}
+.lineItemsOrange {
+  composes: lineItemsGreen;
+  background-position: -27px -85px;
+}
+.lineItemsGrey {
+  composes: lineItemsGreen;
+  background-position: -27px -142px;
+}
+.commonLineItems {
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+.userPoints {
+  composes: commonLineItems;
+}
+.userPoints::before {
+  margin: 0;
+  display: inline-block;
+  content: '';
+  width: 30px;
+  height: 20px;
+  background-image: url(../../assets/icons/balls.svg);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.userKey {
+  composes: commonLineItems;
+}
+.userKey::before {
+  margin: 0;
+  display: inline-block;
+  content: '';
+  width: 30px;
+  height: 20px;
+  background-image: url(../../assets/icons/key.svg);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.userHelps {
+  composes: commonLineItems;
+}
+.userHelps {
+  composes: commonLineItems;
+}
+.userHelps::before {
+  margin: 0;
+  display: inline-block;
+  content: '';
+  width: 30px;
+  height: 20px;
+  background-image: url(../../assets/icons/finished-applications.svg);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.buttons {
+  width: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  max-width: 123px;
+}
+.hidden-block {
+  display: none;
+}

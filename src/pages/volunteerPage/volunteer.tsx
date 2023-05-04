@@ -17,7 +17,7 @@ const VolunteerPage = () => {
         </section>
         <section>
           <TopPanel title="TEST" />
-          <ApplicationCards cardData={store} ></ApplicationCards>
+          <ApplicationCards cardData={store} size={'large'}></ApplicationCards>
           <div className={styles.opacity}></div>
         </section>
       </div>

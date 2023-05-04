@@ -7,10 +7,20 @@ export interface IApplicationCard {
   about?: string
   completedAppQuantity?: string
   owner?: IOwner
+  size?: 'small' | 'large'
+  type?: 'active' | 'complited'
 }
 
 export interface IOwner {
   name?: string
   avatar?: string
   phone?: string
+}
+
+export interface IToolTipMap {
+  cardData: any
+  id: string
+  name?: string
+  phone?: string
+  avatar?: string
 }
