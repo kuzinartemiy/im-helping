@@ -5,6 +5,7 @@ import TopPanel from '../../components/top-panel';
 import { store } from '../../utils/application-card.constans';
 import { personVolunteer } from '../../utils/person-voluteer.constants';
 import ApplicationCards from '../../components/application-cards/application-cards';
+import { data } from '../../components/nav-cards/nav-cards.constants';
 
 const VolunteerPage = () => {
   return (
@@ -13,7 +14,7 @@ const VolunteerPage = () => {
       <div className={styles.container}>
         <section>
           <PersonVolunteer {...personVolunteer}></PersonVolunteer>
-          <NavCards></NavCards>
+          <NavCards data={ data }></NavCards>
         </section>
         <section>
           <TopPanel title="TEST" />

@@ -12,6 +12,7 @@ import {
 } from '../../pages';
 import ActiveApplications from '../../pages/recipientPage/active-applications/active-applications';
 import ComplitedApplications from '../../pages/recipientPage/complited-applications/complited-applications';
+import ContactsPage from '../../pages/contactsPage/contactsPage';
 
 function App() {
   /* const [openPopup, setOpenPopup] = useState(false); */
@@ -37,6 +38,7 @@ function App() {
           <Route path='complited-applications' element={<ComplitedApplications />} />
         </Route>
         <Route path="/volunteer" element={<VolunteerPage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
       </Routes>
       <Footer />
     </>
