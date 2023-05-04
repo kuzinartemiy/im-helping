@@ -14,7 +14,7 @@ import ServiceButton from '../service-button';
 import CircleButton from '../circle-button';
 import { COLORS } from '../../styles/colors';
 
-const ApplicationCard: FC<IApplicationCard> = ({ cardData, type }) => {
+const ApplicationCard: FC<IApplicationCard> = ({ cardData, type = 'active' }) => {
   return (
     <div className={styles.applicationCard} id={cardData.id}>
       <div className={styles.applicationCard__categoryBarContainer}>
