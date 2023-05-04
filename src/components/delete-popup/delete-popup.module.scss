@@ -1,0 +1,14 @@
+@import '../../styles/colors.scss';
+.deletePopup {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 28px;
+}
+.border {
+  width: 310px;
+  border-bottom: 1px solid $pickerdate-border;
+  margin-bottom: 19px;
+}
