@@ -13,7 +13,7 @@ import {
 } from '../../pages';
 import { ReactComponent as ActiveApplicationIcon } from '../../assets/icons/active-applications.svg';
 import { ReactComponent as ComplitedApplicationsIcon } from '../../assets/icons/completed-applications.svg';
-import MapComponent from '../MapComponent';
+import MapComponent from '../mapComponent';
 import { YMaps } from '@pbe/react-yandex-maps';
 
 function App() {
