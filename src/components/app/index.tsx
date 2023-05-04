@@ -33,10 +33,14 @@ function App() {
         <Route path="/superadmin" element={<SuperAdminPage />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="recipient/*" element={<RecipientPage />}>
-          <Route path='active-applications' element={<ActiveApplications />} />
+          <Route path='active-applications' element={<ActiveApplications type={'activeRecepient'} size={'small'} />} />
           <Route path='complited-applications' element={<ComplitedApplications />} />
         </Route>
-        <Route path="/volunteer" element={<VolunteerPage />} />
+        <Route path="/volunteer/*" element={<VolunteerPage />} >
+          <Route path='map-applications' element={<ActiveApplications type={'activeVolunteer'} size={'large'} />} />
+          <Route path='active-applications' element={<ActiveApplications type={'activeVolunteer'} size={'large'} />} />
+          <Route path='complited-applications' element={<ComplitedApplications />} />
+        </Route>
       </Routes>
       <Footer />
     </>

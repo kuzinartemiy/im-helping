@@ -8,7 +8,7 @@ export interface IApplicationCard {
   completedAppQuantity?: string
   owner?: IOwner
   size?: 'small' | 'large'
-  type?: 'active' | 'complited'
+  type?: 'activeRecepient' | 'activeVolunteer' | 'complited'
 }
 
 export interface IOwner {
@@ -23,4 +23,9 @@ export interface IToolTipMap {
   name?: string
   phone?: string
   avatar?: string
+}
+
+export interface IActiveApplications {
+  type: 'activeRecepient' | 'activeVolunteer'
+  size: 'small' | 'large'
 }
