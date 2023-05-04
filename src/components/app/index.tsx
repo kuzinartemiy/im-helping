@@ -13,6 +13,8 @@ import {
 } from '../../pages';
 import { ReactComponent as ActiveApplicationIcon } from '../../assets/icons/active-applications.svg';
 import { ReactComponent as ComplitedApplicationsIcon } from '../../assets/icons/completed-applications.svg';
+import MapComponent from '../MapComponent';
+import { YMaps } from '@pbe/react-yandex-maps';
 
 function App() {
   /* const [openPopup, setOpenPopup] = useState(false); */
@@ -38,7 +40,7 @@ function App() {
           <Route path='complited-applications' element={<TypeApplications type={'complited'} size={'large'} title={'Завершенные заявки'} titleIcon= {<ComplitedApplicationsIcon />}/>} />
         </Route>
         <Route path="/volunteer/*" element={<VolunteerPage />} >
-          <Route path='map-applications' element={<TypeApplications type={'activeVolunteer'} size={'large'} title={'Активные заявки'} titleIcon= {<ActiveApplicationIcon />}/>} />
+          <Route path='map-applications' element={<YMaps><MapComponent/></YMaps>} />
           <Route path='active-applications' element={<TypeApplications type={'activeVolunteer'} size={'large'} title={'Активные заявки'} titleIcon= {<ActiveApplicationIcon />}/>} />
           <Route path='complited-applications' element={<TypeApplications type={'complited'} size={'large'} title={'Завершенные заявки'} titleIcon= {<ComplitedApplicationsIcon />}/>} />
         </Route>
