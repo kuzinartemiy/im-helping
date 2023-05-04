@@ -1,8 +1,45 @@
+@import '../../styles/colors.scss';
+
 .container {
   display: flex;
   margin: 30px 93px 88px;
   gap: 20px;
 }
-.colorIcon {
- color: #FFFFFF;
+.colorWhiteIcon path {
+  fill: #FFFFFF;
+}
+.colorBlueIcon path {
+  fill: $color-primary;
+}
+.nav {
+  padding-top: 90px;
+}
+.panel {
+  width: 100%;
+}
+.contactsBody {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding-top: 20px;
+  padding-left: 50px;
+}
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  row-gap: 17px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, white 0%, #2E3192 60%, #2E3192 40%, white 100%);
+  border-image-slice: 1;
+}
+.contactItemText {
+  color: $color-secondary;
+  padding-top: 20px;
+}
+.contactItemValue {
+  color: $color-primary;
+  padding-bottom: 23px;
 }

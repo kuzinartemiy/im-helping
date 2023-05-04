@@ -5,11 +5,11 @@ import type { ICard } from '../../components/nav-card';
 
 export const data: ICard[] = [{
   text: 'Контакты',
-  icon: <IconContactsGlobe className={styles.colorIcon}/>,
+  icon: <IconContactsGlobe className={styles.colorWhiteIcon}/>,
   path: '/',
 }, {
   text: 'Напишите нам',
-  icon: <IconMessage className={styles.colorIcon}/>,
+  icon: <IconMessage className={styles.colorWhiteIcon}/>,
   path: '/',
 },
 ];
