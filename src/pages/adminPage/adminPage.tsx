@@ -31,14 +31,13 @@ const AdminPage = () => {
           onFilterClick={() => {
             setState({ ...state, isFilterOpen: !state.isFilterOpen });
           }}
-          popup={
-            <AdminFilterPopup
-              onClick={function (): void {
-                throw new Error('Function not implemented.');
-              }}
-            />
-          }
-        />
+        >
+          <AdminFilterPopup
+            onClick={function (): void {
+              throw new Error('Function not implemented.');
+            }}
+          />
+        </TopPanel>
         <div className={styles.userCards}>
           {adminUsersData.map((userData, index) => (
             <div className={styles.userCard}>
