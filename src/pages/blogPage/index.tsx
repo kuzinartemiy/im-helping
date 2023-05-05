@@ -6,21 +6,23 @@ import navCardsStyles from '../../components/nav-cards/nav-cards.module.scss';
 
 const BlogPage = () => {
   return (
-      <main className={styles.blogPage}>
-        <section>
-          <ul className={navCardsStyles.linkCardContainer}>
+    <main className={styles.blogPage}>
+      <section className={styles.navBlock}>
+        <ul className={navCardsStyles.linkCardContainer}>
           {blogData.map((item, index) => {
-            return <li key={index} className={navCardsStyles.linkCard}>
-              <NavCard text={item.text} icon={item.icon} path={item.path}/>
-            </li>;
+            return (
+              <li key={index} className={navCardsStyles.linkCard}>
+                <NavCard text={item.text} icon={item.icon} path={item.path} />
+              </li>
+            );
           })}
         </ul>
-        </section>
-        <section className={styles.volunteerPage__applications}>
-        <Outlet />
-        <div className={styles.volunteerPage__applications_opacity}></div>
       </section>
-      </main>
+      <section className={styles.blogPage__applications}>
+        <Outlet />
+        <div className={styles.blogPage__applications_opacity}></div>
+      </section>
+    </main>
   );
 };
 

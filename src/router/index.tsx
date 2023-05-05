@@ -3,10 +3,10 @@ import { createBrowserRouter } from 'react-router-dom';
 import { AdminPage, HomePage, RecipientPage, SuperAdminPage, VolunteerPage, BlogPage } from '../pages';
 import { ReactComponent as ActiveApplicationIcon } from '../assets/icons/active-applications.svg';
 import { ReactComponent as ComplitedApplicationsIcon } from '../assets/icons/completed-applications.svg';
-import { ReactComponent as IconPopular } from '../assets/icons/popular.svg';
 import TypeApplications from '../components/type-applications';
 import { YMaps } from '@pbe/react-yandex-maps';
 import MapComponent from '../components/map-component';
+import Popular from '../pages/blogPage/popular/popular';
 
 export const router = createBrowserRouter([
   {
@@ -77,13 +77,13 @@ export const router = createBrowserRouter([
           {
             path: 'popular',
             element: (
-              <TypeApplications type={'activeVolunteer'} size={'large'} title={'Популярное'} titleIcon= {<IconPopular />}/>
+              <Popular/>
             ),
           },
           {
             path: 'category',
             element: (
-              <TypeApplications type={'activeVolunteer'} size={'large'} title={'Категория'} titleIcon= {<IconPopular />}/>
+              <Popular/>
             ),
           },
         ],
