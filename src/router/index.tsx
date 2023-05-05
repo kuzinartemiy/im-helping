@@ -5,7 +5,7 @@ import { ReactComponent as ActiveApplicationIcon } from '../assets/icons/active-
 import { ReactComponent as ComplitedApplicationsIcon } from '../assets/icons/completed-applications.svg';
 import TypeApplications from '../components/type-applications';
 import { YMaps } from '@pbe/react-yandex-maps';
-import MapComponent from '../components/mapComponent';
+import MapComponent from '../components/map-component';
 
 export const router = createBrowserRouter([
   {

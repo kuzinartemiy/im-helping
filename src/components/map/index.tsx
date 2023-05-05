@@ -6,7 +6,7 @@ import TopPanel from '../top-panel';
 import { ReactComponent as MapIcon } from '../../assets/icons/requests-map.svg';
 import MapFilterPopup from '../map-filter-popup';
 import { CoordsPopup } from '../coords-popup/coords-popup';
-import { requests } from './consts';
+import { requests } from './map.constants';
 import { /* YMaps, Map, Placemark, */ useYMaps } from '@pbe/react-yandex-maps';
 import Select from '../select';
 
