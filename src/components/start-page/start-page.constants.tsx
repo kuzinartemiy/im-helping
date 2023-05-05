@@ -14,10 +14,10 @@ export const btnStart = [{
 }, {
   text: 'Реципиент',
   icon: <IconCompleted className={styles.colorIcon} />,
-  path: '/recipient',
+  path: '/recipient/active-applications',
 }, {
   text: 'Волонтер',
   icon: <IconCompleted className={styles.colorIcon} />,
-  path: '/volunteer',
+  path: '/volunteer/active-applications',
 },
 ];

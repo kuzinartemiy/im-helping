@@ -52,11 +52,11 @@ const ApplicationCard: FC<IApplicationCard> = ({ cardData, type = 'active' }) =>
         <div className={ styles.applicationCard__userColumn_name }><Text children={ cardData.owner.name } align='center' size='16' lineHeight='19px'/></div>
         <Text children={ cardData.owner.phone } color={COLORS.get('color-primary')} size='16'/>
         <div className={ styles.applicationCard__userColumnBtns }>
-          { type === 'active'
+          { type !== 'complited'
             ? (
           <><CircleButton >
               <Message />
-            </CircleButton><CircleButton>
+            </CircleButton><CircleButton >
                 <Phone />
               </CircleButton></>)
             : (<><CircleButton disabled = {true}>
@@ -66,7 +66,7 @@ const ApplicationCard: FC<IApplicationCard> = ({ cardData, type = 'active' }) =>
               </CircleButton></>)}
         </div>
       </div>
-      { type === 'active' &&
+      { type !== 'complited' &&
       <div className={ styles.applicationCard__buttonsColumn}>
         <ServiceButton />
         <ServiceButton viewType='edit' />
