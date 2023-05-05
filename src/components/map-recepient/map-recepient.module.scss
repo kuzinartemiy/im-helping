@@ -1,0 +1,18 @@
+@import "../../styles/mixins";
+@import "../../styles/color-variables";
+
+.container {
+  max-width: 454px;
+  margin: auto;
+  &__input {
+    margin-bottom: 8px;
+  }
+  &__text {
+    @include font-source-sans(12px, $text-color-black, 400, 14px);
+    margin-top: 5px;
+    margin-bottom: 10px;
+    span {
+      color: $color-orange-bright;
+    }
+  }
+}
