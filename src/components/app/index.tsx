@@ -1,48 +1,6 @@
-/* import { useNavigate } from 'react-router-dom'; */
-import { Route, Routes } from 'react-router-dom';
-import styles from './app.module.scss';
-import Footer from '../footer';
-import Header from '../header';
-import {
-  HomePage,
-  SuperAdminPage,
-  AdminPage,
-  VolunteerPage,
-  RecipientPage,
-  PrivacyPage
-} from '../../pages';
-import ActiveApplications from '../../pages/recipientPage/active-applications/active-applications';
-import ComplitedApplications from '../../pages/recipientPage/complited-applications/complited-applications';
+import { router } from '../../router';
+import { RouterProvider } from 'react-router-dom';
 
-function App() {
-  /* const [openPopup, setOpenPopup] = useState(false); */
-  /*   const navigate = useNavigate(); */
-  /*   const handleCloseIngredientInModal = () => {
-    console.log(close);
-    navigate('/');
-  }; */
-  /* const handleClose = () => {
-    setOpenPopup(false);
-  }; */
-
-  return (
-    <>
-      <div className={styles.app} />
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/superadmin" element={<SuperAdminPage />} />
-        <Route path="/admin" element={<AdminPage />} />
-        <Route path="recipient/*" element={<RecipientPage />}>
-          <Route path='active-applications' element={<ActiveApplications />} />
-          <Route path='complited-applications' element={<ComplitedApplications />} />
-        </Route>
-        <Route path="/volunteer" element={<VolunteerPage />} />
-        <Route path="/privacy" element={<PrivacyPage />} />
-      </Routes>
-      <Footer />
-    </>
-  );
-}
+const App = () => <RouterProvider router={router} />;
 
 export default App;

@@ -9,32 +9,28 @@
   &::-webkit-scrollbar {
     width: 0;
   }
-  &__large{
-    max-height: 700px;
+  &__large {
+    max-height: 730px;
   }
-  &__small{
-    max-height: 550px;
+  &__small {
+    max-height: 570px;
   }
-}
 
-.applicationCards__large {
+  &__empty {
+    display: flex;
+    justify-content: center;
+    padding-top: 126px;
+  }
 
-}
-
-.applicationCards__empty {
-  display: flex;
-  justify-content: center;
-  padding-top: 126px;
-}
-
-.applicationCards__addAplicationContainer {
-  display: flex;
-  align-items: center;
-  gap: 59px;
-  padding-left: 64px;
-  border-bottom: 2px solid;
-  border-image: linear-gradient(to right, #ffffff 10%, #2e3192 50%, #ffffff 90%);
-  border-image-slice: 1;
-  padding: 23px 64px ;
-  margin-bottom: 20px;
+  &__addAplicationContainer {
+    display: flex;
+    align-items: center;
+    gap: 59px;
+    padding-left: 64px;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #ffffff 10%, #2e3192 50%, #ffffff 90%);
+    border-image-slice: 1;
+    padding: 23px 64px;
+    margin-bottom: 20px;
+  }
 }
