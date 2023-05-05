@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Modal from '../modal';
-import styles from './createApplicationPopup.module.scss';
+import styles from './create-application-popup.module.scss';
 import UserAvatar from '../user-avatar/user-avatar';
 import Text from '../text';
 import DatePickerProd from '../datepicker_prod';
@@ -18,10 +18,12 @@ interface ICreateApplicationPopup {
     avatar: string
     phone: string
   }
+  onClose: () => void
 }
 
 const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
   owner,
+  onClose,
 }) => {
   const [window, setWindow] = useState(1);
 
@@ -30,9 +32,7 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
   };
   return (
     <Modal
-      onClose={function (): void {
-        throw new Error('Function not implemented.');
-      }}
+      onClose={onClose}
     >
       <div className={styles.mainContainer}>
         <div className={styles.wrapper}>
