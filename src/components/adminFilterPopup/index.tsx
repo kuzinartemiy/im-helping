@@ -2,7 +2,6 @@ import styles from './adminFilterPopup.module.scss';
 import { COLORS } from '../../styles/colors';
 import Checkbox from '../checkbox';
 import Text from '../text';
-import { CoordsPopup } from '../coords-popup/coords-popup';
 import Button from '../button';
 
 interface IAdminFilterPopup {
@@ -11,13 +10,6 @@ interface IAdminFilterPopup {
 
 const AdminFilterPopup: React.FC<IAdminFilterPopup> = ({ onClick }) => {
   return (
-    <CoordsPopup
-      pageX={500}
-      pageY={100}
-      onOverlayClick={function (): void {
-        throw new Error('Function not implemented.');
-      }}
-    >
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <Text
@@ -50,7 +42,6 @@ const AdminFilterPopup: React.FC<IAdminFilterPopup> = ({ onClick }) => {
           <Button onClick={onClick}>{'Применить'}</Button>
         </div>
       </div>
-    </CoordsPopup>
   );
 };
 

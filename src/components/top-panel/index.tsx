@@ -15,6 +15,7 @@ type TTopPanel = {
   filterText?: string
   filterImage?: React.ReactNode
   filterImageStyle?: string
+  popup?: React.ReactNode
 } & React.HTMLProps<HTMLDivElement>;
 
 const TopPanel = ({
@@ -22,6 +23,7 @@ const TopPanel = ({
   titleIcon,
   titleImageStyle = style.title_image,
   filterImageStyle = style.filter_image,
+  popup = null,
   ...props
 }: TTopPanel) => {
   const [openFilterPopup, setOpenFilterPopup] = useState(false);
@@ -36,17 +38,42 @@ const TopPanel = ({
       setOpenFilterPopup(false);
     }
   };
+
+  const activePopup = (
+    <FilterPopup onClose={handleClose}>
+      { popup !== null ? popup : <ActiveFilterPopup /> }
+    </FilterPopup>
+  );
+
   return (
-    <div className={style.wrapper} {...props}>
+    <div
+      className={style.wrapper}
+      {...props}
+    >
       <div className={style.title}>
         <div className={titleImageStyle}>{titleIcon}</div>
-        <Text size='24' color={COLORS.get('color-primary')}>{title}</Text>
+        <Text
+          size='24'
+          color={COLORS.get('color-primary')}
+        >
+          {title}
+        </Text>
       </div>
-      <div className={style.filter} onClick={onFilterClick}>
-        <Text size='16' color={COLORS.get('color-primary')}>Фильтр</Text>
-        <div className={filterImageStyle}><FilterIcon fill={COLORS.get('color-primary')} /></div>
+      <div
+        className={style.filter}
+        onClick={onFilterClick}
+      >
+        <Text
+          size='16'
+          color={COLORS.get('color-primary')}
+        >
+          Фильтр
+        </Text>
+        <div className={filterImageStyle}>
+          <FilterIcon fill={COLORS.get('color-primary')} />
+        </div>
       </div>
-      {openFilterPopup && <FilterPopup onClose={handleClose}><ActiveFilterPopup/></FilterPopup>}
+      {openFilterPopup && activePopup}
     </div>
   );
 };
