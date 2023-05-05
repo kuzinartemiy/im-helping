@@ -5,11 +5,13 @@ import { ReactComponent as FilterIcon } from '../../assets/icons/filter.svg';
 import { COLORS } from '../../styles/colors';
 import { useState } from 'react';
 import FilterPopup from '../filter-popup';
+import ActiveFilterPopup from '../active-filter-popup';
 
 type TTopPanel = {
   title: string
   titleIcon?: React.ReactNode
   titleImageStyle?: string
+  filter?: boolean
   onFilterClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
   filterText?: string
   filterImage?: React.ReactNode
@@ -21,7 +23,7 @@ const TopPanel = ({
   titleIcon,
   titleImageStyle = style.title_image,
   filterImageStyle = style.filter_image,
-  children,
+  filter = true,
   ...props
 }: TTopPanel) => {
   const [openFilterPopup, setOpenFilterPopup] = useState(false);
@@ -42,11 +44,13 @@ const TopPanel = ({
         <div className={titleImageStyle}>{titleIcon}</div>
         <Text size='24' color={COLORS.get('color-primary')}>{title}</Text>
       </div>
-      <div className={style.filter} onClick={onFilterClick}>
+      { filter
+        ? <div className={style.filter} onClick={onFilterClick}>
         <Text size='16' color={COLORS.get('color-primary')}>Фильтр</Text>
         <div className={filterImageStyle}><FilterIcon fill={COLORS.get('color-primary')} /></div>
       </div>
-      {openFilterPopup && <FilterPopup onClose={handleClose}>{children}</FilterPopup>}
+        : null }
+      {openFilterPopup && <FilterPopup onClose={handleClose}><ActiveFilterPopup/></FilterPopup>}
     </div>
   );
 };

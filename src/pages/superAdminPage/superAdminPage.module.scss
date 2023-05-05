@@ -1,0 +1,29 @@
+.wrapper {
+  margin: 30px 93px 88px;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: 0.1fr 1fr;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  min-width: 295px;
+  // navCards имеет margin в 16px
+  gap: calc(30px - 16px);
+}
+
+.content {
+  display: grid;
+  grid-template-rows: 0.1fr 0.1fr 1fr;
+  row-gap: 34px;
+}
+
+.inputContainer {
+  width: 351px;
+  height: 44px;
+}
+
+.cards {
+  padding-top: 31px;
+}
