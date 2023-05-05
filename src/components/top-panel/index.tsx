@@ -5,7 +5,6 @@ import { ReactComponent as FilterIcon } from '../../assets/icons/filter.svg';
 import { COLORS } from '../../styles/colors';
 import { useState } from 'react';
 import FilterPopup from '../filter-popup';
-import ActiveFilterPopup from '../active-filter-popup';
 
 type TTopPanel = {
   title: string
@@ -15,6 +14,7 @@ type TTopPanel = {
   filterText?: string
   filterImage?: React.ReactNode
   filterImageStyle?: string
+  children: React.ReactNode
 } & React.HTMLProps<HTMLDivElement>;
 
 const TopPanel = ({
@@ -22,6 +22,7 @@ const TopPanel = ({
   titleIcon,
   titleImageStyle = style.title_image,
   filterImageStyle = style.filter_image,
+  children,
   ...props
 }: TTopPanel) => {
   const [openFilterPopup, setOpenFilterPopup] = useState(false);
@@ -46,7 +47,7 @@ const TopPanel = ({
         <Text size='16' color={COLORS.get('color-primary')}>Фильтр</Text>
         <div className={filterImageStyle}><FilterIcon fill={COLORS.get('color-primary')} /></div>
       </div>
-      {openFilterPopup && <FilterPopup onClose={handleClose}><ActiveFilterPopup/></FilterPopup>}
+      {openFilterPopup && <FilterPopup onClose={handleClose}>{children}</FilterPopup>}
     </div>
   );
 };

@@ -11,7 +11,7 @@ import { COLORS } from '../../styles/colors';
 const ApplicationCards: FC<IApplicationCard> = ({
   cardData,
   size = 'large',
-  type = 'active',
+  type,
 }) => {
   return (
     <>
@@ -21,7 +21,7 @@ const ApplicationCards: FC<IApplicationCard> = ({
           <EmptyApplicationsCards />
         </section>
         )
-        : type === 'active'
+        : type === 'activeRecepient'
           ? (
         <div>
           <div className={styles.applicationCards__addAplicationContainer}>
@@ -34,14 +34,18 @@ const ApplicationCards: FC<IApplicationCard> = ({
               color={COLORS.get('color-secondary')}
             />
           </div>
-          <section className={`${styles.applicationCards} ${styles[`applicationCards__${size}`]}`}
+          <section
+            className={`${styles.applicationCards} ${
+              styles[`applicationCards__${size}`]
+            }`}
           >
             {cardData.aplicationCardData.map(
               (aplicationCard: IApplicationCard) => (
                 <ApplicationCard
                   key={aplicationCard.id}
                   cardData={aplicationCard}
-                  type={'active'}
+                  type={'activeRecepient'}
+                  size={'small'}
                 />
               ),
             )}
@@ -59,7 +63,8 @@ const ApplicationCards: FC<IApplicationCard> = ({
             <ApplicationCard
               key={aplicationCard.id}
               cardData={aplicationCard}
-              type={'complited'}
+              type={type}
+              size={'large'}
             />
           ),
         )}
