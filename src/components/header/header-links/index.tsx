@@ -21,7 +21,7 @@ const HeaderLinks: React.FC<IHeaderLinks> = ({ extraClass = '', ...props }) => {
         </NavLink>
       </li>
       <li className={styles.navLink}>
-        <NavLink className={`${styles.navItem} ${extraClass}`} to="/path" {...props}>
+        <NavLink className={`${styles.navItem} ${extraClass}`} to="/blog/popular" {...props}>
           <BlogIcon />
           <Text tag='p' weight='400' size='16' color='black'>Блог</Text>
         </NavLink>
