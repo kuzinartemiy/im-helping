@@ -6,6 +6,7 @@ import { ReactComponent as ComplitedApplicationsIcon } from '../assets/icons/com
 import TypeApplications from '../components/type-applications';
 import { YMaps } from '@pbe/react-yandex-maps';
 import MapComponent from '../components/map-component';
+import ConfBlockApp from '../pages/adminPage/conf-block-app';
 
 export const router = createBrowserRouter([
   {
@@ -17,61 +18,89 @@ export const router = createBrowserRouter([
     children: [
       {
         path: 'admin',
-        element: (
-          <AdminPage />
-        ),
+        element: <AdminPage />,
+        children: [
+          {
+            path: 'confirmation-blocking-applications',
+            element: <ConfBlockApp />,
+          },
+          {
+            path: 'statistics',
+            element: <p>Page 2</p>,
+          },
+          {
+            path: 'creation-editing-applications',
+            element: <p>Page 3</p>,
+          },
+        ],
       },
       {
         path: 'recipient/',
-        element: (
-          <RecipientPage />
-        ),
+        element: <RecipientPage />,
         children: [
           {
             path: 'active-applications',
             element: (
-              <TypeApplications type={'activeRecepient'} size={'small'} title={'Активные заявки'} titleIcon= {<ActiveApplicationIcon />}/>
+              <TypeApplications
+                type={'activeRecepient'}
+                size={'small'}
+                title={'Активные заявки'}
+                titleIcon={<ActiveApplicationIcon />}
+              />
             ),
           },
           {
             path: 'complited-applications',
             element: (
-              <TypeApplications type={'complited'} size={'large'} title={'Завершенные заявки'} titleIcon= {<ComplitedApplicationsIcon />}/>
+              <TypeApplications
+                type={'complited'}
+                size={'large'}
+                title={'Завершенные заявки'}
+                titleIcon={<ComplitedApplicationsIcon />}
+              />
             ),
           },
         ],
       },
       {
         path: 'volunteer/',
-        element: (
-          <VolunteerPage />
-        ),
+        element: <VolunteerPage />,
         children: [
           {
             path: 'map-applications',
             element: (
-              <YMaps><MapComponent/></YMaps>
+              <YMaps>
+                <MapComponent />
+              </YMaps>
             ),
           },
           {
             path: 'active-applications',
             element: (
-              <TypeApplications type={'activeVolunteer'} size={'large'} title={'Активные заявки'} titleIcon= {<ActiveApplicationIcon />}/>
+              <TypeApplications
+                type={'activeVolunteer'}
+                size={'large'}
+                title={'Активные заявки'}
+                titleIcon={<ActiveApplicationIcon />}
+              />
             ),
           },
           {
             path: 'complited-applications',
             element: (
-              <TypeApplications type={'complited'} size={'large'} title={'Завершенные заявки'} titleIcon= {<ComplitedApplicationsIcon />}/>
+              <TypeApplications
+                type={'complited'}
+                size={'large'}
+                title={'Завершенные заявки'}
+                titleIcon={<ComplitedApplicationsIcon />}
+              />
             ),
           },
         ],
       },
       {
         path: 'superadmin',
-        element: (
-          <SuperAdminPage />
-        ),
+        element: <SuperAdminPage />,
       },
     ],
   },

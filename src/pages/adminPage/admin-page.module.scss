@@ -1,3 +1,5 @@
+@import '../../styles/color-variables';
+
 .adminPage {
     display: flex;
     margin: 0 auto;
@@ -5,9 +7,9 @@
     max-width: 1440px;
     padding: 30px 93px 0;
     box-sizing: border-box;
-    max-height: calc(100vh - 110px);
+    // max-height: calc(100vh - 110px);
   }
-  
+
   .adminSidebar {
     display: flex;
     flex-direction: column;
@@ -16,7 +18,7 @@
     margin-right: 20px;
     box-sizing: border-box;
   }
-  
+
   .adminContent {
     display: flex;
     flex-direction: column;
@@ -43,9 +45,14 @@
         display: none;
       }
   }
-  
+
   .userCard {
     padding-top: 30px;
     box-sizing: border-box;
   }
-  
+
+  .linkCardContainer {
+     list-style-type: none;
+     padding: 30px 10px;
+     border: 2px solid $bg-button-sea;
+  }
