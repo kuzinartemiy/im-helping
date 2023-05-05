@@ -1,5 +1,6 @@
 @import '../../styles/_mixins.scss';
 @import '../../styles/colors.scss';
+@import '../../styles/_mixins.scss';
 
 .inputContainer {
   display: flex;
@@ -51,6 +52,7 @@
       }
     }
   }
+
   .errorMessage {
     @include font-source-sans(13px, $color-orange-bright, 400, 16px);
     margin: 8px 0 0;

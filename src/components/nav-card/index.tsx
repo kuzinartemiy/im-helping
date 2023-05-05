@@ -4,7 +4,7 @@ import Text from '../text';
 import { type FC } from 'react';
 import { COLORS } from '../../styles/colors';
 
-interface ICard {
+export interface ICard {
   text: string
   icon: React.ReactNode
   path: string

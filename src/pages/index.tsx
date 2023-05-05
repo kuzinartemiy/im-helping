@@ -11,5 +11,5 @@ export {
   AdminPage,
   VolunteerPage,
   RecipientPage,
-  PrivacyPage
+  PrivacyPage,
 };
