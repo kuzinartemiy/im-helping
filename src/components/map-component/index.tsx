@@ -1,12 +1,12 @@
 // /* eslint-disable */
 import { useState, useEffect, useRef } from 'react';
-import styles from './map.module.scss';
+import styles from './map-component.module.scss';
 import location from '../../assets/icons/location.svg';
 import TopPanel from '../top-panel';
 import { ReactComponent as MapIcon } from '../../assets/icons/requests-map.svg';
 import MapFilterPopup from '../map-filter-popup';
 import { CoordsPopup } from '../coords-popup/coords-popup';
-import { requests } from './map.constants';
+import { requests } from './map-component.constants';
 import { /* YMaps, Map, Placemark, */ useYMaps } from '@pbe/react-yandex-maps';
 import Select from '../select';
 

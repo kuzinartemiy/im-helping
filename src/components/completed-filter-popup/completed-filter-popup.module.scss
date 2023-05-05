@@ -1,31 +1,28 @@
-@import "../../styles/colors.scss";
+@import "../../styles/color-variables";
 @import "../../styles/mixins";
 
 .popup {
-  padding: 22px 30px 34px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  gap: 12px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  max-width: 370px;
+  width: 100%;
 
   &__title {
-    @include font-source-sans(12px, var(--text-color-black), 700, 14px);
+    @include font-source-sans(12px, $text-color-black, 700, 14px);
     padding-bottom: 7.5px;
-    border-bottom: 1px solid var(--pickerdate-border);
+    border-bottom: 1px solid $pickerdate-border;
   }
 
   label {
     display: flex;
     align-items: center;
   }
-
-  button {
-    position: absolute;
-    bottom: 34px;
-    right: 30px;
-  }
+  &__button {
+    margin-top: 74px;
+    margin-right: 0px;
+    display: flex;
+    justify-content: flex-end;
+}
 }
