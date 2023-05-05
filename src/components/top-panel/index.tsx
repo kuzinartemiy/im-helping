@@ -14,7 +14,6 @@ type TTopPanel = {
   filterText?: string
   filterImage?: React.ReactNode
   filterImageStyle?: string
-  children: React.ReactNode
 } & React.HTMLProps<HTMLDivElement>;
 
 const TopPanel = ({
