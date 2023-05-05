@@ -1,0 +1,18 @@
+@import '../../../styles/colors.scss';
+
+.link {
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  height: 113px;
+
+  padding-left: 30px;
+  padding-right: 30px;
+  gap: 10px;
+
+  color: $background-popup;
+  text-decoration: none;
+  line-height: 19px;
+}

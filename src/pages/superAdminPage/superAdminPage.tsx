@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import style from './superAdminPage.module.scss';
-import Input from '../../components/input/input';
+import Input from '../../components/common/input/input';
 import NavCards from '../../components/nav-cards';
 import PersonVolunteer from '../../components/person-volunteer';
 import TopPanel from '../../components/top-panel';

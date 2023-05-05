@@ -1,11 +1,11 @@
 import style from './top-panel.module.scss';
-import Text from '../text';
+import Text from '../common/text';
 
 import { ReactComponent as FilterIcon } from '../../assets/icons/filter.svg';
 import { COLORS } from '../../styles/colors';
 import { useState } from 'react';
-import FilterPopup from '../filter-popup';
-import ActiveFilterPopup from '../active-filter-popup';
+import FilterPopup from '../modals/filter-popup';
+import ActiveFilterPopup from '../modals/active-filter-popup';
 
 type TTopPanel = {
   title: string

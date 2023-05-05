@@ -1,4 +1,4 @@
-import NavCard from '../nav-card/index';
+import NavCard from '../common/nav-card/index';
 import { btnStart } from './start-page.constants';
 import styles from '../nav-cards/nav-cards.module.scss';
 import stylesMain from './start-page.module.scss';

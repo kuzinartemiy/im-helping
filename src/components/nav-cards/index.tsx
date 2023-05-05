@@ -1,6 +1,6 @@
 import styles from './nav-cards.module.scss';
-import NavCard from '../nav-card';
-import type { ICard } from '../nav-card';
+import NavCard from '../common/nav-card';
+import type { ICard } from '../common/nav-card';
 
 function NavCards(props: { data: ICard[] }) {
   return (

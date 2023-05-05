@@ -4,9 +4,9 @@ import { COLORS } from '../../styles/colors';
 import { type IToolTipMap } from '../../utils/types/dataTypes';
 import { hideNumber } from './utils/hideNumber';
 import UserAvatar from '../user-avatar/user-avatar';
-import Text from '../text';
+import Text from '../common/text';
 import { ReactComponent as Status } from '../../assets/icons/balls.svg';
-import Button from '../button';
+import Button from '../common/button';
 
 const TooltipMap: FC<IToolTipMap> = ({ cardData }) => {
   return (

@@ -1,6 +1,6 @@
 import type React from 'react';
 import styles from './header-links.module.scss';
-import Text from '../../text';
+import Text from '../../common/text';
 import { ReactComponent as PersonIcon } from '../../../assets/icons/person.svg';
 import { ReactComponent as BlogIcon } from '../../../assets/icons/blog.svg';
 import { ReactComponent as PrivacyIcon } from '../../../assets/icons/privacy.svg';

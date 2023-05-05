@@ -2,9 +2,9 @@ import styles from './empty-application-cards.module.scss';
 import { COLORS } from '../../../styles/colors';
 import { ReactComponent as ComplitedApplicationsIcon } from '../../../assets/icons/completed applications-grey.svg';
 import { ReactComponent as Arrow } from '../../../assets/icons/Vector 2.svg';
-import Text from '../../text';
+import Text from '../../common/text';
 import { ReactComponent as Plus } from '../../../assets/icons/plus12.svg';
-import CircleButton from '../../circle-button';
+import CircleButton from '../../common/circle-button';
 
 const EmptyApplicationsCards = () => {
   return (

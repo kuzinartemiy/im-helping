@@ -1,7 +1,7 @@
 import TopPanel from '../../../components/top-panel';
 import { ReactComponent as Message } from '../../../assets/icons/message.svg';
 import styles from '../contactsPage.module.scss';
-import Button from '../../../components/button';
+import Button from '../../../components/common/button';
 import { useState } from 'react';
 
 const Feedback = () => {

@@ -3,7 +3,7 @@ import PersonVolunteer from '../../components/person-volunteer';
 import { personVolunteer } from '../../utils/person-voluteer.constants';
 import { Outlet } from 'react-router-dom';
 import { volunteerData } from './volunteerPage.constans';
-import NavCard from '../../components/nav-card';
+import NavCard from '../../components/common/nav-card';
 import navCardsStyles from '../../components/nav-cards/nav-cards.module.scss';
 
 const VolunteerPage = () => {

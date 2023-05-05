@@ -3,9 +3,9 @@ import ApplicationCard from '../application-card/application-card';
 import styles from './application-cards.module.scss';
 import { type IApplicationCard } from '../../utils/types/dataTypes';
 import EmptyApplicationsCards from './empty-application-cards/empty-application-cards';
-import CircleButton from '../circle-button';
+import CircleButton from '../common/circle-button';
 import { ReactComponent as Plus } from '../../assets/icons/plus12.svg';
-import Text from '../text';
+import Text from '../common/text';
 import { COLORS } from '../../styles/colors';
 
 const ApplicationCards: FC<IApplicationCard> = ({

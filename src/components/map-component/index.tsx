@@ -4,11 +4,11 @@ import styles from './map-component.module.scss';
 import location from '../../assets/icons/location.svg';
 import TopPanel from '../top-panel';
 import { ReactComponent as MapIcon } from '../../assets/icons/requests-map.svg';
-import MapFilterPopup from '../map-filter-popup';
-import { CoordsPopup } from '../coords-popup/coords-popup';
+import MapFilterPopup from '../modals/map-filter-popup';
+import { CoordsPopup } from '../modals/coords-popup/coords-popup';
 import { requests } from './map-component.constants';
 import { /* YMaps, Map, Placemark, */ useYMaps } from '@pbe/react-yandex-maps';
-import Select from '../select';
+import Select from '../common/select';
 
 /* const API_KEY = "05f8d2ae-bd94-4329-b9f9-7351e2ec9627"; */
 

@@ -7,12 +7,12 @@ import { ReactComponent as LocationIcon } from '../../assets/icons/location-tran
 import { ReactComponent as ComplitedAplications } from '../../assets/icons/finished-applications.svg';
 import { ReactComponent as Message } from '../../assets/icons/message.svg';
 import { ReactComponent as Phone } from '../../assets/icons/phone.svg';
-import CategoryBar from '../category-bar';
-import Text from '../text';
+import CategoryBar from '../common/category-bar';
+import Text from '../common/text';
 import UserAvatar from '../user-avatar/user-avatar';
-import ServiceButton from '../service-button';
-import CircleButton from '../circle-button';
+import CircleButton from '../common/circle-button';
 import { COLORS } from '../../styles/colors';
+import ServiceButton from '../common/service-button';
 
 const ApplicationCard: FC<IApplicationCard> = ({ cardData, type = 'active' }) => {
   return (

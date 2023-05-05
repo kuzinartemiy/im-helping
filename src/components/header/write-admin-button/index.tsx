@@ -1,7 +1,7 @@
 import { type SyntheticEvent, type DetailedHTMLProps } from 'react';
 import styles from './write-admin-button.module.scss';
-import Text from '../../text';
-import CircleButton from '../../circle-button';
+import Text from '../../common/text';
+import CircleButton from '../../common/circle-button';
 import { ReactComponent as ChatIcon } from '../../../assets/icons/message.svg';
 
 interface IWriteAdminButtonProps extends DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {

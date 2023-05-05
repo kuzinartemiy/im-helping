@@ -4,7 +4,7 @@ import PersonVolunteer from '../../components/person-volunteer';
 import { personVolunteer } from '../../utils/person-voluteer.constants';
 import { Outlet } from 'react-router-dom';
 import { recipientData } from './recipientPage.constans';
-import NavCard from '../../components/nav-card';
+import NavCard from '../../components/common/nav-card';
 
 const RecipientPage = () => {
   return (
