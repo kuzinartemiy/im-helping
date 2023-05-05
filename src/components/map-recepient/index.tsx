@@ -1,80 +1,70 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, /* useRef, useEffect, */ createRef } from 'react';
 import Input from '../input/input';
 import Text from '../text';
 import styles from './map-recepient.module.scss';
-import { /* YMaps, Map, Placemark, */ useYMaps } from '@pbe/react-yandex-maps';
+import {
+  YMaps,
+  Map,
+  Placemark /* , useYMaps, ZoomControl */,
+} from '@pbe/react-yandex-maps';
+
+interface IDefaultState {
+  center: number[]
+  zoom: number
+}
 
 const MapRecepient = () => {
-  const [input, setInput] = useState('');
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
+  const defaultState: IDefaultState = {
+    center: [55.751574, 37.573856],
+    zoom: 10,
   };
-  let myMap: any;
-  const ymaps = useYMaps([
-    'Map',
-    'GeoObjectCollection',
-    'Placemark',
-    'GeoObject',
-    'getCoordinates',
-    'geometry',
-  ]);
-  const mapRef = useRef(null);
-  /*   const myMap = new ymaps.Map(mapRef.current, {
-    center: center,
-    zoom: zoom,
-  }); */
+  const inputRef = createRef();
 
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    if (ymaps == null || !mapRef.current) {
-      return;
-    }
+  const [addressCoord, setAddressCoord] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  const [savedYmaps, setSavedYmaps] = useState();
+  const [isHideYandexInput, setIsHideYandexInput] = useState(false);
 
-    myMap = new ymaps.Map(mapRef.current, {
-      center: [55.76, 37.64],
-      zoom: 10,
+  const API_KEY = '05f8d2ae-bd94-4329-b9f9-7351e2ec9627';
+  const iconLayout = 'default#image';
+  const iconImageHref = 'location';
+  const iconImageSize = [53, 53];
+
+  const mapOptions = {
+    modules: ['geocode', 'SuggestView'],
+    defaultOptions: { suppressMapOpenBlock: true },
+    width: '100%',
+    height: '728px',
+  };
+
+  const onClickAddress = (e: any, ymaps: any) => {
+    const name = e.get('item').value;
+    setInputValue(name);
+    ymaps.geocode(name).then((result: any) => {
+      const coord = result.geoObjects.get(0).geometry.getCoordinates();
+      setAddressCoord(coord);
     });
+  };
 
-    /*     const myGeocoder = ymaps.geocode(input);
+  const onYmapsLoad = (ymaps: any) => {
+    setSavedYmaps(ymaps);
+    const suggestView = new ymaps.SuggestView('suggest', inputRef.current);
+    suggestView.events.add('select', (e: any) => {
+      return onClickAddress(e, ymaps);
+    });
+  };
 
-    myGeocoder.then(
-      function (res) {
-          // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-          alert('Object coordinates:' + res.geoObjects.get(0).geometry.getCoordinates());
-      },
-      function (err) {
-          alert('Error');
-      }
-  );
-  myMap.events.add('click', function (e) {
-    // Getting the click coordinate
-    var coords = e.get('coords');
-    alert(coords.join(', '));
-}); */
-
-    /*     requests.forEach((city: any) => {
-      const cityCollection = new ymaps.GeoObjectCollection();
-      city.requests.forEach((req: any) => {
-        const reqPlaceMark = new ymaps.Placemark(
-          req.coord,
-          {
-            ...req,
-          },
-          {
-            iconLayout: 'default#image',
-            iconImageHref: location,
-            iconImageSize: [53, 53],
-          },
-        );
-        reqPlaceMark.events.add('click', function (e: any) {
-          setReqinfo(e.originalEvent.target.properties._data);
-        });
-        cityCollection.add(reqPlaceMark);
-        placemarkCollection[city.city.name] = cityCollection;
-      });
-      myMap.geoObjects.add(cityCollection);
-    }); */
-  }, [ymaps]);
+  const onClickToMap = async (e: any) => {
+    const coords = e.get('coords');
+    setAddressCoord(coords);
+    const result = await savedYmaps.geocode(coords);
+    const firstGeoObject = result.geoObjects.get(0);
+    setInputValue(firstGeoObject.getAddressLine());
+    setIsHideYandexInput(true);
+  };
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  };
 
   return (
     <section className={styles.container}>
@@ -86,12 +76,69 @@ const MapRecepient = () => {
         lineHeight={'14px'}
       ></Text>
       <div className={styles.container__input}>
-      <Input placeholder={'Например: ул. Нахимова, д.9, у подъезда №3'} /* id={'suggest'} */ label={''} type={'text'} name={'adress'} value={input} onChange={handleOnChange} padding={'9px 10px'}></Input>
+        <Input
+          placeholder={'Например: ул. Нахимова, д.9, у подъезда №3'}
+          /* id={'suggest'} */ label={''}
+          type={'text'}
+          name={'adress'}
+          value={inputValue}
+          onChange={handleOnChange}
+          padding={'9px 10px'}
+        ></Input>
       </div>
-      <h5 className={styles.container__text}> * Будьте осторожны, если указываете домашний адресс, <span>не</span> пишите его полностью.</h5>
-      <div className={styles.container__map} style={{ height: '728px', width: '100%' }} ref={mapRef}></div>
-      <button type="submit" id="button">Проверить</button>
-      </section>
+      <h5 className={styles.container__text}>
+        {' '}
+        * Будьте осторожны, если указываете домашний адресс, <span>
+          не
+        </span>{' '}
+        пишите его полностью.
+      </h5>
+      {/* <div className={styles.container__map} style={{ height: '728px', width: '100%' }} ref={mapRef}></div> */}
+      {/* <YMaps
+        query={{
+          load: 'package.full',
+          apikey: API_KEY,
+        }}
+      >
+        <Map
+        /*  state={
+            addressCoord ? { ...mapState, center: addressCoord } : mapState
+          }
+          {...mapOptions}
+          defaultState={defaultState}
+          onLoad={onYmapsLoad}
+          width="100%"
+          height={'159px'}
+          onClick={onClickToMap}
+        >
+          {addressCoord && <Placemark options={{
+            iconLayout,
+            iconImageHref,
+            iconImageSize,
+          }}geometry={addressCoord} />}
+        </Map>
+      </YMaps> */}
+
+      <YMaps
+        query={{
+          apikey: API_KEY,
+        }}
+      >
+        <Map defaultState={defaultState} width="100%" height={'159px'} /* onClick={onClickToMap} */>
+        { addressCoord && <Placemark
+            geometry={addressCoord}
+            options={{
+              iconLayout,
+              iconImageHref,
+              iconImageSize,
+            }}
+          />}
+        </Map>
+      </YMaps>
+      <button type="submit" id="button">
+        Проверить
+      </button>
+    </section>
   );
 };
 
