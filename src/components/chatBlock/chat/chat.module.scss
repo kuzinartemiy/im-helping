@@ -1,0 +1,75 @@
+@import '../../../styles/colors.scss';
+
+.container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0.5px solid $bg-button-disabled;
+  max-height: 205px;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  padding: 20px;
+
+  &::-webkit-scrollbar-thumb {
+  background-color: $color-primary;
+  border: 2px solid $color-primary;
+  }
+
+  &::-webkit-scrollbar {
+  width: 6px;
+  background-color: $bg-button-wave;
+  }
+}
+
+.rightMessage {
+  display: flex;
+  position: relative;
+  min-height: 60px;
+  flex-direction: row-reverse;
+
+}
+
+.leftMessage {
+  display: flex;
+  min-height: 60px;
+  
+}
+
+.text {
+  box-sizing: border-box;
+  max-width: 220px;
+  width: 100%;
+  padding: 5px 15px;
+  position: relative;
+  margin: 10px 11px;
+  color: $background;
+  border: none;
+}
+
+.left {
+  background: $color-primary;
+
+  &::after {
+    content: ''; 
+    position: absolute;
+    left: -4%;
+    top: 0;
+    border: 4px solid transparent; 
+    border-top: 2px solid $color-primary; 
+    border-right: 6px solid $color-primary;
+  }
+}
+
+.right {
+  background: $bg-button-sea;
+
+  &::after {
+    content: ''; 
+    position: absolute;
+    right: -4%;
+    top: 0;
+    border: 4px solid transparent; 
+    border-top: 2px solid $bg-button-sea; 
+    border-left: 6px solid $bg-button-sea;
+  }
+}

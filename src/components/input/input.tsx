@@ -2,7 +2,7 @@ import type React from 'react';
 import styles from './input.module.scss';
 
 interface InputProps {
-  label: string
+  label?: string
   type: string
   name: string
   value: string
@@ -10,6 +10,7 @@ interface InputProps {
   placeholder?: string
   isError?: boolean
   errorMessage?: string
+  padding?: string
 }
 
 const Input: React.FC<InputProps> = ({
@@ -21,6 +22,7 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   isError = false,
   errorMessage,
+  padding = '35px 12px 12px 12px',
 }) => {
   return (
     <div className={styles.inputContainer}>
@@ -36,6 +38,9 @@ const Input: React.FC<InputProps> = ({
           onChange={onChange}
           placeholder={placeholder}
           className={styles.input}
+          style={{
+            padding: `${padding}`,
+          }}
         />
       </div>
       {isError && <span className={styles.errorMessage}>{errorMessage}</span>}

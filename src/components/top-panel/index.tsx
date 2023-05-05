@@ -10,11 +10,12 @@ type TTopPanel = {
   title: string
   titleIcon?: React.ReactNode
   titleImageStyle?: string
+  filter?: boolean
   onFilterClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
   filterText?: string
   filterImage?: React.ReactNode
   filterImageStyle?: string
-  children: React.ReactNode
+  children?: React.ReactNode
 } & React.HTMLProps<HTMLDivElement>;
 
 const TopPanel = ({
@@ -22,6 +23,7 @@ const TopPanel = ({
   titleIcon,
   titleImageStyle = style.title_image,
   filterImageStyle = style.filter_image,
+  filter = true,
   children,
   ...props
 }: TTopPanel) => {
@@ -52,20 +54,12 @@ const TopPanel = ({
           {title}
         </Text>
       </div>
-      <div
-        className={style.filter}
-        onClick={onFilterClick}
-      >
-        <Text
-          size='16'
-          color={COLORS.get('color-primary')}
-        >
-          Фильтр
-        </Text>
-        <div className={filterImageStyle}>
-          <FilterIcon fill={COLORS.get('color-primary')} />
-        </div>
+      { filter
+        ? <div className={style.filter} onClick={onFilterClick}>
+        <Text size='16' color={COLORS.get('color-primary')}>Фильтр</Text>
+        <div className={filterImageStyle}><FilterIcon fill={COLORS.get('color-primary')} /></div>
       </div>
+        : null }
       {openFilterPopup && <FilterPopup onClose={handleClose}>{children}</FilterPopup>}
     </div>
   );

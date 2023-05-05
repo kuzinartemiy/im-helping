@@ -1,0 +1,52 @@
+.container {
+  width: 100%;
+  max-width: 586px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  grid-template-rows: 0.1fr 1fr;
+  grid-template-areas:
+  'avatar userInfo'
+  '. textArea';
+  column-gap: 20px;
+  row-gap: 30px;
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  grid-area: textArea;
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.buttonInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buttonContainer {
+  margin-top: 8px;
+}
+
+.inputContainer {
+  width: 100%;
+  position: relative;
+  
+}
+
+.buttonFile {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 90%;
+  top: 40%;
+}
