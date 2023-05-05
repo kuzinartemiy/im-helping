@@ -1,25 +1,33 @@
 import styles from './admin-page.module.scss';
 import navCardsStyles from '../../components/nav-cards/nav-cards.module.scss';
-// import AdminDefault from '../../components/admin-default';
 import TopPanel from '../../components/top-panel';
 import PersonVolunteer from '../../components/person-volunteer';
 import AdminFilterPopup from '../../components/adminFilterPopup';
-// import { useState } from 'react';
-import { adminData, adminPageData } from './adminPage.constans';
+import {
+  adminData,
+  adminPageData,
+} from './adminPage.constans';
+import type { TAdminUsersData } from './adminPage.constans';
 import NavCard from '../../components/nav-card';
-import { Outlet } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { create } from 'zustand';
 
-// interface IInitState {
-//   window: 'confirmation' | 'statistics' | 'create';
-// }
+interface IUseFindUser {
+  user: TAdminUsersData | null
+  addUser: (newUser: TAdminUsersData) => void
+}
 
-// const initState: IInitState = {
-//   window: 'confirmation',
-// };
+export const useFindUser = create<IUseFindUser>((set) => ({
+  user: null,
+  addUser: (newUser: TAdminUsersData) =>
+    set((state) => ({ ...state, user: newUser })),
+}));
 
 const AdminPage = () => {
-  // const [state] = useState(initState);
-  return (
+  const { pathname } = useLocation();
+  return pathname === '/admin'
+    ? (<Navigate to='/admin/confirmation-blocking-applications' />)
+    : (
     <div className={styles.adminPage}>
       <aside className={styles.adminSidebar}>
         <PersonVolunteer
@@ -57,7 +65,7 @@ const AdminPage = () => {
         <Outlet />
       </main>
     </div>
-  );
+    );
 };
 
 export default AdminPage;

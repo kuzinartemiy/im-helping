@@ -4,14 +4,14 @@ import Text from '../../text';
 import CircleButton from '../../circle-button';
 import { ReactComponent as ChatIcon } from '../../../assets/icons/message.svg';
 
-interface IWriteAdminButtonProps extends DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+interface IWriteAdminButtonProps extends DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   viewType?: 'visible' | 'invisible'
   onClick?: (() => void) | ((e: SyntheticEvent) => void)
 }
 
 const WriteAdminButton = ({ onClick, viewType = 'visible', ...props }: IWriteAdminButtonProps) => (
   <div className={styles.wrapper}>
-    <button
+    <div
       className={`${styles.button} ${styles[`button_viewType_${viewType}`]}`}
       onClick={onClick}
       {...props}
@@ -24,7 +24,7 @@ const WriteAdminButton = ({ onClick, viewType = 'visible', ...props }: IWriteAdm
           Написать администратору
         </Text>
       </div>
-    </button>
+    </div>
   </div>
 );
 

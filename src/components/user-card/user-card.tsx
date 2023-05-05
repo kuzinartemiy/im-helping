@@ -7,11 +7,12 @@ interface UserCardProps {
   id: string
   phone: string
   avatar?: string
+  onClick?: () => void
 }
 
-const UserCard: React.FC<UserCardProps> = ({ name, id, phone, avatar = defaultAvatar }) => {
+const UserCard: React.FC<UserCardProps> = ({ name, id, phone, avatar = defaultAvatar, onClick }) => {
   return (
-    <div className={styles.cardWrapper}>
+    <div className={styles.cardWrapper} onClick={onClick}>
         <div className={styles.card}>
             <img className={styles.avatar} src={avatar} alt={avatar === defaultAvatar ? 'User Avatar' : name} />
             <div className={styles.cardContent}>

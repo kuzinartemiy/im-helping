@@ -7,6 +7,9 @@ import TypeApplications from '../components/type-applications';
 import { YMaps } from '@pbe/react-yandex-maps';
 import MapComponent from '../components/map-component';
 import ConfBlockApp from '../pages/adminPage/conf-block-app';
+import CreatEditApp from '../pages/adminPage/creat-edit-app';
+import StatisticsApp from '../pages/adminPage/statistics-app';
+import SearchApp from '../pages/adminPage/search-app';
 
 export const router = createBrowserRouter([
   {
@@ -26,11 +29,15 @@ export const router = createBrowserRouter([
           },
           {
             path: 'statistics',
-            element: <p>Page 2</p>,
+            element: <StatisticsApp />,
           },
           {
             path: 'creation-editing-applications',
-            element: <p>Page 3</p>,
+            element: <CreatEditApp />,
+          },
+          {
+            path: 'search-applications',
+            element: <SearchApp />,
           },
         ],
       },

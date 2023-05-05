@@ -6,9 +6,11 @@ const ConfBlockApp = () => {
   return (
     <div className={styles.userCards}>
       {adminUsersData.map((userData, index) => (
-        <div className={styles.userCard}>
+        <div
+          className={styles.userCard}
+          key={index}
+        >
           <AdminDefault
-            key={index}
             userImg={userData.userImg}
             userName={userData.userName}
             userId={userData.userId}
