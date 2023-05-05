@@ -39,7 +39,7 @@
   font-size: 24px;
   line-height: 29px;
   border-bottom: 1px solid transparent;
-  border-image: linear-gradient(to right, white 0%, #2E3192 60%, #2E3192 40%, white 100%);
+  border-image: linear-gradient(to right, white 0%, $color-primary 60%, $color-primary 40%, white 100%);
   border-image-slice: 1;
 }
 
