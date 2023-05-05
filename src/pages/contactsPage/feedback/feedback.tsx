@@ -23,7 +23,7 @@ const Feedback = () => {
 
   return (
     <>
-      <TopPanel titleIcon={<Message width={43} height={35} className={styles.colorBlueIcon} />} title="Напишите нам" />
+      <TopPanel titleIcon={<Message width={43} height={35} className={styles.colorBlueIcon} />} title="Напишите нам">TEST</TopPanel>
       <div className={styles.feedback}>
         <form name="feedback" className={styles.form} id="feedback" noValidate>
           <fieldset className={styles.form__edit}>

@@ -16,7 +16,7 @@ const Recipient = () => {
           <NavCards data={data}></NavCards>
         </section>
         <section>
-          <TopPanel title="TEST" />
+          <TopPanel title="TEST">TEST</TopPanel>
           <ApplicationCards cardData={store} ></ApplicationCards>
           <div className={styles.opacity}></div>
         </section>

@@ -21,7 +21,7 @@ const RecipientPage = () => {
       </section>
       <section className={styles.recipientPage__applications}>
         <Outlet />
-        <div className={styles.recipientPage__applications__opacity}></div>
+        <div className={styles.recipientPage__applications_opacity}></div>
       </section>
     </main>
   );

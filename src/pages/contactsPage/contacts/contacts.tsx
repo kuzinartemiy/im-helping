@@ -5,7 +5,7 @@ import TopPanel from '../../../components/top-panel';
 const Contacts = () => {
   return (
     <>
-      <TopPanel title="Контакты" titleIcon={<IconContactsGlobe className={styles.colorBlueIcon} />} />
+      <TopPanel title="Контакты" titleIcon={<IconContactsGlobe className={styles.colorBlueIcon} />}>TEST</TopPanel>
       <div className={styles.contactsBody}>
         <div className={styles.contactItem}>
           <p className={styles.contactItemText}>Эмейл</p>
