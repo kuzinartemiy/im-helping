@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  padding: 30px 92px 80px 93px;
+  gap: 20px;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  // navCards имеет margin в 16px
+  gap: calc(30px - 16px);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
