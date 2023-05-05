@@ -1,0 +1,134 @@
+@import '../../styles/_mixins.scss';
+@import '../../styles/colors.scss';
+
+.dataContainer,
+.wrapper,
+.documentsPoupup__userInfo,
+.documentsPoupup__userInfoText,
+.documentsPopup__avatar,
+.documentsPoupup__userInfoPhone,
+.mainContainer,
+.checkboxContainer,
+.secondContainer,
+.secondContainer__textContainer,
+.fourthContainer,
+.fourthContainer__date,
+.fourthContainer__place {
+  display: flex;
+}
+
+.firstContainer,
+.secondContainer,
+.fhirdContainer,
+.fourthContainer {
+  height: 350px;
+}
+
+.mainContainer {
+  flex-direction: column;
+}
+
+.secondContainer {
+  margin: 20px 0 0;
+  flex-direction: column;
+}
+
+.secondContainer {
+  gap: 5px;
+
+  & input {
+    @include font-source-sans(16px, $bg-button-disabled, 400, 20px);
+    padding-top: 12px !important;
+  }
+
+  &__span {
+    color: $color-orange-bright;
+  }
+
+  &__text {
+    max-width: 350px;
+  }
+}
+
+.wrapper {
+  gap: 20px;
+}
+
+.documentsPoupup__userInfo {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.documentsPoupup__userInfoText {
+  flex-direction: column;
+  gap: 5px;
+}
+
+.documentsPopup__avatar {
+  align-items: center;
+}
+
+.documentsPoupup__userInfoPhone {
+  gap: 42px;
+}
+
+.dataContainer {
+  margin: 20px 0 0;
+  gap: 50px;
+}
+
+.checkboxContainer {
+  margin: 10px 0 0;
+  padding: 12px 14px;
+  border: 1px solid $pickerdate-border;
+  @include font-source-sans(16px, $bg-button-disabled, 400, 20px);
+  border-radius: 10px;
+}
+
+.button {
+  margin-top: 20px;
+  align-self: flex-end;
+}
+
+.mapContainer {
+  width: 100%;
+  height: 175px;
+  background: lightblue;
+}
+
+.fhirdContainer {
+  @include font-source-sans(16px, $bg-button-disabled, 400, 20px);
+
+  &__text {
+    margin: 20px 0 5px;
+  }
+}
+
+.fourthContainer {
+  flex-direction: column;
+  padding-left: 80px;
+  gap: 20px;
+  &__date {
+    margin-top: 30px;
+    gap: 20px;
+    @include font-source-sans(24px, $text-color-black, 400, 28px);
+  }
+
+  &__place {
+    gap: 10px;
+  }
+
+  &__placeText {
+    @include font-source-sans(16px, $text-color-black, 400, 19px);
+  }
+
+  &__title {
+    @include font-source-sans(16px, $text-color-black, 700, 19px);
+  }
+
+  &__report {
+    margin: 5px 0 0 0;
+    @include font-source-sans(16px, $text-color-black, 400, 26px);
+  }
+}
