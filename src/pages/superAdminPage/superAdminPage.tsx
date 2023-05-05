@@ -6,6 +6,7 @@ import PersonVolunteer from '../../components/person-volunteer';
 import TopPanel from '../../components/top-panel';
 import { ApprovedOrBlockSvg, superAdminTestPersonProps } from './superAdminPage.constants';
 import AdminPrivilegesCard from '../../components/admin-privileges-card';
+import { data } from '../../components/nav-cards/nav-cards.constants';
 
 function SuperAdminPage() {
   const [inputName, setUnputName] = useState<string>('');
@@ -19,7 +20,7 @@ function SuperAdminPage() {
     <div className={style.wrapper}>
       <div className={style.leftSide}>
         <PersonVolunteer {...superAdminTestPersonProps} />
-        <NavCards />
+        <NavCards data={data} />
       </div>
       <div className={style.content}>
         <TopPanel title="Подтверждение / Блокировка" titleIcon={<ApprovedOrBlockSvg />} children={undefined} />
