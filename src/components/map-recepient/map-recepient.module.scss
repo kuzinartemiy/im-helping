@@ -4,6 +4,8 @@
 .container {
   max-width: 454px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
   &__input {
     margin-bottom: 8px;
   }
@@ -14,5 +16,10 @@
     span {
       color: $color-orange-bright;
     }
+  }
+  &__btn{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 45px;
   }
 }

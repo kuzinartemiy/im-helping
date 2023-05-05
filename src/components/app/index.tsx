@@ -21,6 +21,7 @@ import {
   RecipientPage,
 } from '../../pages'; */
 import MapRecepient from '../map-recepient';
+import { YMaps } from '@pbe/react-yandex-maps';
 /* import { store } from '../../utils/application-card.constans';
 import ApplicationCard from '../application-card/application-card'; */
 
@@ -34,12 +35,15 @@ function App() {
   /*   const handleClose = () => {
     setOpenPopup(false);
   }; */
-
+  const API_KEY = '05f8d2ae-bd94-4329-b9f9-7351e2ec9627';
   return (
     <>
       <div className={styles.app} />
       <Header />
-      <MapRecepient/>
+      <YMaps
+      query={{
+        apikey: API_KEY,
+      }}><MapRecepient/></YMaps>
       {/* <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/superadmin" element={<SuperAdminPage />} />

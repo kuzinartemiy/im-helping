@@ -1,67 +1,90 @@
-import { useState, /* useRef, useEffect, */ createRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Input from '../input/input';
 import Text from '../text';
 import styles from './map-recepient.module.scss';
-import {
-  YMaps,
-  Map,
-  Placemark /* , useYMaps, ZoomControl */,
-} from '@pbe/react-yandex-maps';
-
-interface IDefaultState {
-  center: number[]
-  zoom: number
-}
+import { /* Map, Placemark,  */ useYMaps } from '@pbe/react-yandex-maps';
+import location from '../../assets/icons/location.svg';
+import Button from '../button';
 
 const MapRecepient = () => {
-  const defaultState: IDefaultState = {
-    center: [55.751574, 37.573856],
-    zoom: 10,
-  };
-  const inputRef = createRef();
+  /*   const inputRef = createRef();
 
-  const [addressCoord, setAddressCoord] = useState([]);
+  const [addressCoord, setAddressCoord] = useState([]); */
   const [inputValue, setInputValue] = useState('');
-  const [savedYmaps, setSavedYmaps] = useState();
-  const [isHideYandexInput, setIsHideYandexInput] = useState(false);
-
-  const API_KEY = '05f8d2ae-bd94-4329-b9f9-7351e2ec9627';
-  const iconLayout = 'default#image';
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  let myMap: any;
+  /*   const [savedYmaps, setSavedYmaps] = useState();
+  const [isHideYandexInput, setIsHideYandexInput] = useState(false); */
+  /* const iconLayout = 'default#image';
   const iconImageHref = 'location';
-  const iconImageSize = [53, 53];
+  const iconImageSize = [53, 53]; */
+  const mapRef = useRef(null);
+  const ymaps = useYMaps([
+    'Map',
+    'GeoObjectCollection',
+    'Placemark',
+    'GeoObject',
+    'SuggestView',
+    'geocode',
+  ]);
 
-  const mapOptions = {
-    modules: ['geocode', 'SuggestView'],
-    defaultOptions: { suppressMapOpenBlock: true },
-    width: '100%',
-    height: '728px',
-  };
-
-  const onClickAddress = (e: any, ymaps: any) => {
-    const name = e.get('item').value;
-    setInputValue(name);
-    ymaps.geocode(name).then((result: any) => {
-      const coord = result.geoObjects.get(0).geometry.getCoordinates();
-      setAddressCoord(coord);
+  useEffect(() => {
+    const iconLayout = 'default#image';
+    const iconImageHref = location;
+    const iconImageSize = [55.76, 37.64];
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    if (ymaps == null || !mapRef.current /* || !currentCity */) {
+      return;
+    }
+    myMap = new ymaps.Map(mapRef.current, {
+      center: [55.76, 37.64],
+      zoom: 15,
     });
-  };
 
-  const onYmapsLoad = (ymaps: any) => {
-    setSavedYmaps(ymaps);
-    const suggestView = new ymaps.SuggestView('suggest', inputRef.current);
-    suggestView.events.add('select', (e: any) => {
-      return onClickAddress(e, ymaps);
+    /*  const suggestView = ymaps.('suggest');
+    console.log(suggestView); */
+
+    const myGeocoder = ymaps.geocode('suggest');
+    console.log(myGeocoder);
+    myGeocoder.then(
+      function (res) {
+        myMap.geoObjects.add(res.geoObjects);
+        // Выведем в консоль данные, полученные в результате геокодирования объекта.
+        console.log(
+          res.geoObjects.get(0).properties.get('metaDataProperty', {}),
+        );
+      },
+      function (err) {
+        console.log(err);
+      },
+    );
+
+    /*     const myGeoObject = new ymaps.GeoObject({
+      geometry: {
+        type: 'Point', // geometry type - point
+        coordinates: [55.8, 37.8], // координаты точки
+      },
     });
-  };
+    myMap.geoObjects.add(myGeoObject); */
+    /*  suggestView.events.add('select', function (e) {
+      console.log('select');
+    }); */
 
-  const onClickToMap = async (e: any) => {
-    const coords = e.get('coords');
-    setAddressCoord(coords);
-    const result = await savedYmaps.geocode(coords);
-    const firstGeoObject = result.geoObjects.get(0);
-    setInputValue(firstGeoObject.getAddressLine());
-    setIsHideYandexInput(true);
-  };
+    const myPlacemark = new ymaps.Placemark(
+      [55.76, 37.64],
+      {},
+      {
+        draggable: true, // The placemark is draggable.
+        preset: 'islands#whiteStretchyIcon',
+        iconLayout,
+        iconImageHref,
+        iconImageSize,
+      },
+    );
+
+    myMap.geoObjects.add(myPlacemark);
+  }, [ymaps]);
+
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
@@ -78,7 +101,8 @@ const MapRecepient = () => {
       <div className={styles.container__input}>
         <Input
           placeholder={'Например: ул. Нахимова, д.9, у подъезда №3'}
-          /* id={'suggest'} */ label={''}
+          id={'suggest'}
+          label={''}
           type={'text'}
           name={'adress'}
           value={inputValue}
@@ -93,52 +117,14 @@ const MapRecepient = () => {
         </span>{' '}
         пишите его полностью.
       </h5>
-      {/* <div className={styles.container__map} style={{ height: '728px', width: '100%' }} ref={mapRef}></div> */}
-      {/* <YMaps
-        query={{
-          load: 'package.full',
-          apikey: API_KEY,
-        }}
-      >
-        <Map
-        /*  state={
-            addressCoord ? { ...mapState, center: addressCoord } : mapState
-          }
-          {...mapOptions}
-          defaultState={defaultState}
-          onLoad={onYmapsLoad}
-          width="100%"
-          height={'159px'}
-          onClick={onClickToMap}
-        >
-          {addressCoord && <Placemark options={{
-            iconLayout,
-            iconImageHref,
-            iconImageSize,
-          }}geometry={addressCoord} />}
-        </Map>
-      </YMaps> */}
-
-      <YMaps
-        query={{
-          apikey: API_KEY,
-        }}
-      >
-        <Map defaultState={defaultState} width="100%" height={'159px'} /* onClick={onClickToMap} */>
-        { addressCoord && <Placemark
-            geometry={addressCoord}
-            options={{
-              iconLayout,
-              iconImageHref,
-              iconImageSize,
-            }}
-          />}
-        </Map>
-      </YMaps>
-      <button type="submit" id="button">
-        Проверить
-      </button>
-    </section>
+      <div
+        className={styles.container__map}
+        style={{ height: '159px', width: '100%' }}
+        ref={mapRef}
+      ></div>
+      <div className={styles.container__btn}>
+      <Button children={'Продолжить'} /* type="submit" id="button" */></Button>
+      </div></section>
   );
 };
 

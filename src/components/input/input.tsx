@@ -11,6 +11,7 @@ interface InputProps {
   isError?: boolean
   errorMessage?: string
   padding?: string
+  id?: string | undefined
 }
 
 const Input: React.FC<InputProps> = ({
