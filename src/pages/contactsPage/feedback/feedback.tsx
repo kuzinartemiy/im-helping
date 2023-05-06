@@ -35,7 +35,7 @@ const Feedback = () => {
             <textarea id="comments" className={styles.form__input} placeholder="Задайте Ваш вопрос" rows={6} required value={comment} onChange={onChangeComment} />
           </fieldset>
           <div className={styles.form__button}>
-            <Button type="submit" disabled={comment.length < 1 || name.length < 1 || description.length < 1} width={'93'}>{'Отправить'}</Button>
+            <Button type="submit" disabled={comment.length < 1 || name.length < 1 || description.length < 1} size={'small'}>{'Отправить'}</Button>
           </div>
         </form>
       </div>

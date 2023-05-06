@@ -46,7 +46,7 @@ export const ChatBlock: FC<IChat> = ({ user, messages }) => {
           </div>
 
           <div className={styles.buttonContainer}><Button
-            width={'50'}
+            size={'small'}
             height={'42'}
             children={
               <div className={styles.buttonInner}>

@@ -4,12 +4,13 @@ import styles from './service-button.module.scss';
 export interface IServiceButtonProps extends DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   viewType?: 'close' | 'edit' | 'approved'
   onClick?: (() => void) | ((e: SyntheticEvent) => void)
+  isDisabled?: boolean
 }
 
-const ServiceButton = ({ onClick, viewType = 'close', ...props }: IServiceButtonProps) => (
+const ServiceButton = ({ onClick, viewType = 'close', isDisabled, ...props }: IServiceButtonProps) => (
   <button
     className={`${styles.button} ${styles[`button_viewType_${viewType}`]}`} onClick={onClick}
-    {...props}
+    disabled={isDisabled} {...props}
   >
     <div className={`${styles.content} ${styles[`content_viewType_${viewType}`]}`}>
     </div>
