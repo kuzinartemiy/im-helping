@@ -26,7 +26,7 @@ const TooltipMap: FC<IToolTipMap> = ({ cardData }) => {
         <Text children={ cardData.completedAppQuantity } color={'#2E3192' } size={ '24' } lineHeight={ '29px' } />
         <Status width='42px' height='30px' />
       </div>
-        <Button children={ <Text children={ 'Откликнуться' } color={ COLORS.get('background-popup') } align={ 'center' } />} />
+        <Button onClick={cardData.onButtonClick} children={ <Text children={ 'Откликнуться' } color={ COLORS.get('background-popup') } align={ 'center' } />} />
     </div>
   );
 };

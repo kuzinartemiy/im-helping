@@ -9,6 +9,7 @@ import { requests } from './consts';
 import { useYMaps } from '@pbe/react-yandex-maps';
 import Select from '../select';
 import TooltipMap from '../tooltip-map/tooltip-map';
+import ThanksPopup from '../thanks-popup';
 
 /* const API_KEY = "05f8d2ae-bd94-4329-b9f9-7351e2ec9627"; */
 
@@ -78,7 +79,10 @@ const MapComponent = () => {
       });
   };
 
-  const onAcceptButtonClick = () => setIsReqAccepted(true);
+  const onAcceptButtonClick = () => {
+    setIsReqAccepted(true);
+    setReqinfo(null);
+  };
   const onThanksOverlayClick = () => setIsReqAccepted(false);
 
   return (
@@ -98,18 +102,21 @@ const MapComponent = () => {
         owner: reqInfo.owner,
         about: reqInfo.description,
         completedAppQuantity: reqInfo.qty,
-      }} id = {reqInfo.id}/>
+        onButtonClick: onAcceptButtonClick,
+      }} id = {reqInfo.id}
+      />
               </CoordsPopup>
         : null }
 
       { isReqAccepted
-      ? <CoordsPopup
+        ? <CoordsPopup
             pageX={placemarkCoords[0]}
             pageY={placemarkCoords[1]}
             onOverlayClick={onThanksOverlayClick}
       >
-        
+        <ThanksPopup/>
         </CoordsPopup>
+        : null
         }
 
       <div

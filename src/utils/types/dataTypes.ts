@@ -23,4 +23,5 @@ export interface IToolTipMap {
   name?: string
   phone?: string
   avatar?: string
+  onButtonClick?: () => void
 }
