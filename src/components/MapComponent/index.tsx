@@ -15,12 +15,9 @@ import TooltipMap from '../tooltip-map/tooltip-map';
 // 'geoObject.addon.balloon'
 
 const MapComponent = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [reqInfo, setReqinfo] = useState<any>();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [currentCity, setCurrentCity] = useState<any>(requests[0]);
-  const [btnCoords, setBtnCoords] = useState<any>();
   const [placemarkCoords, setPlacemarkCoords] = useState<any>();
+  const [isReqAccepted, setIsReqAccepted] = useState(false);
   let myMap: any;
   const placemarkCollection: any = {};
   const ymaps = useYMaps([
@@ -33,7 +30,7 @@ const MapComponent = () => {
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    if (ymaps == null || !mapRef.current || !currentCity) {
+    if (ymaps == null || !mapRef.current) {
       return;
     }
 
@@ -81,9 +78,13 @@ const MapComponent = () => {
       });
   };
 
+  const onAcceptButtonClick = () => setIsReqAccepted(true);
+  const onThanksOverlayClick = () => setIsReqAccepted(false);
+
   return (
     <div className={styles.container}>
       <TopPanel
+        filterType='MapFilterPopup'
         title="Карта"
         titleIcon={<MapIcon />}
       />
@@ -100,6 +101,16 @@ const MapComponent = () => {
       }} id = {reqInfo.id}/>
               </CoordsPopup>
         : null }
+
+      { isReqAccepted
+      ? <CoordsPopup
+            pageX={placemarkCoords[0]}
+            pageY={placemarkCoords[1]}
+            onOverlayClick={onThanksOverlayClick}
+      >
+        
+        </CoordsPopup>
+        }
 
       <div
         className={styles.container__map}
