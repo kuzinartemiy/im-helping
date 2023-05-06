@@ -22,14 +22,14 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   isError = false,
   errorMessage,
-  padding = '35px 12px 12px 12px',
+  padding = '12px 12px 12px 12px',
 }) => {
   return (
     <div className={styles.inputContainer}>
       <label className={styles.label} htmlFor={name}>
         {label}
       </label>
-      <div className={styles.inputWrapper}>
+      <div className={!isError ? `${styles.inputWrapper}` : `${styles.inputWrapper} ${styles.inputWrapper__invalid}`}>
         <input
           type={type}
           name={name}
