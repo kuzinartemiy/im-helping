@@ -2,10 +2,12 @@ export const requests = [{
   city: { name: 'Москва', coords: [55.755864, 37.617698] },
   requests: [
     {
-      user: {
+      id: '432423',
+      owner: {
         firstName: 'Ivan',
         secondName: 'Ivanov',
         phone: '8-800-555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat1',
       description:
@@ -14,10 +16,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
+      id: '432423',
+      owner: {
         firstName: 'Ivan',
         secondName: 'Ivanov',
         phone: '8-800-555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat1',
       description:
@@ -26,10 +30,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
+      id: '432423',
+      owner: {
         firstName: 'Ivan',
         secondName: 'Ivanov',
         phone: '8-800-555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat2',
       description:
@@ -38,10 +44,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
+      id: '432423',
+      owner: {
         firstName: 'Ivan',
         secondName: 'Ivanov',
         phone: '8-800-555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat3',
       description:
@@ -50,10 +58,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
+      id: '432423',
+      owner: {
         firstName: 'Ivan',
         secondName: 'Ivanov',
         phone: '8-800-555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat4',
       description:
@@ -68,10 +78,12 @@ export const requests = [{
   city: { name: 'Санкт-Петербург', coords: [59.939099, 30.315877] },
   requests: [
     {
-      user: {
+      id: '432423',
+      owner: {
         firstName: 'Ivan',
         secondName: 'Ivanov',
         phone: '8-800-555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat1',
       description:
@@ -80,10 +92,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
+      id: '432423',
+      owner: {
         firstName: 'Ivan',
         secondName: 'Ivanov',
         phone: '8-800-555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat1',
       description:
@@ -92,10 +106,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
+      id: '432423',
+      owner: {
         firstName: 'Ivan',
         secondName: 'Ivanov',
         phone: '8-800-555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat2',
       description:
@@ -104,10 +120,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
+      id: '432423',
+      owner: {
         firstName: 'Ivan',
         secondName: 'Ivanov',
         phone: '8-800-555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat3',
       description:
@@ -116,10 +134,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
+      id: '432423',
+      owner: {
         firstName: 'Ivan',
         secondName: 'Ivanov',
         phone: '8-800-555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat4',
       description:

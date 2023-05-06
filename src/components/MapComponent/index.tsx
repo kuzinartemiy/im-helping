@@ -7,8 +7,9 @@ import { ReactComponent as MapIcon } from '../../assets/icons/requests-map.svg';
 import MapFilterPopup from '../map-filter-popup';
 import { CoordsPopup } from '../coords-popup/coords-popup';
 import { requests } from './consts';
-import { /* YMaps, Map, Placemark, */ useYMaps } from '@pbe/react-yandex-maps';
+import { useYMaps } from '@pbe/react-yandex-maps';
 import Select from '../select';
+import TooltipMap from '../tooltip-map/tooltip-map';
 
 /* const API_KEY = "05f8d2ae-bd94-4329-b9f9-7351e2ec9627"; */
 
@@ -16,7 +17,7 @@ import Select from '../select';
 
 const MapComponent = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [reqInfo, setReqinfo] = useState();
+  const [reqInfo, setReqinfo] = useState<any>();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [currentCity, setCurrentCity] = useState<any>(requests[0]);
   const [btnCoords, setBtnCoords] = useState<any>();
@@ -93,6 +94,7 @@ const MapComponent = () => {
           <MapFilterPopup />
         </CoordsPopup>
       )}
+      {reqInfo ? <TooltipMap cardData={ reqInfo } id = {reqInfo.id}/> : null }
       <div
         className={styles.container__map}
         style={{ height: '728px', width: '100%' }}

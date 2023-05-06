@@ -12,6 +12,8 @@ import {
 } from '../../pages';
 import ActiveApplications from '../../pages/recipientPage/active-applications/active-applications';
 import ComplitedApplications from '../../pages/recipientPage/complited-applications/complited-applications';
+import MapComponent from '../MapComponent';
+import { YMaps } from '@pbe/react-yandex-maps';
 
 function App() {
   /* const [openPopup, setOpenPopup] = useState(false); */
@@ -38,6 +40,7 @@ function App() {
         </Route>
         <Route path="/volunteer" element={<VolunteerPage />} />
       </Routes>
+      <YMaps><MapComponent/></YMaps>
       <Footer />
     </>
   );
