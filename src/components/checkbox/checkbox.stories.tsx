@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import '../../styles/colors';
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'im-helping/Button',
+  title: 'im-helping/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
   parameters: {

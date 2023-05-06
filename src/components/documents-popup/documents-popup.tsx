@@ -35,7 +35,6 @@ export const DocumentsPopup: FC<IDocumentsPopup> = ({ data }) => {
         />
         <div className={styles.documentsPoupup__button}>
           <Button
-            width={ '126' }
             children={
               <div className={styles.documentsPoupup__buttonInner}>
                 <AttachIcon />
