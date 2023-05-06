@@ -19,6 +19,11 @@
     background-color: $bg-button-sea;
   }
 
+  &:active,
+  &:focus {
+    background-color: $bg-button-sea;
+  }
+
   &:disabled {
     background-color: $bg-button-disabled;
   }
