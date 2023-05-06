@@ -4,8 +4,8 @@ export const requests = [{
     {
       id: '432423',
       owner: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
+        name: 'Ivan',
+        surname: 'Ivanov',
         phone: '8-800-555-35-35',
         avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
@@ -18,8 +18,8 @@ export const requests = [{
     {
       id: '432423',
       owner: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
+        name: 'Ivan',
+        surname: 'Ivanov',
         phone: '8-800-555-35-35',
         avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
@@ -32,8 +32,8 @@ export const requests = [{
     {
       id: '432423',
       owner: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
+        name: 'Ivan',
+        surname: 'Ivanov',
         phone: '8-800-555-35-35',
         avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
@@ -46,8 +46,8 @@ export const requests = [{
     {
       id: '432423',
       owner: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
+        name: 'Ivan',
+        surname: 'Ivanov',
         phone: '8-800-555-35-35',
         avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
@@ -60,8 +60,8 @@ export const requests = [{
     {
       id: '432423',
       owner: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
+        name: 'Ivan',
+        surname: 'Ivanov',
         phone: '8-800-555-35-35',
         avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
@@ -80,8 +80,8 @@ export const requests = [{
     {
       id: '432423',
       owner: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
+        name: 'Ivan',
+        surname: 'Ivanov',
         phone: '8-800-555-35-35',
         avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
@@ -94,10 +94,10 @@ export const requests = [{
     {
       id: '432423',
       owner: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
+        name: 'Ivan',
+        surname: 'Ivanov',
         phone: '8-800-555-35-35',
-        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
+        avatar: 'https://topuch.com/mihail-yureevich-lermontov/325089_html_faaabb808d3e09b2.jpg',
       },
       category: 'cat1',
       description:
@@ -108,10 +108,10 @@ export const requests = [{
     {
       id: '432423',
       owner: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
+        name: 'Ivan',
+        surname: 'Ivanov',
         phone: '8-800-555-35-35',
-        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
+        avatar: 'https://uramdb.ru/uploads/2023/2/17/9693342-fyodor-ivanovich-tyutchev_medium.jpg',
       },
       category: 'cat2',
       description:
@@ -122,8 +122,8 @@ export const requests = [{
     {
       id: '432423',
       owner: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
+        name: 'Ivan',
+        surname: 'Ivanov',
         phone: '8-800-555-35-35',
         avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
@@ -136,10 +136,10 @@ export const requests = [{
     {
       id: '432423',
       owner: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
+        name: 'Ivan',
+        surname: 'Ivanov',
         phone: '8-800-555-35-35',
-        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
+        avatar: 'hhttps://upload.wikimedia.org/wikipedia/commons/6/6c/Fet_by_Repin.jpg',
       },
       category: 'cat4',
       description:

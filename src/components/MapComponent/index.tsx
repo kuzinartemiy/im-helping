@@ -21,6 +21,7 @@ const MapComponent = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [currentCity, setCurrentCity] = useState<any>(requests[0]);
   const [btnCoords, setBtnCoords] = useState<any>();
+  const [placemarkCoords, setPlacemarkCoords] = useState<any>();
   let myMap: any;
   const placemarkCollection: any = {};
   const ymaps = useYMaps([
@@ -30,6 +31,7 @@ const MapComponent = () => {
     'GeoObject',
   ]);
   const mapRef = useRef(null);
+
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     if (ymaps == null || !mapRef.current || !currentCity) {
@@ -57,6 +59,8 @@ const MapComponent = () => {
         );
         reqPlaceMark.events.add('click', function (e: any) {
           setReqinfo(e.originalEvent.target.properties._data);
+          console.log(e);
+          setPlacemarkCoords([e.originalEvent.domEvent.originalEvent.clientX, e.originalEvent.domEvent.originalEvent.clientY]);
         });
         cityCollection.add(reqPlaceMark);
         placemarkCollection[city.city.name] = cityCollection;
@@ -65,8 +69,6 @@ const MapComponent = () => {
     });
   }, [ymaps]);
 
-  const onFilterClick: React.MouseEventHandler = (e) =>
-    setBtnCoords([e.pageX, e.pageY]);
   const onOverlayClick = () => setBtnCoords([]);
   const onSelectChange = (e: any) => {
     myMap
@@ -83,7 +85,6 @@ const MapComponent = () => {
       <TopPanel
         title="Карта"
         titleIcon={<MapIcon />}
-        onFilterClick={onFilterClick}
       />
       {Boolean(btnCoords) && btnCoords.length > 0 && (
         <CoordsPopup
@@ -94,7 +95,21 @@ const MapComponent = () => {
           <MapFilterPopup />
         </CoordsPopup>
       )}
-      {reqInfo ? <TooltipMap cardData={ reqInfo } id = {reqInfo.id}/> : null }
+
+      {reqInfo
+        ? <CoordsPopup
+            pageX={placemarkCoords[0]}
+            pageY={placemarkCoords[1]}
+            onOverlayClick={onOverlayClick}>
+      <TooltipMap cardData={{
+        id: reqInfo.id,
+        owner: reqInfo.owner,
+        about: reqInfo.description,
+        completedAppQuantity: reqInfo.qty,
+      }} id = {reqInfo.id}/>
+              </CoordsPopup>
+        : null }
+
       <div
         className={styles.container__map}
         style={{ height: '728px', width: '100%' }}

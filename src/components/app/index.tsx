@@ -14,6 +14,8 @@ import ActiveApplications from '../../pages/recipientPage/active-applications/ac
 import ComplitedApplications from '../../pages/recipientPage/complited-applications/complited-applications';
 import MapComponent from '../MapComponent';
 import { YMaps } from '@pbe/react-yandex-maps';
+import TooltipMap from '../tooltip-map/tooltip-map';
+
 
 function App() {
   /* const [openPopup, setOpenPopup] = useState(false); */
@@ -25,6 +27,20 @@ function App() {
   /* const handleClose = () => {
     setOpenPopup(false);
   }; */
+
+  const unfo = { id: '432423',
+  owner: {
+    firstName: 'Ivan',
+    secondName: 'Ivanov',
+    phone: '8-800-555-35-35',
+    avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
+  },
+  category: 'cat1',
+  description:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente!',
+  coord: [59.898513, 30.410314],
+  qty: 7,
+}
 
   return (
     <>
@@ -41,6 +57,7 @@ function App() {
         <Route path="/volunteer" element={<VolunteerPage />} />
       </Routes>
       <YMaps><MapComponent/></YMaps>
+      <TooltipMap cardData={unfo} id={unfo.id}/>
       <Footer />
     </>
   );
