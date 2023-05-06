@@ -28,19 +28,6 @@ function App() {
     setOpenPopup(false);
   }; */
 
-  const unfo = { id: '432423',
-  owner: {
-    firstName: 'Ivan',
-    secondName: 'Ivanov',
-    phone: '8-800-555-35-35',
-    avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
-  },
-  category: 'cat1',
-  description:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, sapiente!',
-  coord: [59.898513, 30.410314],
-  qty: 7,
-}
 
   return (
     <>
@@ -57,7 +44,6 @@ function App() {
         <Route path="/volunteer" element={<VolunteerPage />} />
       </Routes>
       <YMaps><MapComponent/></YMaps>
-      <TooltipMap cardData={unfo} id={unfo.id}/>
       <Footer />
     </>
   );

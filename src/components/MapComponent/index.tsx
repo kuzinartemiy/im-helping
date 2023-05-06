@@ -4,7 +4,6 @@ import styles from './map.module.scss';
 import location from '../../assets/icons/location.svg';
 import TopPanel from '../top-panel';
 import { ReactComponent as MapIcon } from '../../assets/icons/requests-map.svg';
-import MapFilterPopup from '../map-filter-popup';
 import { CoordsPopup } from '../coords-popup/coords-popup';
 import { requests } from './consts';
 import { useYMaps } from '@pbe/react-yandex-maps';
@@ -59,8 +58,7 @@ const MapComponent = () => {
         );
         reqPlaceMark.events.add('click', function (e: any) {
           setReqinfo(e.originalEvent.target.properties._data);
-          console.log(e);
-          setPlacemarkCoords([e.originalEvent.domEvent.originalEvent.clientX, e.originalEvent.domEvent.originalEvent.clientY]);
+          setPlacemarkCoords([e.originalEvent.domEvent.originalEvent.pageX, e.originalEvent.domEvent.originalEvent.pageY]);
         });
         cityCollection.add(reqPlaceMark);
         placemarkCollection[city.city.name] = cityCollection;
@@ -69,7 +67,10 @@ const MapComponent = () => {
     });
   }, [ymaps]);
 
-  const onOverlayClick = () => setBtnCoords([]);
+  const onOverlayClickRequest = () => {
+    setPlacemarkCoords([]);
+    setReqinfo(null);
+  };
   const onSelectChange = (e: any) => {
     myMap
       ?.setBounds(placemarkCollection[e.target.value].getBounds(), {
@@ -86,21 +87,11 @@ const MapComponent = () => {
         title="Карта"
         titleIcon={<MapIcon />}
       />
-      {Boolean(btnCoords) && btnCoords.length > 0 && (
-        <CoordsPopup
-          pageX={btnCoords[0]}
-          pageY={btnCoords[1]}
-          onOverlayClick={onOverlayClick}
-        >
-          <MapFilterPopup />
-        </CoordsPopup>
-      )}
-
-      {reqInfo
+      {reqInfo && placemarkCoords
         ? <CoordsPopup
             pageX={placemarkCoords[0]}
             pageY={placemarkCoords[1]}
-            onOverlayClick={onOverlayClick}>
+            onOverlayClick={onOverlayClickRequest}>
       <TooltipMap cardData={{
         id: reqInfo.id,
         owner: reqInfo.owner,
