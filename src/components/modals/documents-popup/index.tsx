@@ -1,11 +1,11 @@
 import { type FC } from 'react';
 import styles from './documents-popup.module.scss';
 import { COLORS } from '../../../styles/colors';
-import UserAvatar from '../../user-avatar/user-avatar';
+import UserAvatar from '../../user-avatar';
 import Text from '../../common/text';
 import Button from '../../common/button';
 import { ReactComponent as AttachIcon } from '../../assets/icons/attach.svg';
-import Textarea from '../../common/textarea/textarea';
+import Textarea from '../../common/textarea';
 
 interface IDocumentsPopup {
   data: any

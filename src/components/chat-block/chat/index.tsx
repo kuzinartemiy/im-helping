@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import styles from './chat.module.scss';
-import UserAvatar from '../../user-avatar/user-avatar';
+import UserAvatar from '../../user-avatar';
 import Text from '../../common/text';
 import { COLORS } from '../../../styles/colors';
 

@@ -3,8 +3,8 @@ import styles from './chatBlock.module.scss';
 import Button from '../common/button';
 import { ReactComponent as SendIcon } from '../../assets/icons/send.svg';
 import { ReactComponent as VectorIcon } from '../../assets/icons/vector.svg';
-import Input from '../common/input/input';
-import { InfoUser } from '../infoUser';
+import Input from '../common/input';
+import { InfoUser } from '../info-user';
 import Chat from './chat';
 
 interface IChat {

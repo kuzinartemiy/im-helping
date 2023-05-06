@@ -1,6 +1,6 @@
 import { type FC } from 'react';
-import UserAvatar from '../user-avatar/user-avatar';
-import styles from './infoUser.module.scss';
+import UserAvatar from '../user-avatar';
+import styles from './info-user.module.scss';
 import Text from '../common/text';
 
 interface IInfoUser {

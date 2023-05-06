@@ -1,12 +1,13 @@
 
 import Checkbox from '../../common/checkbox';
 import RadiusSearch from '../../common/radius-search';
-import DatePickerProd from '../../common/datepicker_prod';
+import CustomDatePicker from '../../common/datepicker';
 import Text from '../../common/text';
 import styles from './map-filter-popup.module.scss';
 import { COLORS } from '../../../styles/colors';
 import Button from '../../common/button';
 import { data } from './map-filter-popup.constants';
+import { DatePickerTypes } from '../../../types';
 
 function MapFilterPopup() {
   return (
@@ -36,10 +37,10 @@ function MapFilterPopup() {
         <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>{'Дата и время'}</Text>
         <p className={styles.border} />
         <div className={styles.datePicker}>
-          <DatePickerProd type={'time'} >{'Время'}</DatePickerProd>
+          <CustomDatePicker type={DatePickerTypes.Time} >{'Время'}</CustomDatePicker>
         </div>
         <div className={styles.datePicker}>
-          <DatePickerProd type={'data'} >{'Дата'}</DatePickerProd>
+          <CustomDatePicker type={DatePickerTypes.Date} >{'Дата'}</CustomDatePicker>
         </div>
       </div>
       <div className={styles.btn}>

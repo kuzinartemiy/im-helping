@@ -1,8 +1,8 @@
 import { type FC } from 'react';
-import ApplicationCard from '../application-card/application-card';
+import ApplicationCard from '../application-card';
 import styles from './application-cards.module.scss';
 import { type IApplicationCard } from '../../utils/types/dataTypes';
-import EmptyApplicationsCards from './empty-application-cards/empty-application-cards';
+import EmptyApplicationsCards from './empty-application-cards';
 import CircleButton from '../common/circle-button';
 import { ReactComponent as Plus } from '../../assets/icons/plus12.svg';
 import Text from '../common/text';

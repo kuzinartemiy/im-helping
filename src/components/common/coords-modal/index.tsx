@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import style from './coords-popup.module.scss';
+import style from './coords-modal.module.scss';
 const modalsContainer = document.querySelector('#modalsContainer');
 
 type TCoordsPopup = {

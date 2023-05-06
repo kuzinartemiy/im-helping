@@ -9,7 +9,7 @@ import { ReactComponent as Message } from '../../assets/icons/message.svg';
 import { ReactComponent as Phone } from '../../assets/icons/phone.svg';
 import CategoryBar from '../common/category-bar';
 import Text from '../common/text';
-import UserAvatar from '../user-avatar/user-avatar';
+import UserAvatar from '../user-avatar';
 import CircleButton from '../common/circle-button';
 import { COLORS } from '../../styles/colors';
 import ServiceButton from '../common/service-button';

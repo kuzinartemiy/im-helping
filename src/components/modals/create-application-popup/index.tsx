@@ -2,15 +2,16 @@ import { useState } from 'react';
 import styles from './create-application-popup.module.scss';
 import { ReactComponent as LocationIcon } from '../../assets/icons/small-location.svg';
 import Checkbox from '../../common/checkbox';
-import DatePickerProd from '../../common/datepicker_prod';
-import Input from '../../common/input/input';
+import CustomDatePicker from '../../common/datepicker';
+import Input from '../../common/input';
 import Modal from '../../common/modal';
 import NavButton from '../../common/nav-button';
 import Select from '../../common/select';
-import Textarea from '../../common/textarea/textarea';
-import UserAvatar from '../../user-avatar/user-avatar';
+import Textarea from '../../common/textarea';
+import UserAvatar from '../../user-avatar';
 import Button from '../../common/button';
 import Text from '../../common/text';
+import { DatePickerTypes } from '../../../types';
 
 interface ICreateApplicationPopup {
   owner: {
@@ -74,11 +75,11 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                   <div className={styles.dataContainer}>
                     <div>
                       <p>Время</p>
-                      <DatePickerProd type={'time'} />
+                      <CustomDatePicker type={DatePickerTypes.Time} />
                     </div>
                     <div>
                       <p>Дата</p>
-                      <DatePickerProd type={'data'} />
+                      <CustomDatePicker type={DatePickerTypes.Date} />
                       <div className={styles.checkboxContainer}>
                         <Checkbox />
                         <span>Бессрочно</span>
