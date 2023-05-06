@@ -9,7 +9,7 @@ export interface ICheckboxProps {
   onChange?: () => void
 }
 
-const Checkbox: React.FC<ICheckboxProps> = ({ children, id, isDisabled, isChecked, onChange, ...props }) => {
+const Checkbox: React.FC<ICheckboxProps> = ({ children, id, isDisabled = true, isChecked, onChange, ...props }) => {
   // const [isdisabled] = React.useState(false);
   // const [ischecked, setChecked] = React.useState(false);
 

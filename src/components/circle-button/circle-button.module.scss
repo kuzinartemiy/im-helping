@@ -61,14 +61,10 @@
             background-color: $color-primary;
         }
     }
-    }
-    
-
-    .border {
     &__primary {
         border: 0;
     }
     &__secondary {
-        border: 1px solid $bg-button-disabled;   
+        border: 1px solid $bg-button-disabled;
     }
 }
