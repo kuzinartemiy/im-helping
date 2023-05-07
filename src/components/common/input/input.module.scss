@@ -1,0 +1,59 @@
+@import '../../../styles/_mixins.scss';
+@import '../../../styles/colors.scss';
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    align-self: flex-start;
+    margin-bottom: 8px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: $bg-button-disabled;
+  }
+
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 0.5px solid $bg-button-disabled;
+
+    &:focus-within {
+      border-color: $bg-button-wave;
+      border-width: 1px;
+    }
+
+    .input {
+      width: 100%;
+      resize: none;
+      padding: 35px 12px 12px 12px;
+      box-sizing: border-box;
+      background: $white;
+      border: none;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: -0.32px;
+      color: $black;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-size: 16px;
+        line-height: 20px;
+        color: $bg-button-disabled;
+      }
+    }
+  }
+
+  .errorMessage {
+    @include font-source-sans(13px, $color-orange-bright, 400, 16px);
+    margin: 8px 0 0;
+  }
+}

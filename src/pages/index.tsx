@@ -1,10 +1,10 @@
-import HomePage from './home/home';
-import SuperAdminPage from './superAdminPage/superAdminPage';
-import AdminPage from './adminPage/adminPage';
-import VolunteerPage from './volunteerPage';
-import RecipientPage from './recipientPage/recipient';
-import PrivacyPage from './privacyPage/privacyPage';
-import BlogPage from './blogPage';
+import SuperAdminPage from './super-admin-page';
+import AdminPage from './admin-page';
+import VolunteerPage from './volunteer-page';
+import RecipientPage from './recipient-page';
+import PrivacyPage from './privacy-page';
+import HomePage from './home-page';
+import BlogPage from './blog-page';
 
 export {
   HomePage,

@@ -1,11 +1,11 @@
 import style from './top-panel.module.scss';
-import Text from '../text';
+import Text from '../../components/common/text';
 
 import { ReactComponent as FilterIcon } from '../../assets/icons/filter.svg';
 import { COLORS } from '../../styles/colors';
 import { useState } from 'react';
-import FilterPopup from '../filter-popup';
-import ActiveFilterPopup from '../active-filter-popup';
+import ActiveFilterPopup from '../modals/active-filter-popup';
+import FilterPopup from '../modals/filter-popup';
 
 type TTopPanel = {
   title: string
@@ -44,12 +44,14 @@ const TopPanel = ({
         <div className={titleImageStyle}>{titleIcon}</div>
         <Text size='24' color={COLORS.get('color-primary')}>{title}</Text>
       </div>
-      { filter
-        ? <div className={style.filter} onClick={onFilterClick}>
-        <Text size='16' color={COLORS.get('color-primary')}>Фильтр</Text>
-        <div className={filterImageStyle}><FilterIcon fill={COLORS.get('color-primary')} /></div>
-      </div>
-        : null }
+      {filter && (
+        <div className={style.filter} onClick={onFilterClick}>
+          <Text size='16' color={COLORS.get('color-primary')}>Фильтр</Text>
+          <div className={filterImageStyle}>
+            <FilterIcon fill={COLORS.get('color-primary')} />
+          </div>
+        </div>
+      )}
       {openFilterPopup && <FilterPopup onClose={handleClose}><ActiveFilterPopup/></FilterPopup>}
     </div>
   );

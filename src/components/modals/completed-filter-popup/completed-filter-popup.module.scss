@@ -1,0 +1,28 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixins";
+
+.popup {
+  gap: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-width: 370px;
+  width: 100%;
+
+  &__title {
+    @include font-source-sans(12px, $black, 700, 14px);
+    padding-bottom: 7.5px;
+    border-bottom: 1px solid $pickerdate-border;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+  }
+  &__button {
+    margin-top: 74px;
+    margin-right: 0px;
+    display: flex;
+    justify-content: flex-end;
+}
+}
