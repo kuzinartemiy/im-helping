@@ -12,6 +12,8 @@ import UserAvatar from '../../user-avatar';
 import Button from '../../common/button';
 import Text from '../../common/text';
 import { DatePickerTypes, type IOwner } from '../../../types';
+import MapRecepient from '../../map-recepient';
+import { YMaps } from '@pbe/react-yandex-maps';
 
 interface ICreateApplicationPopup {
   owner: IOwner
@@ -105,8 +107,9 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                     </p>
                   </div>
                   <div className={styles.mapContainer}>
-
-                    
+                  <YMaps>
+                  <MapRecepient/>
+                  </YMaps>
                   </div>
                 </div>
               );
