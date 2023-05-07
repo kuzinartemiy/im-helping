@@ -27,6 +27,7 @@ const initState = {
   time: false,
   adress: '',
   select: 'Выберите тип задачи',
+  mainText: '',
 };
 
 const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
@@ -53,7 +54,7 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
     }
 
     if (window === 3) {
-      if (state.select !== initState.select) return false;
+      if (state.select !== initState.select && state.mainText !== initState.mainText) return false;
     }
 
     if (window === 4) return false;
@@ -120,7 +121,7 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                     <div>
                       <p>Время</p>
                       <CustomDatePicker
-                        type={DatePickerTypes.Time}
+                        type={DatePickerTypes.Date}
                         name={'watch'}
                         onChange={handleChange}
                       />
@@ -128,7 +129,7 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                     <div>
                       <p>Дата</p>
                       <CustomDatePicker
-                        type={DatePickerTypes.Date}
+                        type={DatePickerTypes.Time}
                         name={'data'}
                         onChange={handleChange}
                       />
@@ -136,6 +137,7 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                         <Checkbox
                           name={'time'}
                           onChange={handleChange}
+                          isDisabled={false}
                         />
                         <span>Бессрочно</span>
                       </div>
@@ -186,7 +188,12 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                     onChange={handleChange}
                   />
                   <p className={styles.fhirdContainer__text}>Опишите задачу</p>
-                  <Textarea label={''} />
+                  <Textarea
+                    label={''}
+                    name={'mainText'}
+                    value={state.mainText as string}
+                    onChange={handleChange}
+                  />
                 </div>
               );
             case 4:
@@ -218,7 +225,7 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                       вводится текст
                     </p>
                     <p className={styles.fourthContainer__report}>
-                      здесь будет контент из TextArea
+                      {state.mainText}
                     </p>
                   </div>
                 </div>

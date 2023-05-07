@@ -27,7 +27,7 @@ const CreatEditApp = () => {
   return (
     <div className={styles.CreatEditAppContainer}>
       <div className={styles.search}>
-        <NavButton onClick={() => navigate('/admin/search-applications')}>
+        <NavButton onClick={() => navigate('/profile/admin/search-applications')}>
           Поиск
         </NavButton>
       </div>

@@ -54,7 +54,7 @@ const CustomDatePicker: React.FC<IDatePicker> = ({
           locale='ru'
         />
       )}
-      {type === DatePickerTypes.Date && (
+      {type === DatePickerTypes.Time && (
         <DatePicker
           selected={startDate}
           onChange={(date: any) => {

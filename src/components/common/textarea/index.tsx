@@ -1,12 +1,12 @@
 import type React from 'react';
-import { useState } from 'react';
 import styles from './textarea.module.scss';
 
-interface TextareaProps {
+interface TextareaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
   label?: string
   placeholder?: string
   rows?: number
   maxLength?: number
+  value?: string
 }
 
 const Textarea: React.FC<TextareaProps> = ({
@@ -14,31 +14,29 @@ const Textarea: React.FC<TextareaProps> = ({
   rows = 6,
   placeholder = 'Введите ваш текст...',
   maxLength = 300,
+  value = '',
+  ...props
 }) => {
-  const [text, setText] = useState<string>('');
-
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(event.target.value);
-  };
-
-  const remainingChars = maxLength - text.length;
+  const remainingChars = maxLength - value.length;
 
   return (
     <div className={styles.textareaContainer}>
-      <label className={styles.label} htmlFor="myTextarea">{label}</label>
+      <label
+        className={styles.label}
+        htmlFor='myTextarea'
+      >
+        {label}
+      </label>
       <div className={styles.textareaWrapper}>
         <textarea
-          id="myTextarea"
-          value={text}
-          onChange={handleChange}
+          id='myTextarea'
           rows={rows}
           maxLength={maxLength}
           placeholder={placeholder}
           className={styles.textarea}
+          {...props}
         />
-        <div className={styles.charsCounter}>
-          {remainingChars} знаков
-        </div>
+        <div className={styles.charsCounter}>{remainingChars} знаков</div>
       </div>
     </div>
   );
