@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { type Meta, type StoryObj } from '@storybook/react';
 import '../../styles/colors';
 import Select from '.';
 
@@ -7,7 +7,10 @@ const meta: Meta<typeof Select> = {
   component: Select,
   tags: ['autodocs'],
   parameters: {
-    layout: 'padded',
+    layout: 'padded', // 'padded' | 'centered' | 'fullscreen'
+    docs: {
+      canvas: { sourceState: 'none' }, // 'hidden' | 'shown' | 'none'
+    },
   },
   argTypes: {
     value: {

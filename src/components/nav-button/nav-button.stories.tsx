@@ -49,3 +49,10 @@ export const Default: Story = {
     children: 'Поиск',
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    isDisabled: true,
+    children: 'Поиск',
+  },
+};
