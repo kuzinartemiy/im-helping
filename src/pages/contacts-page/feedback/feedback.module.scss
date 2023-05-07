@@ -1,0 +1,54 @@
+@import '../../../styles/colors.scss';
+
+.feedback {
+  padding-top: 20px;
+  padding-left: 30px;
+}
+
+.colorBlueIcon path {
+  fill: $color-primary;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+
+  &__input {
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 9px 10px;
+    font-style: normal;
+    font-weight: 400;
+    color: $black;
+    border: 0.5px solid $color-primary;
+    resize: none;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      font-size: 12px;
+      line-height: 14px;
+      color: $color-secondary;
+    }
+  }
+
+  &__label {
+    margin-bottom: 5px;
+  }
+
+  &__edit {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

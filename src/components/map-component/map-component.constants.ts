@@ -2,10 +2,12 @@ export const requests = [{
   city: { name: 'Москва', coords: [55.755864, 37.617698] },
   requests: [
     {
-      user: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
-        phone: '8-800-555-35-35',
+      id: '432423',
+      owner: {
+        name: 'Ivan',
+        surname: 'Ivanov',
+        phone: '+7(800) 555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat1',
       description:
@@ -14,10 +16,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
-        phone: '8-800-555-35-35',
+      id: '432423',
+      owner: {
+        name: 'Ivan',
+        surname: 'Ivanov',
+        phone: '+7(800) 555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat1',
       description:
@@ -26,10 +30,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
-        phone: '8-800-555-35-35',
+      id: '432423',
+      owner: {
+        name: 'Ivan',
+        surname: 'Ivanov',
+        phone: '+7(800) 555-35-35',
+        avatar: 'https://bp22.ru/wp-content/uploads/5/c/1/5c177507feebc681b79b512406da75c5.jpeg',
       },
       category: 'cat2',
       description:
@@ -38,10 +44,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
-        phone: '8-800-555-35-35',
+      id: '432423',
+      owner: {
+        name: 'Ivan',
+        surname: 'Ivanov',
+        phone: '+7(800) 555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat3',
       description:
@@ -50,10 +58,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
-        phone: '8-800-555-35-35',
+      id: '432423',
+      owner: {
+        name: 'Ivan',
+        surname: 'Ivanov',
+        phone: '+7(800) 555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat4',
       description:
@@ -68,10 +78,12 @@ export const requests = [{
   city: { name: 'Санкт-Петербург', coords: [59.939099, 30.315877] },
   requests: [
     {
-      user: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
-        phone: '8-800-555-35-35',
+      id: '432423',
+      owner: {
+        name: 'Ivan',
+        surname: 'Ivanov',
+        phone: '+7(800) 555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat1',
       description:
@@ -80,10 +92,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
-        phone: '8-800-555-35-35',
+      id: '432423',
+      owner: {
+        name: 'Ivan',
+        surname: 'Ivanov',
+        phone: '+7(800) 555-35-35',
+        avatar: 'https://topuch.com/mihail-yureevich-lermontov/325089_html_faaabb808d3e09b2.jpg',
       },
       category: 'cat1',
       description:
@@ -92,10 +106,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
-        phone: '8-800-555-35-35',
+      id: '432423',
+      owner: {
+        name: 'Ivan',
+        surname: 'Ivanov',
+        phone: '+7(800) 555-35-35',
+        avatar: 'https://uramdb.ru/uploads/2023/2/17/9693342-fyodor-ivanovich-tyutchev_medium.jpg',
       },
       category: 'cat2',
       description:
@@ -104,10 +120,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
-        phone: '8-800-555-35-35',
+      id: '432423',
+      owner: {
+        name: 'Ivan',
+        surname: 'Ivanov',
+        phone: '+7(800) 555-35-35',
+        avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/11441263/de-1200.jpg',
       },
       category: 'cat3',
       description:
@@ -116,10 +134,12 @@ export const requests = [{
       qty: 7,
     },
     {
-      user: {
-        firstName: 'Ivan',
-        secondName: 'Ivanov',
-        phone: '8-800-555-35-35',
+      id: '432423',
+      owner: {
+        name: 'Ivan',
+        surname: 'Ivanov',
+        phone: '+7(800) 555-35-35',
+        avatar: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Fet_by_Repin.jpg',
       },
       category: 'cat4',
       description:

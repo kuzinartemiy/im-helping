@@ -1,16 +1,16 @@
 import styles from './header.module.scss';
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import WriteAdminButton from './write-admin-button';
-import HeaderLinks from './header-links';
+import HeaderNavMenu from './header-nav-menu';
 
 export default function Header() {
   return (
     <header className={styles.header}>
-      <NavLink className={styles.navLogo} to="/">
+      <Link className={styles.navLogo} to='/'>
         <Logo />
-      </NavLink>
-      <HeaderLinks />
+      </Link>
+      <HeaderNavMenu />
       <WriteAdminButton />
     </header>
   );

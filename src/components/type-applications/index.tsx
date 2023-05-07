@@ -1,39 +1,45 @@
-import { type FC } from 'react';
-import { type ITypeApplications } from '../../utils/types/dataTypes';
-import { store } from '../../utils/application-card.constans';
 import TopPanel from '../top-panel';
-import ApplicationCards from '../application-cards/application-cards';
-import ActiveFilterPopup from '../active-filter-popup';
-import CompletedFilterPopup from '../completed-filter-popup';
+import ApplicationCards from '../application-cards';
+import { useStore } from '../../services/store';
 
-const TypeApplications: FC<ITypeApplications> = ({
+export interface ITypeApplicationsProps {
+  type: 'activeRecepient' | 'activeVolunteer' | 'completed'
+  size: 'small' | 'large'
+  title: string
+  titleIcon: any
+}
+
+const TypeApplications = ({
   type,
   size,
   title,
   titleIcon,
-}) => {
+}: ITypeApplicationsProps) => {
+  const applicationCards = useStore((state) => state.applicationCards);
   return (
     <>
-      {type !== 'complited'
-        ? (
+      {type === 'completed' && (
         <TopPanel
           titleIcon={titleIcon}
           title={title}
-          children={<ActiveFilterPopup />}
+          filterType={'CompletedFilterPopup'}
         />
-        )
-        : (
+      )}
+      {type === 'activeRecepient' && (
         <TopPanel
           titleIcon={titleIcon}
           title={title}
-          children={<CompletedFilterPopup />}
+          filterType={'RecipientFilterPopup'}
         />
-        )}
-      <ApplicationCards
-        cardData={store}
-        size={size}
-        type={type}
-      ></ApplicationCards>
+      )}
+      {type === 'activeVolunteer' && (
+        <TopPanel
+          titleIcon={titleIcon}
+          title={title}
+          filterType={'ActiveFilterPopup'}
+        />
+      )}
+      <ApplicationCards applicationCards={applicationCards} size={size} />
     </>
   );
 };

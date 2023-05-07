@@ -1,11 +1,11 @@
 @import 'font-variables';
 @import 'mixins';
-@import 'color-variables';
+@import 'colors';
 @import './react-datepicker.scss';
 
 
 .color_gradient {
-  background-image: linear-gradient(to right, $background-popup) 0%, $color-primary 50%, $background-popup 100%;
+  background-image: linear-gradient(to right, $white) 0%, $color-primary 50%, $white 100%;
 }
 
 body,

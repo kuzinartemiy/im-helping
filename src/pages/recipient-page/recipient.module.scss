@@ -1,0 +1,15 @@
+.recipientPage {
+  margin: 30px 93px 88px;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: 0.1fr 1fr;
+  &__applications {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 818px;
+    box-sizing: border-box;
+    position: relative;
+  }
+}
+
