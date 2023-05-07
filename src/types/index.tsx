@@ -17,13 +17,14 @@ export interface IOwner {
 
 export interface IApplicationCard {
   id: string
-  date: string
-  time: string
-  location: string
+  date?: string
+  time?: string
+  location?: string
   about: string
   completedAppQuantity: string
   owner: IOwner
   type?: ApplicationTypes
+  onButtonClick?: () => void
 }
 
 export interface IToolTipMap {
