@@ -1,0 +1,24 @@
+.avatar {
+  display: flex;
+  align-items: center;
+  grid-area: avatar;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  grid-area: userInfo;
+}
+
+.userInfoText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.userInfoPhone {
+  display: flex;
+  gap: 42px;
+}

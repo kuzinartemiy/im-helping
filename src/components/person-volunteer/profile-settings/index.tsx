@@ -1,27 +1,18 @@
-// import { type SyntheticEvent, type DetailedHTMLProps } from 'react';
 import { useRef, type DetailedHTMLProps, useState } from 'react';
 import styles from './profile-settings.module.scss';
-import useStore from '../store';
+import { useStore } from '../../../services/store';
 import { shallow } from 'zustand/shallow';
+import Button from '../../common/button';
 
 interface IProfileSettingsProps
   extends DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
   > {
-  // viewType?: 'close' | 'edit' | 'approved'
-  // onClick?: (() => void) | ((e: SyntheticEvent) => void)
+  onClose: () => void
 }
 
-// const ProfileSettings = ({ onClick, viewType = 'close', ...props }: IProfileSettingsProps) => (
-const ProfileSettings = ({ children }: IProfileSettingsProps) => {
-  // const { getAvatar, getName, changeName, changeAvatar } = useStore((state) => ({
-  //   getAvatar: state.userAvatar,
-  //   getName: state.userName,
-  //   changeName: state.changeName,
-  //   changeAvatar: state.changeAvatar,
-  // }), shallow);
-
+const ProfileSettings = ({ onClose }: IProfileSettingsProps) => {
   const {
     getAvatar,
     getName,
@@ -57,64 +48,71 @@ const ProfileSettings = ({ children }: IProfileSettingsProps) => {
     changeName(nameValue);
     changeNumber(numberValue);
     changeAbout(aboutValue);
+    onClose();
   };
 
   return (
     <div className={styles.profileSettings}>
-      <div className={styles.profileChangeItem}>
-        <img src={avatarValue} alt="avatar" className={styles.personAvatar} />
-        <input
-          className={styles.photoChangeInput}
-          ref={inputRef}
-          type="url"
-          onChange={(e) => setAvatarValue(e.target.value)}
-          placeholder={'Изменить фото'}
-        />
-      </div>
-      <div className={styles.profileChangeItem}>
-        <div className={styles.labelWrapper}>
-          <label className={styles.inputLabel}>Имя:</label>
-        </div>
-        <input
-          className={styles.profileChangeInput}
-          type="text"
-          onChange={(e) => setNameValue(e.target.value)}
-          placeholder={getName}
-        />
-      </div>
-      <div className={styles.profileChangeItem}>
-        <div className={styles.labelWrapper}>
-          <label className={styles.inputLabel}>Тел.:</label>
-        </div>
-        <input
-          className={styles.profileChangeInput}
-          type="tel"
-          onChange={(e) => setNumberValue(e.target.value)}
-          placeholder={getNumber}
-        />
-      </div>
-      <div className={styles.profileChangeItem}>
-        <div className={styles.labelWrapper}>
-          <label className={styles.inputLabel}>О себе:</label>
-        </div>
-        <textarea
-          className={styles.profileChangeInput}
-          onChange={(e) => setAboutValue(e.target.value)}
-          placeholder={getAbout}
-        />
-      </div>
-      <button type="button" onClick={saveChanges}>
-        Сохранить
-      </button>
-      {children}
+      <ul className={styles.profileSettingsList}>
+        <li className={styles.profileChangeItem}>
+          <img src={avatarValue} alt="avatar" className={styles.personAvatar} />
+          <input
+            className={styles.photoChangeInput}
+            ref={inputRef}
+            type="url"
+            onChange={(e) => setAvatarValue(e.target.value)}
+            placeholder={'Изменить фото'}
+          />
+        </li>
+        <li className={styles.profileChangeItem}>
+          <div className={styles.labelWrapper}>
+            <label className={styles.inputLabel}>Имя:</label>
+          </div>
+          <input
+            className={styles.profileChangeInput}
+            type="text"
+            onChange={(e) => setNameValue(e.target.value)}
+            value={nameValue}
+            placeholder={'Введите имя'}
+          />
+        </li>
+        <li className={styles.profileChangeItem}>
+          <div className={styles.labelWrapper}>
+            <label className={styles.inputLabel}>Тел.:</label>
+          </div>
+          <input
+            className={styles.profileChangeInput}
+            type="tel"
+            onChange={(e) => setNumberValue(e.target.value)}
+            value={numberValue}
+            placeholder={'Введите тел. номер'}
+          />
+        </li>
+        <li className={styles.profileChangeItem}>
+          <div className={styles.labelWrapper}>
+            <label className={styles.inputLabel}>О себе:</label>
+          </div>
+          <textarea
+            className={styles.profileChangeInput}
+            onChange={(e) => setAboutValue(e.target.value)}
+            value={aboutValue}
+            placeholder={'Введите информацию о себе'}
+          />
+        </li>
+        <li className={styles.profileChangeItem}>
+          <div className={styles.labelWrapper}>
+          </div>
+          <div className={styles.saveButton}>
+                  <Button onClick={saveChanges}>Сохранить</Button>
+          </div>
+        </li>
+        <li className={styles.profileChangeItem}>
+          <div className={styles.labelWrapper}>
+          </div>
+                  <Button viewType="secondary" onClick={onClose}>Выход</Button>
+        </li>
+      </ul>
     </div>
-    // <button
-    //   className={`${styles.button} ${styles[`button_viewType_${viewType}`]}`} onClick={onClick}
-    //   {...props}
-    // >
-    //   <div className={`${styles.content} ${styles[`content_viewType_${viewType}`]}`}>
-    //   </div>
-    // </button>
   );
 };
 

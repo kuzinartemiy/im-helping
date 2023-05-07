@@ -1,17 +1,23 @@
-.applicationCard{
-  max-width: 889px;
+@import url(../../styles/colors.scss);
+
+.applicationCard {
   min-height: 219px;
   display: grid;
   grid-template-columns: 0.5fr 1.5fr 1fr 0.1fr;
   grid-template-rows: 0.1fr 1fr;
   grid-template-areas:
-  'category-bar category-bar user buttons'
-  'dateTimeLocation about user buttons';
+    "category-bar category-bar user buttons"
+    "dateTimeLocation about user buttons";
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, #ffffff 10%, #2e3192 50%, #ffffff 90%);
+  border-image-slice: 1;
+  box-sizing: border-box;
 }
 
 .applicationCard__categoryBarContainer {
   grid-area: category-bar;
   padding-top: 5px;
+  margin-bottom: 10px;
 }
 
 .applicationCard__dateTimeLocation {
@@ -95,9 +101,15 @@
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  padding-right: 50px;
+  padding-right: 40px;
   padding-left: 54px;
   padding-top: 7px;
+  box-sizing: border-box;
+  min-width: 227px;
+  &_name {
+    overflow: hidden;
+    max-height: 38px;
+  }
 }
 
 .applicationCard__userColumnBtns {

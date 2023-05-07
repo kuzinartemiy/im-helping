@@ -1,17 +1,19 @@
 import styles from './nav-cards.module.scss';
-import NavCard from '../nav-card';
-import { data } from './nav-cards.constants';
+import NavCard from '../common/nav-card';
+import type { INavCard } from '../common/nav-card';
 
-function NavCards() {
-  return (
-    <ul className={styles.linkCardContainer}>
-      {data.map((item, index) => {
-        return <li key={index} className={styles.linkCard}>
-          <NavCard text={item.text} icon={item.icon} path={item.path}/>
-        </li>;
-      })}
-    </ul>
-  );
+interface INavCardsProps {
+  cards: INavCard[]
 }
+
+const NavCards = ({ cards }: INavCardsProps) => (
+  <ul className={styles.linkCardContainer}>
+    {cards.map((item, index) => (
+      <li key={index} className={styles.linkCard}>
+        <NavCard text={item.text} icon={item.icon} path={item.path}/>
+      </li>
+    ))}
+  </ul>
+);
 
 export default NavCards;

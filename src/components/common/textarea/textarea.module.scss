@@ -1,0 +1,63 @@
+@import '../../../styles/colors.scss';
+
+.textareaContainer {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .textareaWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 0.5px solid $pickerdate-border;
+
+    &:focus-within {
+      border-color: $bg-button-wave;
+      border-width: 1px;
+    }
+
+    .textarea {
+      width: 100%;
+      resize: none;
+      padding: 15px 15px 30px 12px;
+      box-sizing: border-box;
+      background: $white;
+      border: none;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: -0.32px;
+      color: $black;
+
+      &:focus {
+        outline: none;    
+      }
+
+      &::placeholder {
+        font-size: 12px;
+        line-height: 15px;
+        color: $bg-button-disabled;
+      }
+    }
+
+    .charsCounter {
+      padding: 5px 12px 5px 0;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 12px;
+      text-align: right;
+      color: $bg-button-disabled;
+      border: none;
+    }
+  }
+}

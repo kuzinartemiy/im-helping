@@ -1,0 +1,57 @@
+@import '../../../styles/colors.scss';
+
+.button {
+  all: unset;
+  width: 32px;
+  height: 32.5px;
+  cursor: pointer;
+  transition: .3s;
+  background-color: $color-primary;
+  background-repeat: no-repeat;
+  &_viewType_close {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 84.6%,  4.6% 100%);
+  background-color: $color-secondary;
+  background-image: url('../../../assets/icons/close.svg');
+  background-position: 6px 5.5px;
+  &:hover {
+    background-color: $color-primary;
+  }
+  &:active {
+    background-color: $color-secondary;
+  }
+}
+&_viewType_edit {
+  clip-path: polygon(4.6% 0%, 100% 15.38%, 100% 100%,  0% 100%);
+  background-image: url('../../../assets/icons/edit.svg');
+  background-color: $bg-button-sea;
+  background-position: 100% 100%;
+  &:hover {
+    background-color: $bg-button-seaweed;
+  }
+  &:disabled {
+    background-color: $bg-button-disabled;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &:active {
+    background-color: $bg-button-sea;
+  }
+  }
+&_viewType_approved {
+  clip-path: polygon(0 0, 32px 0, 30.5px 32px, 0 27px);
+  background-image: url('../../../assets/icons/approved.svg');
+  background-color: $bg-button-seaweed;
+  background-position: 4px 4px;
+  &:hover {
+    background-color: $bg-button-grass;
+  }
+  &:active {
+    background-color: $bg-button-sea;
+  }
+  &:disabled {
+    background-color: $bg-button-disabled;
+    cursor: not-allowed;
+    pointer-events: none;
+    }  
+}
+}

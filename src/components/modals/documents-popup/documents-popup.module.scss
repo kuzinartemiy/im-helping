@@ -1,0 +1,57 @@
+.documentsPoupup {
+  width: 100%;
+  max-width: 586px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  grid-template-rows: 0.1fr 1fr;
+  grid-template-areas:
+  'avatar userInfo'
+  'avatr textArea';
+  column-gap: 20px;
+  row-gap: 30px;
+}
+
+.documentsPoupup__avatar {
+  display: flex;
+  align-items: center;
+  grid-area: avatar;
+}
+
+.documentsPoupup__userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  grid-area: userInfo;
+}
+
+.documentsPoupup__userInfoText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.documentsPoupup__userInfoPhone {
+  display: flex;
+  gap: 42px;
+}
+
+.documentsPoupup__textAreaContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  grid-area: textArea;
+}
+
+.documentsPoupup__button {
+  align-self: center;
+  margin-bottom: 15px;
+}
+
+.documentsPoupup__buttonInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

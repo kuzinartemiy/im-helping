@@ -20,7 +20,7 @@ const collection = {
   'bg-button-disabled': '#818c99',
 
   background: '#fbfdff',
-  'background-popup': '#ffffff',
+  white: '#ffffff',
 
   'text-color-black': '#000000',
 

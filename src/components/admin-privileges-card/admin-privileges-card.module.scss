@@ -1,0 +1,106 @@
+@import '../../styles/colors.scss';
+
+.cardWrapper {
+  width: 276px;
+  padding-top: 31px;
+  display: flex;
+
+  .card {
+    width: 100%;
+    height: 100%;
+    padding: 41px 30px 0;
+    background: $background;
+    border: 1px solid $bg-button-sea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .avatar {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    position: absolute;
+    top: -31px;
+  }
+
+  .cardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    font-family: 'Golos';
+    font-style: normal;
+    font-weight: 400;
+    color: $black;
+
+    .name {
+      font-size: 16px;
+      line-height: 19px;
+      margin-bottom: 5px;
+    }
+
+    .id {
+      font-size: 12px;
+      line-height: 14px;
+      opacity: .5;
+      margin-bottom: 7px;
+    }
+
+    .phone {
+      font-size: 12px;
+      line-height: 14px;
+
+      .phoneKey {
+        font-weight: 700;
+        padding-right: 12px;
+      }
+    }
+  }
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    &.open {
+      max-height: 218px;
+      padding-bottom: 30px;
+    }
+    li {
+      padding: 10px;
+    }
+  }
+  .dropdownParent {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+  }
+  .dropdownIconDown {
+    margin-top: -3px;
+    cursor: pointer;
+    width: 30px;
+    height: 15px;
+    background-image: url(../../assets/icons/arrow-down.svg);
+    background-repeat: no-repeat;
+  }
+  .dropdownIconUp {
+    margin-top: -8px;
+    background-image: url(../../assets/icons/arrow-up.svg);
+    background-repeat: no-repeat;
+  }
+  .line {
+    margin: 0;
+    box-sizing: border-box;
+    vertical-align: top;
+    border: none;
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(to right, white 0%, #2E3192 20%, #2E3192 80%, white 100%);
+  }
+}

@@ -5,8 +5,8 @@ import { ReactComponent as HandsIcon } from '../../assets/icons/finished-applica
 import { ReactComponent as EditIcon } from '../../assets/icons/customization.svg';
 import { ReactComponent as ProgressBarIcon } from '../../assets/icons/progress-bar.svg';
 import { useEffect, useState } from 'react';
-import Modal from '../modal';
-import useStore from './store';
+import Modal from '../common/modal';
+import { useStore } from '../../services/store';
 import ProfileSettings from './profile-settings';
 import { shallow } from 'zustand/shallow';
 
@@ -49,11 +49,6 @@ const PersonVolunteer = ({
   counters,
 }: IPersonVolunteer) => {
   const [openPopup, setOpenPopup] = useState(false);
-  /*   const navigate = useNavigate(); */
-  /*   const handleCloseIngredientInModal = () => {
-    console.log(close);
-    navigate('/');
-  }; */
   const handleClose = () => {
     setOpenPopup(false);
   };
@@ -69,26 +64,12 @@ const PersonVolunteer = ({
     changeAvatar: state.changeAvatar,
   }), shallow);
 
-  // const getAvatar = useStore(state => state.userAvatar);
-  // const getName = useStore((state) => state.userName);
-  // const getNumber = useStore((state) => state.userNumber);
-  // const getAbout = useStore((state) => state.userAbout);
-
-  // const changeAvatar = useStore((state) => state.changeAvatar);
-  // const changeName = useStore((state) => state.changeName);
-  // const changeNumber = useStore((state) => state.changeNumber);
-  // const changeAbout = useStore((state) => state.changeAbout);
-
   useEffect(() => {
     changeAvatar(avatar);
     changeName(name);
     changeNumber(phone);
     changeAbout(about);
   }, []);
-  // changeAvatar(avatar);
-  // changeName(name);
-  // changeNumber(phone);
-  // changeAbout(about);
 
   return (
   <div className={styles.personWrapper}>
@@ -130,7 +111,7 @@ const PersonVolunteer = ({
       </button>
       {openPopup && <Modal viewType='secondary'
         onClose={() => { handleClose(); }}
-      > <ProfileSettings />
+      > <ProfileSettings onClose={() => { handleClose(); }}/>
       </Modal>}
     { (progress != null) &&
       <div className={styles.progressBar}>
@@ -139,7 +120,6 @@ const PersonVolunteer = ({
       </div>
       }
     </div>
-
   </div>
   );
 };
