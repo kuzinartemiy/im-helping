@@ -79,15 +79,15 @@ type Story = StoryObj<typeof Select>;
 export const Default: Story = {
   args: {
     value: 'Школа',
-    errorText: 'Неверный формат телефонного номера',
     elementsList: ['Школа №75', 'Школа №594', 'Школа №1137'],
   },
 };
 
 export const Error: Story = {
   args: {
-    value: 'Школа',
+    value: 'Телефон',
     errorText: 'Ошибка загрузки',
-    /* isError: ('Школа')=> true, */
+    isError: true,
+    elementsList: ['Школа №75', 'Школа №594', 'Школа №1137'],
   },
 };
