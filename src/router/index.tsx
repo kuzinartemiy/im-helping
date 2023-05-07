@@ -105,29 +105,25 @@ export const router = createBrowserRouter([
       },
       {
         path: 'blog',
-        element: (
-          <BlogPage />
-        ),
+        element: <BlogPage />,
         children: [
           {
+            path: '',
+            element: <Navigate to='blog/popular' />,
+          },
+          {
             path: 'popular',
-            element: (
-              <Popular/>
-            ),
+            element: <Popular/>,
           },
           {
             path: 'category',
-            element: (
-              <Popular/>
-            ),
+            element: <Popular/>,
           },
         ],
       },
       {
         path: 'superadmin',
-        element: (
-          <SuperAdminPage />
-        ),
+        element: <SuperAdminPage />,
       },
       {
         path: 'privacy',
