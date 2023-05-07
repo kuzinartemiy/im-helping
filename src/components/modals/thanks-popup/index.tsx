@@ -1,5 +1,5 @@
 import styles from './thanks-popup.module.scss';
-import thanksImage from '../../assets/images/thanks.svg';
+import thanksImage from '../../../assets/images/thanks.svg';
 
 const ThanksPopup = () => {
   return (

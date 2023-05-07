@@ -1,4 +1,4 @@
-@import "../../../styles/colors.scss";
+@import '../../../styles/colors.scss';
 
 .button {
     border-radius: 50%;
@@ -46,14 +46,10 @@
             background-color: $bg-button-wave;
         }
     }
-    }
-    
-
-    .border {
     &__primary {
         border: 0;
     }
     &__secondary {
-        border: 1px solid $bg-button-disabled;   
+        border: 1px solid $bg-button-disabled;
     }
 }

@@ -19,10 +19,15 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 351px;
     border: 0.5px solid $bg-button-disabled;
 
     &:focus-within {
       border-color: $bg-button-wave;
+      border-width: 1px;
+    }
+    &__invalid {
+      border-color: $color-orange-bright;
       border-width: 1px;
     }
 
@@ -48,6 +53,10 @@
         font-size: 16px;
         line-height: 20px;
         color: $bg-button-disabled;
+      }
+      &__invalid {
+        border-color: $color-orange-bright;
+        border-width: 1px;
       }
     }
   }

@@ -22,7 +22,6 @@ const RecipientPage = () => {
       </section>
       <section className={styles.recipientPage__applications}>
         <Outlet />
-        <div className={styles.recipientPage__applications_opacity} />
       </section>
     </main>
   );

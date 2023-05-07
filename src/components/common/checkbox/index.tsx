@@ -1,7 +1,7 @@
 import type * as React from 'react';
 import styles from '../checkbox/checkbox.module.scss';
 
-interface ICheckboxProps {
+export interface ICheckboxProps {
   id?: string
   children?: React.ReactNode
   isDisabled?: boolean
@@ -9,7 +9,7 @@ interface ICheckboxProps {
   onChange?: () => void
 }
 
-const Checkbox: React.FC<ICheckboxProps> = ({ children, id, isDisabled, isChecked, onChange, ...props }) => {
+const Checkbox: React.FC<ICheckboxProps> = ({ children, id, isDisabled = true, isChecked, onChange, ...props }) => {
   // const [isdisabled] = React.useState(false);
   // const [ischecked, setChecked] = React.useState(false);
 

@@ -1,6 +1,5 @@
 import TopPanel from '../top-panel';
 import ApplicationCards from '../application-cards';
-import CompletedFilterPopup from '../modals/completed-filter-popup';
 import { useStore } from '../../services/store';
 
 export interface ITypeApplicationsProps {
@@ -19,24 +18,28 @@ const TypeApplications = ({
   const applicationCards = useStore((state) => state.applicationCards);
   return (
     <>
-      {type !== 'completed'
-        ? (
+      {type === 'completed' && (
         <TopPanel
           titleIcon={titleIcon}
           title={title}
+          filterType={'CompletedFilterPopup'}
         />
-        )
-        : (
+      )}
+      {type === 'activeRecepient' && (
         <TopPanel
           titleIcon={titleIcon}
           title={title}
-          children={<CompletedFilterPopup />}
+          filterType={'RecipientFilterPopup'}
         />
-        )}
-      <ApplicationCards
-        applicationCards={applicationCards}
-        size={size}
-      />
+      )}
+      {type === 'activeVolunteer' && (
+        <TopPanel
+          titleIcon={titleIcon}
+          title={title}
+          filterType={'ActiveFilterPopup'}
+        />
+      )}
+      <ApplicationCards applicationCards={applicationCards} size={size} />
     </>
   );
 };
