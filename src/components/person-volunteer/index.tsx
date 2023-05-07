@@ -4,6 +4,11 @@ import { ReactComponent as KeyIcon } from '../../assets/icons/key.svg';
 import { ReactComponent as HandsIcon } from '../../assets/icons/finished-applications.svg';
 import { ReactComponent as EditIcon } from '../../assets/icons/customization.svg';
 import { ReactComponent as ProgressBarIcon } from '../../assets/icons/progress-bar.svg';
+import { useEffect, useState } from 'react';
+import Modal from '../modal';
+import useStore from './store';
+import ProfileSettings from './profile-settings';
+import { shallow } from 'zustand/shallow';
 
 interface IPersonVolunteer {
   avatar: string
@@ -42,21 +47,64 @@ const PersonVolunteer = ({
   about,
   progress,
   counters,
-}: IPersonVolunteer) => (
+}: IPersonVolunteer) => {
+  const [openPopup, setOpenPopup] = useState(false);
+  /*   const navigate = useNavigate(); */
+  /*   const handleCloseIngredientInModal = () => {
+    console.log(close);
+    navigate('/');
+  }; */
+  const handleClose = () => {
+    setOpenPopup(false);
+  };
+
+  const { getAvatar, getName, getNumber, getAbout, changeName, changeNumber, changeAbout, changeAvatar } = useStore((state) => ({
+    getAvatar: state.userAvatar,
+    getName: state.userName,
+    getNumber: state.userNumber,
+    getAbout: state.userAbout,
+    changeName: state.changeName,
+    changeNumber: state.changeNumber,
+    changeAbout: state.changeAbout,
+    changeAvatar: state.changeAvatar,
+  }), shallow);
+
+  // const getAvatar = useStore(state => state.userAvatar);
+  // const getName = useStore((state) => state.userName);
+  // const getNumber = useStore((state) => state.userNumber);
+  // const getAbout = useStore((state) => state.userAbout);
+
+  // const changeAvatar = useStore((state) => state.changeAvatar);
+  // const changeName = useStore((state) => state.changeName);
+  // const changeNumber = useStore((state) => state.changeNumber);
+  // const changeAbout = useStore((state) => state.changeAbout);
+
+  useEffect(() => {
+    changeAvatar(avatar);
+    changeName(name);
+    changeNumber(phone);
+    changeAbout(about);
+  }, []);
+  // changeAvatar(avatar);
+  // changeName(name);
+  // changeNumber(phone);
+  // changeAbout(about);
+
+  return (
   <div className={styles.personWrapper}>
     <img
-      src={avatar}
+      src={getAvatar}
       alt="avatar"
       className={styles.personAvatar} />
     <div className={styles.personInfo}>
-      <p className={styles.personName}>{name}</p>
+      <p className={styles.personName}>{getName}</p>
       <p className={styles.personId}>ID {id}</p>
       <div className={styles.personProps}>
         <p className={styles.personProp}>
-          <span className={styles.propKey}>Тел.: </span><span className={styles.propValue}>{phone}</span>
+          <span className={styles.propKey}>Тел.: </span><span className={styles.propValue}>{getNumber}</span>
         </p>
         <p className={styles.personProp}>
-          <span className={styles.propKey}>О себе: </span><span className={styles.propValue}>{about}</span>
+          <span className={styles.propKey}>О себе: </span><span className={styles.propValue}>{getAbout}</span>
         </p>
       </div>
 
@@ -75,12 +123,15 @@ const PersonVolunteer = ({
     </ul>
             : null}
 
-      <div className = {styles.editButton}>
+      <button className = {styles.editButton} onClick={() => { setOpenPopup(true); }}>
         <div className={styles.editIconWrapper}>
           <EditIcon className={styles.editIcon}/>
         </div>
-      </div>
-
+      </button>
+      {openPopup && <Modal viewType='secondary'
+        onClose={() => { handleClose(); }}
+      > <ProfileSettings />
+      </Modal>}
     { (progress != null) &&
       <div className={styles.progressBar}>
         <p className={styles.progressTitle}> {progress} из 5</p>
@@ -90,6 +141,7 @@ const PersonVolunteer = ({
     </div>
 
   </div>
-);
+  );
+};
 
 export default PersonVolunteer;

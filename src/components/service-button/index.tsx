@@ -8,12 +8,10 @@ interface IServiceButtonProps extends DetailedHTMLProps<React.ButtonHTMLAttribut
 
 const ServiceButton = ({ onClick, viewType = 'close', ...props }: IServiceButtonProps) => (
   <button
-    className={`${styles.button} ${styles[`button_viewType_${viewType}`]}`} onClick={onClick}
-    {...props}
-  >
-    <div className={`${styles.content} ${styles[`content_viewType_${viewType}`]}`}>
-    </div>
-  </button>
+  className={`${styles.button} ${styles[`button_viewType_${viewType}`]}`} onClick={onClick}
+  {...props}
+>
+</button>
 );
 
 export default ServiceButton;
