@@ -3,15 +3,18 @@ import Input from '../../components/input/input';
 import styles from './search-app.module.scss';
 import { adminUsersData } from './adminPage.constans';
 import UserCard from '../../components/user-card/user-card';
-import { useFindUser } from './adminPage';
+import { AdminPageTitle, useFindUser, useSetTitleAdminPage } from './adminPage';
 import { useNavigate } from 'react-router-dom';
 
 const SearchApp = () => {
+  const { setTitle } = useSetTitleAdminPage();
   const [visible, setVisible] = useState(false);
   const [state, setState] = useState('');
   const [arr, setArr] = useState<typeof adminUsersData>([]);
   const { addUser } = useFindUser();
   const navigate = useNavigate();
+
+  useEffect(() => setTitle(AdminPageTitle.edit), []);
 
   const search = () => {
     const searchArr = adminUsersData.filter((el) => {

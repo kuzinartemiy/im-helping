@@ -1,8 +1,13 @@
+import { useEffect } from 'react';
 import AdminDefault from '../../components/admin-default';
 import styles from './admin-page.module.scss';
+import { AdminPageTitle, useSetTitleAdminPage } from './adminPage';
 import { adminUsersData } from './adminPage.constans';
 
 const ConfBlockApp = () => {
+  const { setTitle } = useSetTitleAdminPage();
+
+  useEffect(() => setTitle(AdminPageTitle.createt), []);
   return (
     <div className={styles.userCards}>
       {adminUsersData.map((userData, index) => (
