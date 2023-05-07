@@ -1,15 +1,16 @@
 import { useNavigate } from 'react-router-dom';
-import NavButton from '../../components/nav-button';
 import styles from './admin-page.module.scss';
-import { AdminPageTitle, useFindUser, useSetTitleAdminPage } from './adminPage';
-import UserCard from '../../components/user-card/user-card';
 import { useEffect, useState } from 'react';
 import { adminUsersData } from './adminPage.constans';
-import CircleButton from '../../components/circle-button';
 import { ReactComponent as Plus } from '../../assets/icons/plus.svg';
 import { COLORS } from '../../styles/colors';
-import Text from '../../components/text';
-import CreateApplicationPopup from '../../components/create-application-popup';
+import { useFindUser, useSetTitleAdminPage } from '.';
+import { AdminPageTitle } from '../../types';
+import NavButton from '../../components/common/nav-button';
+import UserCard from '../../components/user-card';
+import CircleButton from '../../components/common/circle-button';
+import CreateApplicationPopup from '../../components/modals/create-application-popup';
+import Text from '../../components/common/text';
 
 const CreatEditApp = () => {
   const [isOpen, setIsOpen] = useState(false);

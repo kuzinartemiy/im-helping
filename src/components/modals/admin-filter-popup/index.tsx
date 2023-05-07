@@ -3,7 +3,6 @@ import { COLORS } from '../../../styles/colors';
 import Checkbox from '../../common/checkbox';
 import Text from '../../common/text';
 import Button from '../../common/button';
-import { CoordsPopup } from '../../common/coords-modal';
 
 interface IAdminFilterPopup {
   onClick: () => void

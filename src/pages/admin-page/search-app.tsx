@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import Input from '../../components/input/input';
 import styles from './search-app.module.scss';
 import { adminUsersData } from './adminPage.constans';
-import UserCard from '../../components/user-card/user-card';
-import { AdminPageTitle, useFindUser, useSetTitleAdminPage } from './adminPage';
+import { useFindUser, useSetTitleAdminPage } from '.';
 import { useNavigate } from 'react-router-dom';
+import { AdminPageTitle } from '../../types';
+import Input from '../../components/common/input';
+import UserCard from '../../components/user-card';
 
 const SearchApp = () => {
   const { setTitle } = useSetTitleAdminPage();

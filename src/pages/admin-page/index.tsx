@@ -2,18 +2,12 @@ import styles from './admin-page.module.scss';
 import navCardsStyles from '../../components/nav-cards/nav-cards.module.scss';
 import TopPanel from '../../components/top-panel';
 import PersonVolunteer from '../../components/person-volunteer';
-import AdminFilterPopup from '../../components/adminFilterPopup';
 import { adminData, adminPageData } from './adminPage.constans';
 import type { TAdminUsersData } from './adminPage.constans';
-import NavCard from '../../components/nav-card';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { create } from 'zustand';
-
-export enum AdminPageTitle {
-  createt = 'Создание / Редактирование заявки',
-  statistics = 'Статистика',
-  edit = 'Создание / Редактирование заявки',
-}
+import NavCard from '../../components/common/nav-card';
+import AdminFilterPopup from '../../components/modals/admin-filter-popup';
 
 interface IUseFindUser {
   user: TAdminUsersData | null
@@ -40,9 +34,9 @@ export const useSetTitleAdminPage = create<ISetTitleAdminPAge>((set) => ({
 const AdminPage = () => {
   const { title } = useSetTitleAdminPage();
   const { pathname } = useLocation();
-  return pathname === '/admin'
+  return pathname === '/profile/admin'
     ? (
-    <Navigate to='/admin/confirmation-blocking-applications' />)
+    <Navigate to='/profile/admin/confirmation-blocking-applications' />)
     : (
     <div className={styles.adminPage}>
       <aside className={styles.adminSidebar}>
@@ -72,9 +66,7 @@ const AdminPage = () => {
       </aside>
       <main className={styles.adminContent}>
         <TopPanel title={title}>
-          <AdminFilterPopup
-            onClick={() => {}}
-          />
+          <AdminFilterPopup onClick={() => {}} />
         </TopPanel>
         <Outlet />
       </main>

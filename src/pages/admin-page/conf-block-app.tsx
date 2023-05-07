@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import AdminDefault from '../../components/admin-default';
 import styles from './admin-page.module.scss';
-import { AdminPageTitle, useSetTitleAdminPage } from './adminPage';
+import { useSetTitleAdminPage } from '.';
 import { adminUsersData } from './adminPage.constans';
+import { AdminPageTitle } from '../../types';
 
 const ConfBlockApp = () => {
   const { setTitle } = useSetTitleAdminPage();

@@ -34,3 +34,9 @@ export interface IToolTipMap {
   phone?: string
   avatar?: string
 }
+
+export enum AdminPageTitle {
+  createt = 'Создание / Редактирование заявки',
+  statistics = 'Статистика',
+  edit = 'Создание / Редактирование заявки',
+}

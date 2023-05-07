@@ -6,14 +6,14 @@ import { ReactComponent as ComplitedApplicationsIcon } from '../assets/icons/com
 import TypeApplications from '../components/type-applications';
 import { YMaps } from '@pbe/react-yandex-maps';
 import MapComponent from '../components/map-component';
-import ConfBlockApp from '../pages/adminPage/conf-block-app';
-import CreatEditApp from '../pages/adminPage/creat-edit-app';
-import StatisticsApp from '../pages/adminPage/statistics-app';
-import SearchApp from '../pages/adminPage/search-app';
 import Popular from '../pages/blog-page/popular/popular';
 import ContactsPage from '../pages/contacts-page';
 import Socials from '../pages/contacts-page/socials';
 import Feedback from '../pages/contacts-page/feedback';
+import ConfBlockApp from '../pages/admin-page/conf-block-app';
+import StatisticsApp from '../pages/admin-page/statistics-app';
+import CreatEditApp from '../pages/admin-page/creat-edit-app';
+import SearchApp from '../pages/admin-page/search-app';
 
 export const router = createBrowserRouter([
   {
@@ -24,7 +24,11 @@ export const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        path: 'admin',
+        path: 'profile',
+        element: <HomePage />,
+      },
+      {
+        path: 'profile/admin',
         element: <AdminPage />,
         children: [
           {
@@ -60,7 +64,7 @@ export const router = createBrowserRouter([
                 type='activeRecepient'
                 size='small'
                 title='Активные заявки'
-                titleIcon={<ActiveApplicationIcon/>}
+                titleIcon={<ActiveApplicationIcon />}
               />
             ),
           },
@@ -89,7 +93,7 @@ export const router = createBrowserRouter([
             path: 'map-applications',
             element: (
               <YMaps>
-                <MapComponent/>
+                <MapComponent />
               </YMaps>
             ),
           },
@@ -100,7 +104,7 @@ export const router = createBrowserRouter([
                 type='activeVolunteer'
                 size='large'
                 title='Активные заявки'
-                titleIcon= {<ActiveApplicationIcon />}
+                titleIcon={<ActiveApplicationIcon />}
               />
             ),
           },
@@ -111,7 +115,7 @@ export const router = createBrowserRouter([
                 type='completed'
                 size='large'
                 title='Завершенные заявки'
-                titleIcon= {<ComplitedApplicationsIcon />}
+                titleIcon={<ComplitedApplicationsIcon />}
               />
             ),
           },
@@ -127,11 +131,11 @@ export const router = createBrowserRouter([
           },
           {
             path: 'popular',
-            element: <Popular/>,
+            element: <Popular />,
           },
           {
             path: 'category',
-            element: <Popular/>,
+            element: <Popular />,
           },
         ],
       },

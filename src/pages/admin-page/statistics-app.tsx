@@ -1,7 +1,8 @@
 // import styles from './admin-page.module.scss';
 
 import { useEffect } from 'react';
-import { AdminPageTitle, useSetTitleAdminPage } from './adminPage';
+import { useSetTitleAdminPage } from '.';
+import { AdminPageTitle } from '../../types';
 
 const StatisticsApp = () => {
   const { setTitle } = useSetTitleAdminPage();
