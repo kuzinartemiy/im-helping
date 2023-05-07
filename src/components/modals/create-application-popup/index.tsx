@@ -104,7 +104,10 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                       пишите его полностью.
                     </p>
                   </div>
-                  <div className={styles.mapContainer}></div>
+                  <div className={styles.mapContainer}>
+
+                    
+                  </div>
                 </div>
               );
             case 3:

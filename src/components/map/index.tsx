@@ -82,7 +82,7 @@ const MapComponent = () => {
       <TopPanel
         title="Карта"
         titleIcon={<MapIcon />}
-        onFilterClick={onFilterClick} children={<MapFilterPopup/>}/>
+        onFilterClick={onFilterClick} /* children={<MapFilterPopup/>} *//>
       {Boolean(btnCoords) && btnCoords.length > 0 && (
         <CoordsPopup
           pageX={btnCoords[0]}
