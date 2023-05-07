@@ -56,3 +56,26 @@
      padding: 30px 10px;
      border: 2px solid $bg-button-sea;
   }
+
+  .CreatEditAppContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .searchCards {
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+
+  .createApp {
+    display: flex;
+    align-items: center;
+    gap: 59px;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, #ffffff 10%, #2e3192 50%, #ffffff 90%);
+    border-image-slice: 1;
+    padding: 23px 64px;
+    margin-bottom: 20px;
+  }
