@@ -189,8 +189,15 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
               return (
                 <div className={styles.fourthContainer}>
                   <div className={styles.fourthContainer__date}>
-                    <span>{getTime()}</span>
-                    <span>{getDate()}</span>
+                    {state.time as boolean
+                      ? (
+                      <p>бессрочно</p>)
+                      : (
+                      <>
+                        <span>{getTime()}</span>
+                        <span>{getDate()}</span>
+                      </>
+                      )}
                   </div>
                   <div className={styles.fourthContainer__place}>
                     <LocationIcon />
@@ -203,7 +210,8 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                   </div>
                   <div className={styles.fourthContainer__reportContainer}>
                     <p className={styles.fourthContainer__title}>
-                      Откуда взять заголовок, если в текстовое поле просто вводится текст
+                      Откуда взять заголовок, если в текстовое поле просто
+                      вводится текст
                     </p>
                     <p className={styles.fourthContainer__report}>
                       здесь будет контент из TextArea
