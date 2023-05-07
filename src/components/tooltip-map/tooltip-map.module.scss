@@ -1,6 +1,6 @@
-@import url(../../styles//colors.scss);
+@import '../../styles/colors.scss';
 
-.tolltipMap {
+.tooltipMap {
   margin: 0 auto;
   width: 370px;
   height: 292px;
@@ -9,28 +9,28 @@
   align-items: center;
   gap: 5px;
   border-bottom: 2px solid;
-  border-image: linear-gradient(to right, var(--background-popup) 10%, var(--color-primary) 50%, var(--background-popup) 90%);
+  border-image: linear-gradient(to right, var(--white) 10%, var(--color-primary) 50%, var(--white) 90%);
 }
 
-.tolltipMap__userInfo {
+.tooltipMap__userInfo {
   display: flex;
   gap: 5px;
   justify-content: center;
 }
 
-.tolltipMap__userInfoText {
+.tooltipMap__userInfoText {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.tolltipMap__about {
+.tooltipMap__about {
   max-width: 310px;
   max-height: 77px;
   align-self: center;
 }
 
-.tolltipMap__textAbout {
+.tooltipMap__textAbout {
   box-sizing: border-box;
   font-size: 16px;
   font-weight: 400;
@@ -42,7 +42,7 @@
   overflow: hidden;
 }
 
-.tolltipMap__textAboutLink {
+.tooltipMap__textAboutLink {
   text-decoration: none;
   font-size: 16px;
   font-weight: 400;
@@ -50,7 +50,7 @@
   text-align: left;
 }
 
-.tolltipMap__status {
+.tooltipMap__status {
   align-self: flex-end;
   display: flex;
   align-items: center;

@@ -2,7 +2,7 @@ import type React from 'react';
 import styles from './admin-privileges-card.module.scss';
 import defaultAvatar from '../../assets/images/default-user.png';
 import { useState } from 'react';
-import Checkbox from '../checkbox';
+import Checkbox from '../common/checkbox';
 
 interface AdminPrivilegesCardProps {
   name: string

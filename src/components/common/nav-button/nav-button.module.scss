@@ -1,0 +1,30 @@
+@import '../../../styles/colors.scss';
+
+.navButton {
+  clip-path: path('M0 0L169 9.24L155 33H0V0Z');
+  background-color: $color-primary;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  min-width: 169px;
+  height: 33px;
+  transition: background-color .3s;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 9px;
+
+  &:hover {
+    background-color: $bg-button-sea;
+  }
+
+  &:active,
+  &:focus {
+    background-color: $bg-button-sea;
+  }
+
+  &:disabled {
+    background-color: $bg-button-disabled;
+  }
+}

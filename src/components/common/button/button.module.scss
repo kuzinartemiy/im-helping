@@ -1,0 +1,55 @@
+@import '../../../styles/colors.scss';
+
+.button {
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  font-size: 12px;
+  transition: 0.3s;
+  &__small {
+    width: 78px;
+    padding: 8px 6px;
+  }
+  &__medium {
+    width: 104px;
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+  &__large {
+    width: 126px;
+  }
+  &_viewType_primary {
+    border: none;
+    color: $white;
+    background-color: $color-primary;
+    &:hover {
+      background-color: $bg-button-sea;
+    }
+    &:disabled {
+      background-color: $bg-button-disabled;
+    }
+    &:active,
+    &:focus {
+      background-color: $bg-button-sea;
+    }
+  }
+  &_viewType_secondary {
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    background-color: $white;
+    &:hover {
+      color: $white;
+      background-color: $bg-button-sea;
+    }
+    &:disabled {
+      color: $bg-button-disabled;
+      border: 1px solid $bg-button-disabled;
+      background-color: $white;
+    }
+    &:active,
+    &:focus {
+      color: $white;
+      background-color: $bg-button-sea;
+    }
+  }
+}
