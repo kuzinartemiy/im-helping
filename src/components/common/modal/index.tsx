@@ -10,9 +10,10 @@ interface IModal {
   title?: string
   onClose: () => void
   children?: React.ReactNode
+  viewType?: 'primary' | 'secondary'
 }
 
-const Modal: FC<IModal> = ({ onClose, children }) => {
+const Modal: FC<IModal> = ({ onClose, children, viewType = 'primary' }) => {
   const onEscDown = useCallback(
     (e: { key: string }) => {
       if (e.key === 'Escape') {
@@ -31,9 +32,9 @@ const Modal: FC<IModal> = ({ onClose, children }) => {
 
   return ReactDOM.createPortal(
     <>
-      <div className={styles.modal}>
-        <div className={styles.modalHeader}>
-          <div className={styles.modalCloseButton}>
+      <div className={`${styles.modal} ${styles[`modal_viewType_${viewType}`]}`}>
+        <div className={`${styles.modalHeader} ${styles[`modalHeader_viewType_${viewType}`]}`} >
+          <div className={styles.modalCloseButton} >
             <ServiceButton viewType="close" onClick={onClose} />
           </div>
         </div>

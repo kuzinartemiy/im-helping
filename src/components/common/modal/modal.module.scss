@@ -4,14 +4,20 @@
     z-index: 10;
     position: fixed;
     background: $white;
-    min-width: 586px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: min-content;
     box-sizing: border-box;
-    padding: 20px;
     box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.16), 0px 0px 4px rgba(0, 0, 0, 0.04);
+    &_viewType_primary {
+    padding: 20px;
+    min-width: 586px;
+    }
+    &_viewType_secondary {
+    padding: 0px;
+    max-width: 287px;
+    }
 }
 
 .modalCloseButton {
@@ -23,8 +29,13 @@
 }
 
 .modalHeader {
-    display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    &_viewType_primary {
+        display: flex;
+}
+&_viewType_secondary {
+display: none;
+}
 }

@@ -1,0 +1,73 @@
+@import '../../../styles/_mixins.scss';
+@import '../../../styles/colors.scss';
+
+.profileSettings {
+    display: flex;
+    min-height: 285px;
+    min-width: 287px;
+    flex-direction: column;
+    padding: 20px 0 0 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.profileSettingsList{
+    all:unset;
+}
+
+.personAvatar {
+    border-radius: 50%;
+    border: 1px solid $color-blue;
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.profileChangeItem {
+    all:unset;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.photoChangeInput {
+    all:unset;
+    max-width: 138px;
+    border-bottom: 1px solid $color-primary;
+    cursor: pointer;
+    &::placeholder {
+    @include font-source-sans(12px, $black, 400, 14px);
+    }
+}
+
+.profileChangeInput {
+    all:unset;
+    max-width: 138px;
+    max-height: 30px;
+    padding-bottom: 5px;
+    border-bottom: 0.2px solid $color-primary;
+    cursor: pointer;
+    @include font-source-sans(12px, $color-primary, 400, 14px);
+    &::placeholder {
+        color: $bg-button-disabled;
+    }
+}
+
+.labelWrapper{
+    width: 84px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.inputLabel {
+    padding-right: 20px;
+    @include font-source-sans(12px, $color-primary, 700, 14.4px);
+}
+
+.saveButton{
+    margin-top: 10px;
+}

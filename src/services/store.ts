@@ -1,6 +1,19 @@
 import { create } from 'zustand';
 
-export const useStore = create(() => ({
+interface UserState {
+  userAvatar: string
+  userName: string
+  userNumber: string
+  userAbout: string
+  changeAvatar: (url: string) => void
+  changeName: (name: string) => void
+  changeNumber: (number: string) => void
+  changeAbout: (about: string) => void
+  owner: any
+  applicationCards: any
+}
+
+export const useStore = create<UserState>(set => ({
   applicationCards: [
     {
       id: '1',
@@ -107,4 +120,12 @@ export const useStore = create(() => ({
       hands: 150,
     },
   },
+  userAvatar: 'userAvatar',
+  userName: 'userName',
+  userNumber: 'userNumber',
+  userAbout: 'userAbout',
+  changeAvatar: (url: string) => set(() => ({ userAvatar: url })),
+  changeName: (name: string) => set(() => ({ userName: name })),
+  changeNumber: (number: string) => set(() => ({ userNumber: number })),
+  changeAbout: (about: string) => set(() => ({ userAbout: about })),
 }));
