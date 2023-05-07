@@ -1,4 +1,4 @@
-import styles from '../blogPage.module.scss';
+import styles from '../blog-page.module.scss';
 import { ReactComponent as IconPopular } from '../../../assets/icons/popular.svg';
 import TopPanel from '../../../components/top-panel';
 
