@@ -31,7 +31,7 @@ const TooltipMap = ({ cardData }: IToolTipMapProps) => {
         <Text color={COLORS.get('color-primary')} size='24' lineHeight='29px'>{cardData.completedAppQuantity}</Text>
         <Status width='42px' height='30px' />
       </div>
-        <Button>
+        <Button onClick={cardData.onButtonClick}>
           <Text color={COLORS.get('white')} align='center'>Откликнуться</Text>
         </Button>
     </div>

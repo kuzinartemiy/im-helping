@@ -4,22 +4,21 @@ import styles from './map-component.module.scss';
 import location from '../../assets/icons/location.svg';
 import TopPanel from '../top-panel';
 import { ReactComponent as MapIcon } from '../../assets/icons/requests-map.svg';
-import MapFilterPopup from '../modals/map-filter-popup';
 import { requests } from './map-component.constants';
-import { /* YMaps, Map, Placemark, */ useYMaps } from '@pbe/react-yandex-maps';
-import Select from '../common/select';
+import { useYMaps } from '@pbe/react-yandex-maps';
 import { CoordsPopup } from '../common/coords-modal';
+import TooltipMap from '../tooltip-map';
+import ThanksPopup from '../modals/thanks-popup';
+import Select from '../common/select';
 
 /* const API_KEY = "05f8d2ae-bd94-4329-b9f9-7351e2ec9627"; */
 
 // 'geoObject.addon.balloon'
 
 const MapComponent = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [reqInfo, setReqinfo] = useState();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [currentCity, setCurrentCity] = useState<any>(requests[0]);
-  const [btnCoords, setBtnCoords] = useState<any>();
+  const [reqInfo, setReqinfo] = useState<any>();
+  const [placemarkCoords, setPlacemarkCoords] = useState<any>();
+  const [isReqAccepted, setIsReqAccepted] = useState(false);
   let myMap: any;
   const placemarkCollection: any = {};
   const ymaps = useYMaps([
@@ -29,9 +28,10 @@ const MapComponent = () => {
     'GeoObject',
   ]);
   const mapRef = useRef(null);
+
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    if (ymaps == null || !mapRef.current || !currentCity) {
+    if (ymaps == null || !mapRef.current) {
       return;
     }
 
@@ -56,6 +56,7 @@ const MapComponent = () => {
         );
         reqPlaceMark.events.add('click', function (e: any) {
           setReqinfo(e.originalEvent.target.properties._data);
+          setPlacemarkCoords([e.originalEvent.domEvent.originalEvent.pageX, e.originalEvent.domEvent.originalEvent.pageY]);
         });
         cityCollection.add(reqPlaceMark);
         placemarkCollection[city.city.name] = cityCollection;
@@ -64,9 +65,10 @@ const MapComponent = () => {
     });
   }, [ymaps]);
 
-  const onFilterClick: React.MouseEventHandler = (e) =>
-    setBtnCoords([e.pageX, e.pageY]);
-  const onOverlayClick = () => setBtnCoords([]);
+  const onOverlayClickRequest = () => {
+    setPlacemarkCoords([]);
+    setReqinfo(null);
+  };
   const onSelectChange = (e: any) => {
     myMap
       ?.setBounds(placemarkCollection[e.target.value].getBounds(), {
@@ -77,31 +79,60 @@ const MapComponent = () => {
       });
   };
 
+  const onAcceptButtonClick = () => {
+    setIsReqAccepted(true);
+    setReqinfo(null);
+  };
+  const onThanksOverlayClick = () => setIsReqAccepted(false);
+
   return (
     <div className={styles.container}>
       <TopPanel
+        filterType='MapFilterPopup'
         title="Карта"
         titleIcon={<MapIcon />}
-        onFilterClick={onFilterClick} children={<MapFilterPopup/>}/>
-      {Boolean(btnCoords) && btnCoords.length > 0 && (
-        <CoordsPopup
-          pageX={btnCoords[0]}
-          pageY={btnCoords[1]}
-          onOverlayClick={onOverlayClick}
-        >
-          <MapFilterPopup />
+      />
+      {(Boolean(reqInfo)) && (Boolean(placemarkCoords))
+        ? <CoordsPopup
+            pageX={placemarkCoords[0]}
+            pageY={placemarkCoords[1]}
+            onOverlayClick={onOverlayClickRequest}>
+      <TooltipMap cardData={{
+        id: reqInfo.id,
+        owner: reqInfo.owner,
+        about: reqInfo.description,
+        completedAppQuantity: reqInfo.qty,
+        onButtonClick: onAcceptButtonClick,
+      }}
+      />
+              </CoordsPopup>
+        : null }
+
+      { isReqAccepted
+        ? <CoordsPopup
+            pageX={placemarkCoords[0]}
+            pageY={placemarkCoords[1]}
+            onOverlayClick={onThanksOverlayClick}
+      >
+        <ThanksPopup/>
         </CoordsPopup>
-      )}
-      <div className={styles.container__map} style={{ height: '728px', width: '100%' }} ref={mapRef}>
-      <section className={styles.container__map__select}>
-        <Select
-          value={'Выберите город'}
-          elementsList={requests.map((el) => {
-            return el.city.name;
-          })}
-          onChange={onSelectChange}
-        ></Select>
-      </section>
+        : null
+        }
+
+      <div
+        className={styles.container__map}
+        style={{ height: '728px', width: '100%' }}
+        ref={mapRef}
+      >
+        <section className={styles.container__map__select}>
+          <Select
+            value={'Выберите город'}
+            elementsList={requests.map((el: any) => {
+              return el.city.name;
+            })}
+            onChange={onSelectChange}
+          ></Select>
+        </section>
       </div>
     </div>
   );

@@ -48,6 +48,7 @@ const ApplicationCards = ({
             ),
             )}
           </ul>
+          <div className={styles.applicationCards__opacity} />
         </div>
         )
         : (

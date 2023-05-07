@@ -6,6 +6,9 @@ import { COLORS } from '../../styles/colors';
 import { useState } from 'react';
 import ActiveFilterPopup from '../modals/active-filter-popup';
 import FilterPopup from '../modals/filter-popup';
+import MapFilterPopup from '../modals/map-filter-popup';
+import CompletedFilterPopup from '../modals/completed-filter-popup';
+import RecipientFilterPopup from '../modals/recipient-filter-popup';
 
 type TTopPanel = {
   title: string
@@ -16,6 +19,7 @@ type TTopPanel = {
   filterText?: string
   filterImage?: React.ReactNode
   filterImageStyle?: string
+  filterType?: string
 } & React.HTMLProps<HTMLDivElement>;
 
 const TopPanel = ({
@@ -24,6 +28,7 @@ const TopPanel = ({
   titleImageStyle = style.title_image,
   filterImageStyle = style.filter_image,
   filter = true,
+  filterType = 'ActiveFilterPopup',
   ...props
 }: TTopPanel) => {
   const [openFilterPopup, setOpenFilterPopup] = useState(false);
@@ -52,7 +57,12 @@ const TopPanel = ({
           </div>
         </div>
       )}
-      {openFilterPopup && <FilterPopup onClose={handleClose}><ActiveFilterPopup/></FilterPopup>}
+      {openFilterPopup && <FilterPopup onClose={handleClose}>
+        {filterType === 'RecipientFilterPopup' && <RecipientFilterPopup/>}
+        {filterType === 'ActiveFilterPopup' && <ActiveFilterPopup/>}
+        {filterType === 'MapFilterPopup' && <MapFilterPopup/> }
+        {filterType === 'CompletedFilterPopup' && <CompletedFilterPopup/> }
+        </FilterPopup>}
     </div>
   );
 };
