@@ -52,7 +52,7 @@ const AdminPage = () => {
             return (
               <li
                 key={index}
-                className={navCardsStyles.linkCard}
+                className={navCardsStyles.linkCard} style={{ marginBottom: '10px' }}
               >
                 <NavCard
                   text={item.text}

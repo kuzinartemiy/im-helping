@@ -4,17 +4,15 @@
     display: flex;
     margin: 0 auto;
     width: 100%;
-    max-width: 1440px;
     padding: 30px 93px 0;
     box-sizing: border-box;
-    // max-height: calc(100vh - 110px);
   }
 
   .adminSidebar {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 295px;
+    width: 387px;
     margin-right: 20px;
     box-sizing: border-box;
   }
@@ -24,7 +22,6 @@
     flex-direction: column;
     gap: 20px;
     width: 100%;
-    max-width: 940px;
     box-sizing: border-box;
   }
 
@@ -79,3 +76,80 @@
     padding: 23px 64px;
     margin-bottom: 20px;
   }
+
+  .cards {
+    max-height: calc(100vh - 510px);
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    box-sizing: border-box;
+    position: relative;
+    mask-image: linear-gradient(to bottom, white 0%, white 80%, transparent 100%);
+    &::-webkit-scrollbar {
+        display: none;
+      }
+  }
+
+  .statsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    box-sizing: border-box;
+    position: relative;
+    mask-image: linear-gradient(to bottom, white 0%, white 80%, transparent 100%);
+    &::-webkit-scrollbar {
+        display: none;
+      }
+  }
+
+  .diagrammBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 10px;
+    box-sizing: border-box;
+    border: 1px solid #0071BC;
+    width: 640px;
+    height: 237px;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 30px;
+      height: 30px;
+      background-image: url(../../assets/icons/excel.svg);
+    }
+  }
+
+  .statsBlocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .statsBlock {
+    position: relative;
+    border: 1px solid #0071BC;
+    width: 423px;
+    height: 287px;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 30px;
+      height: 30px;
+      background-image: url(../../assets/icons/excel.svg);
+    }
+  }
+
+
+  
