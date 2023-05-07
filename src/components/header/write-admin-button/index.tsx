@@ -9,12 +9,11 @@ interface IWriteAdminButtonProps extends DetailedHTMLProps<React.ButtonHTMLAttri
   onClick?: (() => void) | ((e: SyntheticEvent) => void)
 }
 
-const WriteAdminButton = ({ onClick, viewType = 'visible', ...props }: IWriteAdminButtonProps) => (
+const WriteAdminButton = ({ onClick, viewType = 'visible' }: IWriteAdminButtonProps) => (
   <div className={styles.wrapper}>
-    <button
+    <div
       className={`${styles.button} ${styles[`button_viewType_${viewType}`]}`}
       onClick={onClick}
-      {...props}
     >
       <CircleButton size="small" border='secondary'>
         <ChatIcon />
@@ -24,7 +23,7 @@ const WriteAdminButton = ({ onClick, viewType = 'visible', ...props }: IWriteAdm
           Написать администратору
         </Text>
       </div>
-    </button>
+    </div>
   </div>
 );
 

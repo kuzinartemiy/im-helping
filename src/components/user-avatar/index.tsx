@@ -10,7 +10,7 @@ interface IUserAvatar {
 
 const UserAvatar: FC<IUserAvatar> = ({ src, width = '100', height = '100' }) => {
   return (
-    <img alt='Аватар пользователя' src={ src } style={{
+    <img alt='Аватар пользователя' src={src} style={{
       width: `${width}px`,
       height: `${height}px`,
       borderRadius: '50%',

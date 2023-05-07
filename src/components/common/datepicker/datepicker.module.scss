@@ -2,7 +2,7 @@
 @import '../../../styles/colors.scss';
 
 .name {
-    @include font-source-sans(12px, $text-color-black, 400, 14px);
+    @include font-source-sans(12px, $black, 400, 14px);
     margin-bottom: 5px;
 }
 

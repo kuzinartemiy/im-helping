@@ -5,10 +5,10 @@ import location from '../../assets/icons/location.svg';
 import TopPanel from '../top-panel';
 import { ReactComponent as MapIcon } from '../../assets/icons/requests-map.svg';
 import MapFilterPopup from '../modals/map-filter-popup';
-import { CoordsPopup } from '../common/coords-modal';
 import { requests } from './map-component.constants';
 import { /* YMaps, Map, Placemark, */ useYMaps } from '@pbe/react-yandex-maps';
 import Select from '../common/select';
+import { CoordsPopup } from '../common/coords-modal';
 
 /* const API_KEY = "05f8d2ae-bd94-4329-b9f9-7351e2ec9627"; */
 

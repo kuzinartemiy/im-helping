@@ -32,7 +32,7 @@ const Chat: FC<IChatS> = ({ messages }) => {
             <li key={index} className={styles.rightMessage}>
               <UserAvatar src={item.owner.avatar} width={ '30' } height={ '30' } />
               <div className={`${styles.text} ${styles.right}`}>
-                <Text children={item.text} size={ '12' } lineHeight={' 15px '} color={COLORS.get('background-popup')}/>
+                <Text children={item.text} size={ '12' } lineHeight={' 15px '} color={COLORS.get('white')}/>
               </div>
             </li>
           );
@@ -42,7 +42,7 @@ const Chat: FC<IChatS> = ({ messages }) => {
             <li key={index} className={styles.leftMessage}>
               <UserAvatar src={item.owner.avatar} width={ '30' } height={ '30' } />
               <div className={`${styles.text} ${styles.left}`}>
-                <Text children={item.text} size={ '12' } lineHeight={' 15px '} color={COLORS.get('background-popup')}/>
+                <Text children={item.text} size={ '12' } lineHeight={' 15px '} color={COLORS.get('white')}/>
               </div>
           </li>
           );
@@ -52,7 +52,7 @@ const Chat: FC<IChatS> = ({ messages }) => {
             <li key={index} className={styles.rightMessage}>
               <UserAvatar src={item.owner.avatar} width={ '30' } height={ '30' } />
               <div className={`${styles.text} ${styles.right}`}>
-              <Text children={'печатает сообщение...'} size={ '12' } lineHeight={' 15px '} color={COLORS.get('background-popup')}/>
+              <Text children={'печатает сообщение...'} size={ '12' } lineHeight={' 15px '} color={COLORS.get('white')}/>
               </div>
             </li>
           );

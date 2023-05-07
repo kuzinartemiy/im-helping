@@ -1,4 +1,4 @@
-@import "../../../styles/color-variables";
+@import "../../../styles/colors";
 @import "../../../styles/mixins";
 
 .popup {
@@ -10,7 +10,7 @@
   width: 100%;
 
   &__title {
-    @include font-source-sans(12px, $text-color-black, 700, 14px);
+    @include font-source-sans(12px, $black, 700, 14px);
     padding-bottom: 7.5px;
     border-bottom: 1px solid $pickerdate-border;
   }

@@ -2,8 +2,8 @@ import styles from './adminFilterPopup.module.scss';
 import { COLORS } from '../../../styles/colors';
 import Checkbox from '../../common/checkbox';
 import Text from '../../common/text';
-import { CoordsPopup } from '../../common/coords-modal';
 import Button from '../../common/button';
+import { CoordsPopup } from '../../common/coords-modal';
 
 interface IAdminFilterPopup {
   onClick: () => void

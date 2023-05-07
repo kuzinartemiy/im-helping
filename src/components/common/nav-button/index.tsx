@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes, type DetailedHTMLProps } from 'react';
-import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow-down.svg';
+import { ReactComponent as ArrowIcon } from '../../../assets/icons/arrow-down.svg';
 import Text from '../text';
 import styles from './nav-button.module.scss';
 import { COLORS } from '../../../styles/colors';

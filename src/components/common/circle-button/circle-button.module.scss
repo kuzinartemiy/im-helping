@@ -27,11 +27,6 @@
         &:hover {
             background-color: $bg-button-sea;
         }
-
-        &:active,
-        &:focus {
-            background-color: $bg-button-sea;
-        }
     }
 
     &__medium {
@@ -39,11 +34,6 @@
         height: 53px;
 
         &:hover {
-            background-color: $bg-button-wave;
-        }
-
-        &:active,
-        &:focus {
             background-color: $bg-button-wave;
         }
     }
@@ -54,11 +44,6 @@
 
         &:hover {
             background-color: $bg-button-wave;
-        }
-
-        &:active,
-        &:focus {
-            background-color: $color-primary;
         }
     }
     }

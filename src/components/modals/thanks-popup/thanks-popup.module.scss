@@ -5,7 +5,7 @@
   box-sizing: border-box;
   width: 100%;
   padding: 13px 30px 50px;
-  background-color: $background-popup;
+  background-color: $white;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 32px rgba(0, 0, 0, 0.16);
 
   @media screen and (max-width: 550px) {
@@ -25,7 +25,7 @@
 
   @media screen and (max-width: 550px) {
     border-color: transparent;
-    border-image: linear-gradient(90deg, $background-popup 0%, $color-primary 50%, $background-popup 100%) 1;
+    border-image: linear-gradient(90deg, $white 0%, $color-primary 50%, $white 100%) 1;
   }
 }
 

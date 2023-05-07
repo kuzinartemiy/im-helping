@@ -1,0 +1,24 @@
+@import '../../styles/colors.scss';
+
+.container {
+  display: flex;
+  margin: 30px 93px 88px;
+  gap: 20px;
+}
+
+.colorWhiteIcon path {
+  fill: $white;
+}
+
+.colorBlueIcon path {
+  fill: $color-primary;
+}
+
+.nav {
+  padding-top: 90px;
+  min-width: 295px;
+}
+
+.panel {
+  width: 100%;
+}

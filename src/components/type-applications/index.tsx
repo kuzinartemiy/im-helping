@@ -1,25 +1,29 @@
-import { type FC } from 'react';
-import { type ITypeApplications } from '../../utils/types/dataTypes';
-import { store } from '../../utils/application-card.constans';
 import TopPanel from '../top-panel';
 import ApplicationCards from '../application-cards';
-import ActiveFilterPopup from '../modals/active-filter-popup';
 import CompletedFilterPopup from '../modals/completed-filter-popup';
+import { useStore } from '../../services/store';
 
-const TypeApplications: FC<ITypeApplications> = ({
+export interface ITypeApplicationsProps {
+  type: 'activeRecepient' | 'activeVolunteer' | 'completed'
+  size: 'small' | 'large'
+  title: string
+  titleIcon: any
+}
+
+const TypeApplications = ({
   type,
   size,
   title,
   titleIcon,
-}) => {
+}: ITypeApplicationsProps) => {
+  const applicationCards = useStore((state) => state.applicationCards);
   return (
     <>
-      {type !== 'complited'
+      {type !== 'completed'
         ? (
         <TopPanel
           titleIcon={titleIcon}
           title={title}
-          children={<ActiveFilterPopup />}
         />
         )
         : (
@@ -30,10 +34,9 @@ const TypeApplications: FC<ITypeApplications> = ({
         />
         )}
       <ApplicationCards
-        cardData={store}
+        applicationCards={applicationCards}
         size={size}
-        type={type}
-      ></ApplicationCards>
+      />
     </>
   );
 };

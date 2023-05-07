@@ -1,23 +1,19 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './nav-card.module.scss';
 import Text from '../text';
-import { type FC } from 'react';
 import { COLORS } from '../../../styles/colors';
 
-export interface ICard {
+export interface INavCard {
   text: string
   icon: React.ReactNode
   path: string
-  index?: number
 }
 
-const NavCard: FC<ICard> = ({ icon, text, path }) => {
-  return (
-    <Link to={path} className={styles.link}>
+const NavCard = ({ icon, text, path }: INavCard) => (
+    <NavLink to={path} className={({ isActive }) => `${styles.link} ${isActive ? styles.link_active : ''}`}>
       {icon}
-      <Text tag='p' weight='400' size='16' color={COLORS.get('background-popup')}>{text}</Text>
-    </Link>
-  );
-};
+      <Text tag='p' weight='400' size='16' color={COLORS.get('white')}>{text}</Text>
+    </NavLink>
+);
 
 export default NavCard;

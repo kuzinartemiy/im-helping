@@ -1,6 +1,4 @@
-import { type FC } from 'react';
 import styles from './application-card.module.scss';
-import { type IApplicationCard } from '../../utils/types/dataTypes';
 import { ReactComponent as Calendar } from '../../assets/icons/calendar.svg';
 import { ReactComponent as Clock } from '../../assets/icons/clock.svg';
 import { ReactComponent as LocationIcon } from '../../assets/icons/location-transparent.svg';
@@ -13,46 +11,53 @@ import UserAvatar from '../user-avatar';
 import CircleButton from '../common/circle-button';
 import { COLORS } from '../../styles/colors';
 import ServiceButton from '../common/service-button';
+import { type IApplicationCard } from '../../types';
 
-const ApplicationCard: FC<IApplicationCard> = ({ cardData, type = 'active' }) => {
+interface IApplicationCardProps {
+  card: IApplicationCard
+}
+
+const ApplicationCard = ({ card }: IApplicationCardProps) => {
   return (
-    <div className={styles.applicationCard} id={cardData.id}>
+    <div className={styles.applicationCard} id={card.id}>
       <div className={styles.applicationCard__categoryBarContainer}>
         <CategoryBar bgColor={COLORS.get('color-secondary')}>
-          <Text color={COLORS.get('background-popup')}>категория</Text>
+          <Text color={COLORS.get('white')}>категория</Text>
         </CategoryBar>
       </div>
-      <div className={ styles.applicationCard__dateTimeLocation }>
-        <div className={ styles.applicationCard__dateContainer }>
+      <div className={styles.applicationCard__dateTimeLocation}>
+        <div className={styles.applicationCard__dateContainer}>
           <Calendar />
-          <Text size='24' color={COLORS.get('color-primary')}>{cardData.date}</Text>
+          <Text size='24' color={COLORS.get('color-primary')}>{card.date}</Text>
         </div>
         <div className={styles.applicationCard__dateContainer}>
           <Clock />
-          <Text size='24' color={COLORS.get('color-primary')}>{cardData.time}</Text>
+          <Text size='24' color={COLORS.get('color-primary')}>{card.time}</Text>
         </div>
         <div className={styles.applicationCard__dateContainer}>
           <LocationIcon />
-          <Text size='16' color={COLORS.get('color-primary')}>{cardData.location}</Text>
+          <Text size='16' color={COLORS.get('color-primary')}>{card.location}</Text>
         </div>
       </div>
-      <div className={ styles.applicationCard__about }>
+      <div className={styles.applicationCard__about}>
         <Text children='Заголовок' size='24' color={COLORS.get('color-secondary')} />
-        <div className={ styles.applicationCard__textContainer }>
-          <p className={ styles.applicationCard__textAbout }>{ cardData.about }</p>
+        <div className={styles.applicationCard__textContainer}>
+          <p className={styles.applicationCard__textAbout }>{card.about}</p>
           <p><a className={ styles.applicationCard__textAboutLink } href='*'>Читать</a></p>
         </div>
         <div className={styles.applicationCard__completedQuantity }>
           <ComplitedAplications width='32px' height='32px' />
-          <Text children={ cardData.completedAppQuantity } color={COLORS.get('color-primary')}/>
+          <Text color={COLORS.get('color-primary')}>{card.completedAppQuantity}</Text>
         </div>
       </div>
-      <div className={ styles.applicationCard__userColumn }>
-        <UserAvatar src={ cardData.owner.avatar} />
-        <div className={ styles.applicationCard__userColumn_name }><Text children={ cardData.owner.name } align='center' size='16' lineHeight='19px'/></div>
-        <Text children={ cardData.owner.phone } color={COLORS.get('color-primary')} size='16'/>
-        <div className={ styles.applicationCard__userColumnBtns }>
-          { type !== 'complited'
+      <div className={styles.applicationCard__userColumn}>
+        <UserAvatar src={card.owner.avatar} />
+        <div className={styles.applicationCard__userColumn_name}>
+          <Text align='center' size='16' lineHeight='19px'>{card.owner.name}</Text>
+        </div>
+        <Text children={card.owner.phone } color={COLORS.get('color-primary')} size='16'/>
+        <div className={styles.applicationCard__userColumnBtns}>
+          {card.type !== 'completed'
             ? (
           <><CircleButton >
               <Message />
@@ -66,7 +71,7 @@ const ApplicationCard: FC<IApplicationCard> = ({ cardData, type = 'active' }) =>
               </CircleButton></>)}
         </div>
       </div>
-      { type !== 'complited' &&
+      {card.type !== 'completed' &&
       <div className={ styles.applicationCard__buttonsColumn}>
         <ServiceButton />
         <ServiceButton viewType='edit' />

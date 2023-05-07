@@ -39,7 +39,7 @@ export const DocumentsPopup: FC<IDocumentsPopup> = ({ data }) => {
             children={
               <div className={styles.documentsPoupup__buttonInner}>
                 <AttachIcon />
-                <Text children={'Прикрепить'} color={COLORS.get('background-popup')} align={'center'} />
+                <Text children={'Прикрепить'} color={COLORS.get('white')} align={'center'} />
               </div>
             }
           />

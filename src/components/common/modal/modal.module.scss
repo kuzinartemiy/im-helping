@@ -1,9 +1,9 @@
-@import '../../styles/colors.scss';
+@import '../../../styles/colors.scss';
 
 .modal {
     z-index: 10;
     position: fixed;
-    background: $background-popup;
+    background: $white;
     min-width: 586px;
     top: 50%;
     left: 50%;

@@ -1,77 +1,128 @@
 import MainLayout from '../layouts/main-layout';
-import { createBrowserRouter } from 'react-router-dom';
-import { AdminPage, HomePage, RecipientPage, SuperAdminPage, VolunteerPage } from '../pages';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
+import { AdminPage, HomePage, PrivacyPage, RecipientPage, SuperAdminPage, VolunteerPage } from '../pages';
 import { ReactComponent as ActiveApplicationIcon } from '../assets/icons/active-applications.svg';
 import { ReactComponent as ComplitedApplicationsIcon } from '../assets/icons/completed-applications.svg';
 import TypeApplications from '../components/type-applications';
 import { YMaps } from '@pbe/react-yandex-maps';
 import MapComponent from '../components/map-component';
+import ContactsPage from '../pages/contacts-page';
+import Socials from '../pages/contacts-page/socials';
+import Feedback from '../pages/contacts-page/feedback';
 
 export const router = createBrowserRouter([
   {
-    path: '/',
-    element: <HomePage />,
+    path: '',
+    element: <Navigate to='/profile' />,
   },
   {
     element: <MainLayout />,
     children: [
       {
-        path: 'admin',
-        element: (
-          <AdminPage />
-        ),
+        path: 'profile',
+        element: <HomePage />,
       },
       {
-        path: 'recipient/',
-        element: (
-          <RecipientPage />
-        ),
+        path: 'profile/admin',
+        element: <AdminPage />,
+      },
+      {
+        path: 'profile/superadmin',
+        element: <SuperAdminPage />,
+      },
+      {
+        path: 'profile/recipient',
+        element: <RecipientPage />,
         children: [
+          {
+            path: '',
+            element: <Navigate to='/profile/recipient/active-applications' />,
+          },
           {
             path: 'active-applications',
             element: (
-              <TypeApplications type={'activeRecepient'} size={'small'} title={'Активные заявки'} titleIcon= {<ActiveApplicationIcon />}/>
+              <TypeApplications
+                type='activeRecepient'
+                size='small'
+                title='Активные заявки'
+                titleIcon={<ActiveApplicationIcon/>}
+              />
             ),
           },
           {
-            path: 'complited-applications',
+            path: 'completed-applications',
             element: (
-              <TypeApplications type={'complited'} size={'large'} title={'Завершенные заявки'} titleIcon= {<ComplitedApplicationsIcon />}/>
+              <TypeApplications
+                type='completed'
+                size='large'
+                title='Завершенные заявки'
+                titleIcon={<ComplitedApplicationsIcon />}
+              />
             ),
           },
         ],
       },
       {
-        path: 'volunteer/',
-        element: (
-          <VolunteerPage />
-        ),
+        path: 'profile/volunteer',
+        element: <VolunteerPage />,
         children: [
+          {
+            path: '',
+            element: <Navigate to='/profile/volunteer/map-applications' />,
+          },
           {
             path: 'map-applications',
             element: (
-              <YMaps><MapComponent/></YMaps>
+              <YMaps>
+                <MapComponent/>
+              </YMaps>
             ),
           },
           {
             path: 'active-applications',
             element: (
-              <TypeApplications type={'activeVolunteer'} size={'large'} title={'Активные заявки'} titleIcon= {<ActiveApplicationIcon />}/>
+              <TypeApplications
+                type='activeVolunteer'
+                size='large'
+                title='Активные заявки'
+                titleIcon= {<ActiveApplicationIcon />}
+              />
             ),
           },
           {
-            path: 'complited-applications',
+            path: 'completed-applications',
             element: (
-              <TypeApplications type={'complited'} size={'large'} title={'Завершенные заявки'} titleIcon= {<ComplitedApplicationsIcon />}/>
+              <TypeApplications
+                type='completed'
+                size='large'
+                title='Завершенные заявки'
+                titleIcon= {<ComplitedApplicationsIcon />}
+              />
             ),
           },
         ],
       },
       {
-        path: 'superadmin',
-        element: (
-          <SuperAdminPage />
-        ),
+        path: 'privacy',
+        element: <PrivacyPage />,
+      },
+      {
+        path: 'contacts',
+        element: <ContactsPage />,
+        children: [
+          {
+            path: '',
+            element: <Navigate to='/contacts/socials' />,
+          },
+          {
+            path: 'socials',
+            element: <Socials />,
+          },
+          {
+            path: 'feedback',
+            element: <Feedback />,
+          },
+        ],
       },
     ],
   },

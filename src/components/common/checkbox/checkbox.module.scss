@@ -46,6 +46,6 @@
 }
 
 .checkbox_label {
-  @include font-source-sans(12px, $text-color-black, 400, 14px);
+  @include font-source-sans(12px, $black, 400, 14px);
   cursor: pointer;
 }

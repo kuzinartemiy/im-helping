@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './create-application-popup.module.scss';
-import { ReactComponent as LocationIcon } from '../../assets/icons/small-location.svg';
+import { ReactComponent as LocationIcon } from '../../../assets/icons/small-location.svg';
 import Checkbox from '../../common/checkbox';
 import CustomDatePicker from '../../common/datepicker';
 import Input from '../../common/input';
@@ -11,14 +11,10 @@ import Textarea from '../../common/textarea';
 import UserAvatar from '../../user-avatar';
 import Button from '../../common/button';
 import Text from '../../common/text';
-import { DatePickerTypes } from '../../../types';
+import { DatePickerTypes, type IOwner } from '../../../types';
 
 interface ICreateApplicationPopup {
-  owner: {
-    name: string
-    avatar: string
-    phone: string
-  }
+  owner: IOwner
   onClose: () => void
 }
 
@@ -32,36 +28,34 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
     setWindow(window < 4 ? window + 1 : 4);
   };
   return (
-    <Modal
-      onClose={onClose}
-    >
+    <Modal onClose={onClose}>
       <div className={styles.mainContainer}>
         <div className={styles.wrapper}>
           <div className={styles.documentsPopup__avatar}>
             <UserAvatar
               src={owner.avatar}
-              width={'52'}
-              height={'52'}
+              width='52'
+              height='52'
             />
           </div>
           <div className={styles.documentsPoupup__userInfo}>
             <div className={styles.documentsPoupup__userInfoText}>
               <Text
                 children={owner.name}
-                size={'24'}
-                lineHeight={'24px'}
+                size='24'
+                lineHeight='24px'
               />
               <div className={styles.documentsPoupup__userInfoPhone}>
                 <Text
-                  children={'Тел.:'}
-                  size={'16'}
-                  lineHeight={' 19px '}
-                  weight={'700'}
+                  children='Тел.:'
+                  size='16'
+                  lineHeight=' 9px'
+                  weight='700'
                 />
                 <Text
                   children={owner.phone}
-                  size={'16'}
-                  lineHeight={' 19px '}
+                  size='16'
+                  lineHeight='19px'
                 />
               </div>
             </div>
@@ -93,19 +87,19 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                 <div className={styles.secondContainer}>
                   <span>Укажите место встречи</span>
                   <Input
-                    label={''}
-                    type={'text'}
-                    name={'place'}
-                    value={''}
+                    label=''
+                    type='text'
+                    name='place'
+                    value=''
                     onChange={() => {}}
-                    placeholder={'Например: ул. Нахимова, д.9, у подъезда №3'}
+                    placeholder='Например: ул. Нахимова, д.9, у подъезда №3'
                   />
                   <div className={styles.secondContainer__textContainer}>
                     <p>*</p>
                     <p className={styles.secondContainer__text}>
-                      Будте осторожны, если указываете домашнй адресс,
+                      Будьте осторожны, если указываете домашний адрес,
                       <span className={styles.secondContainer__span}>
-                        не
+                        {' '}не
                       </span>{' '}
                       пишите его полностью.
                     </p>
@@ -120,11 +114,11 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                     Выберите тип задачи
                   </p>
                   <Select
-                    value={'Выберите тип задачи'}
+                    value='Выберите тип задачи'
                     elementsList={['Хорошая задача', 'Офигенная задача']}
                   />
                   <p className={styles.fhirdContainer__text}>Опишите задачу</p>
-                  <Textarea label={''} />
+                  <Textarea label='' />
                 </div>
               );
             case 4:
@@ -160,7 +154,7 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
           }
         })()}
         <div className={styles.button}>
-          <Button onClick={onClick}>{'Продолжить'}</Button>
+          <Button onClick={onClick}>Продолжить</Button>
         </div>
       </div>
     </Modal>

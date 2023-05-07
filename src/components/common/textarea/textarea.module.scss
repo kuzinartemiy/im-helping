@@ -1,4 +1,4 @@
-@import '../../styles/colors.scss';
+@import '../../../styles/colors.scss';
 
 .textareaContainer {
   display: flex;
@@ -29,14 +29,14 @@
       resize: none;
       padding: 15px 15px 30px 12px;
       box-sizing: border-box;
-      background: $background-popup;
+      background: $white;
       border: none;
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
       line-height: 20px;
       letter-spacing: -0.32px;
-      color: $text-color-black;
+      color: $black;
 
       &:focus {
         outline: none;    
