@@ -6,7 +6,7 @@ interface ISelect {
   elementsList: string[]
   name?: string
   errorText?: string
-  isError?: (value: string) => boolean
+  isError?: boolean
   onChange?: (e: React.FormEvent) => void
 }
 
@@ -14,14 +14,14 @@ const Select: React.FC<ISelect> = ({
   value,
   elementsList,
   errorText,
-  isError: checkError = null,
+  isError: checkError = false,
   onChange,
   name,
 }) => {
   const [stateValue, setStateValue] = React.useState(value);
   const [isDefault, setIsDefault] = React.useState(true);
   const [isOpen, setIsOpen] = React.useState(false);
-  const [isError, setIsError] = React.useState(false);
+  const [isError, setIsError] = React.useState(checkError);
   const buttonRef = React.useRef(null);
   const inputRef = React.useRef(null);
 
@@ -51,7 +51,7 @@ const Select: React.FC<ISelect> = ({
 
   const handleClickButton = () => {
     setIsOpen(!isOpen);
-    setIsError(false);
+    if (isError) setIsError(false);
   };
 
   const handleClickLi = (e: React.FormEvent) => {
@@ -60,7 +60,6 @@ const Select: React.FC<ISelect> = ({
     setStateValue(elementValue);
     setIsDefault(false);
     setIsOpen(!isOpen);
-    if (checkError !== null) setIsError(checkError(elementValue));
   };
   const borderColorStyle = (isError && styles.dropdown_error) as string;
   const arrowAnimation = isOpen ? styles.dropdown_close : styles.dropdown_open;
