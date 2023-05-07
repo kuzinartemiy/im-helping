@@ -48,8 +48,32 @@ export const adminUsersData = [
   {
     userImg:
       'https://w7.pngwing.com/pngs/862/646/png-transparent-beard-hipster-male-man-avatars-xmas-giveaway-icon-thumbnail.png',
+    userName: 'Петров Иван Петрович',
+    userId: '13111116',
+    userTel: '+7(234) 567-89-01',
+    userPoints: '2700',
+    userHelps: '180',
+    userKey: '2',
+    lineColor: 'grey',
+    confirmed: 'confirmed',
+  },
+  {
+    userImg:
+      'https://w7.pngwing.com/pngs/862/646/png-transparent-beard-hipster-male-man-avatars-xmas-giveaway-icon-thumbnail.png',
     userName: 'Иванов Иван Иванович',
-    userId: '11111117',
+    userId: '11111317',
+    userTel: '+7(123) 456-78-90',
+    userPoints: '3500',
+    userHelps: '200',
+    userKey: '3',
+    lineColor: 'orange',
+    confirmed: 'unconfirmed',
+  },
+  {
+    userImg:
+      'https://w7.pngwing.com/pngs/862/646/png-transparent-beard-hipster-male-man-avatars-xmas-giveaway-icon-thumbnail.png',
+    userName: 'Иванов Алексей Евгеньевич',
+    userId: '11114117',
     userTel: '+7(123) 456-78-90',
     userPoints: '3500',
     userHelps: '200',

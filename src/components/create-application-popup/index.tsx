@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from '../modal';
 import styles from './create-application-popup.module.scss';
 import UserAvatar from '../user-avatar/user-avatar';
@@ -11,6 +11,7 @@ import Select from '../select';
 import Textarea from '../textarea/textarea';
 import { ReactComponent as LocationIcon } from '../../assets/icons/small-location.svg';
 import NavButton from '../nav-button';
+import useForm from '../../hooks/useForm';
 
 interface ICreateApplicationPopup {
   owner: {
@@ -21,19 +22,64 @@ interface ICreateApplicationPopup {
   onClose: () => void
 }
 
+const initState = {
+  watch: new Date().toString(),
+  data: new Date().toString(),
+  time: false,
+  adress: '',
+  select: 'Выберите тип задачи',
+};
+
 const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
   owner,
   onClose,
 }) => {
   const [window, setWindow] = useState(1);
+  const { state, handleChange } = useForm(initState);
+  const [disabled, setDisabled] = useState(false);
 
   const onClick = () => {
     setWindow(window < 4 ? window + 1 : 4);
+    if (window === 4) onClose();
   };
+
+  const checkDisabled = () => {
+    if (window === 1) {
+      return false;
+    }
+
+    if (window === 2) {
+      if (state.adress !== initState.adress) return false;
+      return true;
+    }
+
+    if (window === 3) {
+      if (state.select !== initState.select) return false;
+    }
+
+    if (window === 4) return false;
+
+    return true;
+  };
+
+  useEffect(() => {
+    setDisabled(checkDisabled());
+  }, [state, window]);
+
+  const addNull = (num: number) => num >= 10 ? String(num) : `0${num}`;
+
+  const getDate = () => {
+    const data = new Date(state.data as string);
+    return `${addNull(data.getDate())}.${addNull(data.getMonth())}.${String(data.getFullYear())}`;
+  };
+
+  const getTime = () => {
+    const data = new Date(state.watch as string);
+    return `${addNull(data.getHours())} : ${addNull(data.getMinutes())}`;
+  };
+
   return (
-    <Modal
-      onClose={onClose}
-    >
+    <Modal onClose={onClose}>
       <div className={styles.mainContainer}>
         <div className={styles.wrapper}>
           <div className={styles.documentsPopup__avatar}>
@@ -74,13 +120,24 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                   <div className={styles.dataContainer}>
                     <div>
                       <p>Время</p>
-                      <DatePickerProd type={'time'} />
+                      <DatePickerProd
+                        type={'time'}
+                        name={'watch'}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div>
                       <p>Дата</p>
-                      <DatePickerProd type={'data'} />
+                      <DatePickerProd
+                        type={'data'}
+                        name={'data'}
+                        onChange={handleChange}
+                      />
                       <div className={styles.checkboxContainer}>
-                        <Checkbox />
+                        <Checkbox
+                          name={'time'}
+                          onChange={handleChange}
+                        />
                         <span>Бессрочно</span>
                       </div>
                     </div>
@@ -94,9 +151,9 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                   <Input
                     label={''}
                     type={'text'}
-                    name={'place'}
-                    value={''}
-                    onChange={() => {}}
+                    name={'adress'}
+                    value={state.adress as string}
+                    onChange={handleChange}
                     placeholder={'Например: ул. Нахимова, д.9, у подъезда №3'}
                   />
                   <div className={styles.secondContainer__textContainer}>
@@ -119,8 +176,10 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
                     Выберите тип задачи
                   </p>
                   <Select
-                    value={'Выберите тип задачи'}
-                    elementsList={['Хорошая задача', 'Офигенная задача']}
+                    name={'select'}
+                    value={state.select as string}
+                    elementsList={['Уход', 'Строительство', 'Разное']}
+                    onChange={handleChange}
                   />
                   <p className={styles.fhirdContainer__text}>Опишите задачу</p>
                   <Textarea label={''} />
@@ -130,26 +189,24 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
               return (
                 <div className={styles.fourthContainer}>
                   <div className={styles.fourthContainer__date}>
-                    <span>24.09.2022</span>
-                    <span>16:00</span>
+                    <span>{getTime()}</span>
+                    <span>{getDate()}</span>
                   </div>
                   <div className={styles.fourthContainer__place}>
                     <LocationIcon />
                     <span className={styles.fourthContainer__placeText}>
-                      ул. Нахимова, д.9, у подъезда №3
+                      {state.adress}
                     </span>
                   </div>
                   <div className={styles.fourthContainer__navButon}>
-                    <NavButton>категория</NavButton>
+                    <NavButton>{state.select}</NavButton>
                   </div>
                   <div className={styles.fourthContainer__reportContainer}>
                     <p className={styles.fourthContainer__title}>
-                      Выгулять собаку
+                      Откуда взять заголовок, если в текстовое поле просто вводится текст
                     </p>
                     <p className={styles.fourthContainer__report}>
-                      Заболел и совсем нет сил даже ходить по квартире. Почти
-                      неделю собаку выгуливали соседи, но в пятницу они не
-                      смогут. Помогите, пожалуйста!
+                      здесь будет контент из TextArea
                     </p>
                   </div>
                 </div>
@@ -159,7 +216,12 @@ const CreateApplicationPopup: React.FC<ICreateApplicationPopup> = ({
           }
         })()}
         <div className={styles.button}>
-          <Button onClick={onClick}>{'Продолжить'}</Button>
+          <Button
+            onClick={onClick}
+            disabled={disabled}
+          >
+            {window === 4 ? 'Опубликовать' : 'Продолжить'}
+          </Button>
         </div>
       </div>
     </Modal>

@@ -1,12 +1,12 @@
 import type * as React from 'react';
 import styles from '../checkbox/checkbox.module.scss';
 
-interface ICheckboxProps {
+interface ICheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id?: string
   children?: React.ReactNode
   isDisabled?: boolean
   isChecked?: boolean
-  onChange?: () => void
+  onChange?: (e: React.FormEvent) => void
 }
 
 const Checkbox: React.FC<ICheckboxProps> = ({ children, id, isDisabled, isChecked, onChange, ...props }) => {
