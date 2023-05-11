@@ -12,11 +12,10 @@
 [Ссылка на бриф](https://www.notion.so/3-8-be2845a627fd43028a7d61436342767b?pvs=4).
 
 ## Используемые технологии
-* ReactJS
+* React
 * Sass
 * TypeScript
-* React Date Picker
-* React Form
+* ReactDatePicker
 * Zustand
 
 ## Команда Фронтики
