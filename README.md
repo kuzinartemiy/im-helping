@@ -9,6 +9,7 @@
 >Данный проект реализован в рамках обучения на курсе "Веб-разработчик плюс" студентами Яндекс Практикума. Команда Фронтики.
 
 [Макет в Figma](https://www.figma.com/file/xYLbl9kLmcAwYCbAhCFMCy/%D0%AF%D0%9F%D0%BE%D0%BC%D0%BE%D0%B3%D0%B0%D1%8E-(Web)?node-id=179-1699&t=cp3lBCLa0Hhu3fVY-0).
+
 [Ссылка на бриф](https://www.notion.so/3-8-be2845a627fd43028a7d61436342767b?pvs=4).
 
 ## Используемые технологии
