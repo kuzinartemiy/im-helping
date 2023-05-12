@@ -43,3 +43,21 @@ export interface IMessage {
   type?: string
   class?: string
 }
+
+export enum AdminPageTitle {
+  created = 'Создание / Редактирование заявки',
+  statistics = 'Статистика',
+  edit = 'Создание / Редактирование заявки',
+}
+
+export interface TAdminUsersData {
+  userImg: string
+  userName: string
+  userId: string
+  userTel: string
+  userPoints: string
+  userHelps: string
+  userKey: string
+  lineColor: string
+  confirmed: string
+}

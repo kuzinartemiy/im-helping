@@ -1,15 +1,15 @@
-import type React from 'react';
 import styles from './user-card.module.scss';
 import defaultAvatar from '../../assets/images/default-user.png';
+import { type DetailedHTMLProps, type HTMLAttributes } from 'react';
 
-interface UserCardProps {
+interface IUserCardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   name: string
   id: string
   phone: string
   avatar?: string
 }
 
-const UserCard: React.FC<UserCardProps> = ({ name, id, phone, avatar = defaultAvatar }) => {
+const UserCard = ({ name, id, phone, avatar = defaultAvatar }: IUserCardProps) => {
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.card}>

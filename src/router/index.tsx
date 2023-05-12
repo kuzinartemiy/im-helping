@@ -10,6 +10,10 @@ import Popular from '../pages/blog-page/popular/popular';
 import ContactsPage from '../pages/contacts-page';
 import Socials from '../pages/contacts-page/socials';
 import Feedback from '../pages/contacts-page/feedback';
+import Statistics from '../pages/admin-page/statistics';
+import Search from '../pages/admin-page/search';
+import CreateEdit from '../pages/admin-page/create-add';
+import ConfBlock from '../pages/admin-page/conf-block';
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +30,24 @@ export const router = createBrowserRouter([
       {
         path: 'profile/admin',
         element: <AdminPage />,
+        children: [
+          {
+            path: 'confirmation-blocking-applications',
+            element: <ConfBlock />,
+          },
+          {
+            path: 'statistics',
+            element: <Statistics />,
+          },
+          {
+            path: 'creation-editing-applications',
+            element: <CreateEdit />,
+          },
+          {
+            path: 'search-applications',
+            element: <Search />,
+          },
+        ],
       },
       {
         path: 'profile/superadmin',
