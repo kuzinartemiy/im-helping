@@ -45,7 +45,7 @@ export interface IMessage {
 }
 
 export enum AdminPageTitle {
-  created = 'Создание / Редактирование заявки',
+  created = 'Подтверждение / Блокировка',
   statistics = 'Статистика',
   edit = 'Создание / Редактирование заявки',
 }
