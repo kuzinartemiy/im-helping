@@ -2,7 +2,11 @@ import styles from '../admin-page.module.scss';
 import diagramm from '../../../assets/images/diagramm.png';
 import { useEffect } from 'react';
 import { AdminPageTitle } from '../../../types';
+import { ReactComponent as StatisticsIcon } from '../../../assets/icons/statistics.svg';
 import { useSetTitleAdminPage } from '..';
+import AdminFilterPopup from '../../../components/modals/admin-filter-popup';
+import TopPanel from '../../../components/top-panel';
+import { COLORS } from '../../../styles/colors';
 
 const Statistics = () => {
   const { setTitle } = useSetTitleAdminPage();
@@ -10,6 +14,9 @@ const Statistics = () => {
   useEffect(() => setTitle(AdminPageTitle.statistics), []);
   return (
     <div className={styles.statsContainer}>
+      <TopPanel title='Статистика' titleIcon={<StatisticsIcon fill={COLORS.get('color-primary')} />}>
+        <AdminFilterPopup onClick={() => {}} />
+      </TopPanel>
       <div className={styles.diagrammBlock}>
         <img src={diagramm} alt="Main statistic" />
       </div>

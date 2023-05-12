@@ -1,37 +1,33 @@
 import { useNavigate } from 'react-router-dom';
-import styles from '../admin-page.module.scss';
+import styles from '../super-admin-page.module.scss';
 import { useEffect, useState } from 'react';
 import { ReactComponent as Plus } from '../../../assets/icons/plus.svg';
+import { ReactComponent as CreateEditIcon } from '../../../assets/icons/create-edit.svg';
 import { useStore } from '../../../services/store';
-import { useFindUser, useSetTitleAdminPage } from '..';
 import ApplicationCards from '../../../components/application-cards';
 import CircleButton from '../../../components/common/circle-button';
 import Text from '../../../components/common/text';
 import NavButton from '../../../components/common/nav-button';
 import CreateApplicationPopup from '../../../components/modals/create-application-popup';
-import { ReactComponent as CreateEditIcon } from '../../../assets/icons/create-edit.svg';
 import UserCard from '../../../components/user-card';
 import { COLORS } from '../../../styles/colors';
-import { AdminPageTitle } from '../../../types';
-import AdminFilterPopup from '../../../components/modals/admin-filter-popup';
+import { useFindUser } from '../../admin-page';
 import TopPanel from '../../../components/top-panel';
+import AdminFilterPopup from '../../../components/modals/admin-filter-popup';
 
-const CreateEdit = () => {
+const SuperAdminCreateEdit = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const { user, addUser } = useFindUser();
-  const { setTitle } = useSetTitleAdminPage();
   const adminUsersData = useStore((store) => store.adminUsersData);
   const applicationCards = useStore((store) => store.applicationCards);
-
-  useEffect(() => setTitle(AdminPageTitle.edit), []);
 
   useEffect(() => {
     addUser(adminUsersData[0]);
   }, []);
 
   return (
-    <div className={styles.creatEditAppContainer}>
+    <div className={styles.CreatEditAppContainer}>
       <TopPanel title='Создание / Редактирование заявки' titleIcon={<CreateEditIcon fill={COLORS.get('color-primary')} />}>
         <AdminFilterPopup onClick={() => {}} />
       </TopPanel>
@@ -79,4 +75,4 @@ const CreateEdit = () => {
   );
 };
 
-export default CreateEdit;
+export default SuperAdminCreateEdit;

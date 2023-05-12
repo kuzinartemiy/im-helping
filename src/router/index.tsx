@@ -14,6 +14,9 @@ import Statistics from '../pages/admin-page/statistics';
 import Search from '../pages/admin-page/search';
 import CreateEdit from '../pages/admin-page/create-add';
 import ConfBlock from '../pages/admin-page/conf-block';
+import SuperAdminConfirm from '../pages/super-admin-page/super-admin-confirm';
+import SuperAdminStatistics from '../pages/super-admin-page/super-admin-statistics';
+import SuperAdminCreateEdit from '../pages/super-admin-page/create-edit';
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +34,10 @@ export const router = createBrowserRouter([
         path: 'profile/admin',
         element: <AdminPage />,
         children: [
+          {
+            path: '',
+            element: <Navigate to='/profile/admin/confirmation-blocking-applications' />,
+          },
           {
             path: 'confirmation-blocking-applications',
             element: <ConfBlock />,
@@ -52,6 +59,24 @@ export const router = createBrowserRouter([
       {
         path: 'profile/superadmin',
         element: <SuperAdminPage />,
+        children: [
+          {
+            path: '',
+            element: <Navigate to='/profile/superadmin/confirmation-block-users' />,
+          },
+          {
+            path: 'confirmation-block-users',
+            element: <SuperAdminConfirm />,
+          },
+          {
+            path: 'statistics',
+            element: <SuperAdminStatistics />,
+          },
+          {
+            path: 'creation-editing-applications',
+            element: <SuperAdminCreateEdit />,
+          },
+        ],
       },
       {
         path: 'profile/recipient',

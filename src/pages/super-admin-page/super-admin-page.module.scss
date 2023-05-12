@@ -1,0 +1,120 @@
+.wrapper {
+  margin: 30px 93px 88px;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: 0.1fr 1fr;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  min-width: 295px;
+  // navCards имеет margin в 16px
+  gap: calc(30px - 16px);
+}
+
+.inputContainer {
+  width: 351px;
+  height: 44px;
+}
+
+.cards {
+  padding-top: 31px;
+}
+
+.statsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  box-sizing: border-box;
+  position: relative;
+  mask-image: linear-gradient(to bottom, white 0%, white 80%, transparent 100%);
+  &::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+.diagrammBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 10px;
+  box-sizing: border-box;
+  border: 1px solid #0071BC;
+  width: 640px;
+  height: 237px;
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url(../../assets/icons/excel.svg);
+  }
+}
+
+
+.statsBlocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.statsBlock {
+  position: relative;
+  border: 1px solid #0071BC;
+  width: 423px;
+  height: 287px;
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url(../../assets/icons/excel.svg);
+  }
+}
+
+.CreatEditAppContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.searchCards {
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.createApp {
+  display: flex;
+  align-items: center;
+  gap: 59px;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  border-image: linear-gradient(to right, #ffffff 10%, #2e3192 50%, #ffffff 90%);
+  border-image-slice: 1;
+  padding: 23px 64px;
+  margin-bottom: 20px;
+}
+
+.cards {
+  max-height: calc(100vh - 510px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  box-sizing: border-box;
+  position: relative;
+  mask-image: linear-gradient(to bottom, white 0%, white 80%, transparent 100%);
+  &::-webkit-scrollbar {
+      display: none;
+    }
+}
