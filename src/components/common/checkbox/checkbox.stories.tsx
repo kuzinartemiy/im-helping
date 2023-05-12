@@ -10,8 +10,8 @@ const meta: Meta<typeof Checkbox> = {
     layout: 'padded',
   },
   argTypes: {
-    isDisabled: {
-      name: 'isDisabled',
+    disabled: {
+      name: 'disabled',
       type: { name: 'boolean', required: false },
       defaultValue: 'false',
       description: 'Вариант Disabled',
@@ -21,8 +21,8 @@ const meta: Meta<typeof Checkbox> = {
       },
       options: ['false', 'true'],
     },
-    isChecked: {
-      name: 'isChecked',
+    checked: {
+      name: 'checked',
       type: { name: 'boolean', required: false },
       defaultValue: 'false',
       description: 'Вариант Checked',
@@ -40,28 +40,28 @@ type Story = StoryObj<typeof Checkbox>;
 
 export const Default: Story = {
   args: {
-    isDisabled: false,
-    isChecked: false,
+    disabled: false,
+    checked: false,
   },
 };
 
 export const Checked: Story = {
   args: {
-    isDisabled: false,
-    isChecked: true,
+    disabled: false,
+    checked: true,
   },
 };
 
 export const CheckedDisabled: Story = {
   args: {
-    isDisabled: true,
-    isChecked: true,
+    disabled: true,
+    checked: true,
   },
 };
 
 export const Disabled: Story = {
   args: {
-    isDisabled: true,
-    isChecked: false,
+    disabled: true,
+    checked: false,
   },
 };

@@ -17,18 +17,6 @@ interface AdminPrivilegesCardProps {
 const AdminPrivilegesCard: React.FC<AdminPrivilegesCardProps> = ({ name, id, phone, avatar = defaultAvatar }) => {
   const [open, setOpen] = useState(false);
 
-  const [confirmAccounts, setConfirmAccounts] = useState(false);
-  const [createRequests, setCreateRequests] = useState(false);
-  const [distributeKeys, setDistributeKeys] = useState(false);
-  const handleConfirmAccounts = () => {
-    setConfirmAccounts(prevState => !prevState);
-  };
-  const handleCreateRequests = () => {
-    setCreateRequests(prevState => !prevState);
-  };
-  const handleDistributeKeys = () => {
-    setDistributeKeys(prevState => !prevState);
-  };
   const handleClick = () => {
     setOpen(!open);
   };
@@ -47,9 +35,9 @@ const AdminPrivilegesCard: React.FC<AdminPrivilegesCardProps> = ({ name, id, pho
           <span className={`${styles.dropdownIconDown} ${open ? styles.dropdownIconUp : ''}`} onClick={handleClick}></span>
         </div>
         <ul className={`${styles.list} ${open ? styles.open : ''}`}>
-          <li><Checkbox isChecked={confirmAccounts} onChange={handleConfirmAccounts}>Подтверждать аккаунты</Checkbox></li>
-          <li><Checkbox isChecked={createRequests} onChange={handleCreateRequests}>Создавать заявки</Checkbox></li>
-          <li><Checkbox isChecked={distributeKeys} onChange={handleDistributeKeys}>Раздавать ключи</Checkbox></li>
+          <li><Checkbox>Подтверждать аккаунты</Checkbox></li>
+          <li><Checkbox>Создавать заявки</Checkbox></li>
+          <li><Checkbox>Раздавать ключи</Checkbox></li>
         </ul>
       </div>
     </div>

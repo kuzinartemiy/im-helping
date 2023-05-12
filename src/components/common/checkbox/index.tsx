@@ -1,33 +1,27 @@
-import type * as React from 'react';
 import styles from '../checkbox/checkbox.module.scss';
+import { type DetailedHTMLProps, type InputHTMLAttributes, useState } from 'react';
 
-export interface ICheckboxProps {
+export interface ICheckboxProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   id?: string
   children?: React.ReactNode
-  isDisabled?: boolean
-  isChecked?: boolean
-  onChange?: () => void
+  disabled?: boolean
+  checked?: boolean
 }
 
-const Checkbox: React.FC<ICheckboxProps> = ({ children, id, isDisabled = true, isChecked, onChange, ...props }) => {
-  // const [isdisabled] = React.useState(false);
-  // const [ischecked, setChecked] = React.useState(false);
-
-  // const handleChange = () => {
-  //   setChecked(!ischecked);
-  // };
+const Checkbox = ({ children, id, disabled = false, checked = false, ...props }: ICheckboxProps) => {
+  const [isChecked, setChecked] = useState(checked);
 
   return (
     <label className={styles.checkbox_label} id={id}>
       <input
         type="checkbox"
         className={styles.checkbox_invisible}
-        onChange={onChange}
-        disabled={isDisabled}
+        onChange={() => setChecked((prev) => !prev)}
+        disabled={disabled}
         checked={isChecked}
         {...props}
       />
-      <span className={styles.checkbox_visible}></span>
+      <span className={styles.checkbox_visible} />
       {children}
     </label>
   );
