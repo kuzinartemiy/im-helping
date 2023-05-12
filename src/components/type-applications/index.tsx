@@ -6,7 +6,7 @@ export interface ITypeApplicationsProps {
   type: 'activeRecepient' | 'activeVolunteer' | 'completed'
   size: 'small' | 'large'
   title: string
-  titleIcon: any
+  titleIcon: React.ReactNode
 }
 
 const TypeApplications = ({

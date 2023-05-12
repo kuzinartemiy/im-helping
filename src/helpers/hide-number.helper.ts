@@ -1,4 +1,4 @@
-export const hideNumber: any = (string: string, replaceTo = '*', elemsHide = 6, sliceFromback = 1) => {
+export const hideNumber = (string: string, replaceTo = '*', elemsHide = 6, sliceFromback = 1) => {
   const result = string.match(/^(\(?\+?\d{1,2}\)? ?\(?\d{1,3}\)? ?\d+-? ?\d+-? ?\d+)$/);
   if (result !== null) {
     // тут мы выдергиваем n элементов после среза x

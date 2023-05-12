@@ -1,5 +1,5 @@
 // /* eslint-disable */
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, type ChangeEvent } from 'react';
 import styles from './map-component.module.scss';
 import location from '../../assets/icons/location.svg';
 import TopPanel from '../top-panel';
@@ -10,6 +10,7 @@ import { CoordsPopup } from '../common/coords-modal';
 import TooltipMap from '../tooltip-map';
 import ThanksPopup from '../modals/thanks-popup';
 import Select from '../common/select';
+import type ymaps from 'yandex-maps';
 
 /* const API_KEY = "05f8d2ae-bd94-4329-b9f9-7351e2ec9627"; */
 
@@ -17,9 +18,9 @@ import Select from '../common/select';
 
 const MapComponent = () => {
   const [reqInfo, setReqinfo] = useState<any>();
-  const [placemarkCoords, setPlacemarkCoords] = useState<any>();
+  const [placemarkCoords, setPlacemarkCoords] = useState<[number, number] | null>();
   const [isReqAccepted, setIsReqAccepted] = useState(false);
-  let myMap: any;
+  let myMap: ymaps.Map;
   const placemarkCollection: any = {};
   const ymaps = useYMaps([
     'Map',
@@ -40,9 +41,9 @@ const MapComponent = () => {
       zoom: 10,
     });
 
-    requests.forEach((city: any) => {
+    requests.forEach((city) => {
       const cityCollection = new ymaps.GeoObjectCollection();
-      city.requests.forEach((req: any) => {
+      city.requests.forEach((req) => {
         const reqPlaceMark = new ymaps.Placemark(
           req.coord,
           {
@@ -66,16 +67,16 @@ const MapComponent = () => {
   }, [ymaps]);
 
   const onOverlayClickRequest = () => {
-    setPlacemarkCoords([]);
+    setPlacemarkCoords(null);
     setReqinfo(null);
   };
-  const onSelectChange = (e: any) => {
-    myMap
+  const onSelectChange = (e: ChangeEvent<HTMLInputElement>) => {
+    void myMap
       ?.setBounds(placemarkCollection[e.target.value].getBounds(), {
         checkZoomRange: true,
       })
       .then(() => {
-        if (myMap.getZoom > 15) myMap.getZoom(15);
+        if (myMap.getZoom() > 15) myMap.getZoom();
       });
   };
 
@@ -92,32 +93,33 @@ const MapComponent = () => {
         title="Карта"
         titleIcon={<MapIcon />}
       />
-      {(Boolean(reqInfo)) && (Boolean(placemarkCoords))
-        ? <CoordsPopup
-            pageX={placemarkCoords[0]}
-            pageY={placemarkCoords[1]}
-            onOverlayClick={onOverlayClickRequest}>
-      <TooltipMap cardData={{
-        id: reqInfo.id,
-        owner: reqInfo.owner,
-        about: reqInfo.description,
-        completedAppQuantity: reqInfo.qty,
-        onButtonClick: onAcceptButtonClick,
-      }}
-      />
-              </CoordsPopup>
-        : null }
-
-      { isReqAccepted
-        ? <CoordsPopup
-            pageX={placemarkCoords[0]}
-            pageY={placemarkCoords[1]}
-            onOverlayClick={onThanksOverlayClick}
-      >
-        <ThanksPopup/>
+      {(Boolean(reqInfo)) && (Boolean(placemarkCoords)) && (placemarkCoords != null) && (
+        <CoordsPopup
+          pageX={placemarkCoords[0]}
+          pageY={placemarkCoords[1]}
+          onOverlayClick={onOverlayClickRequest}
+        >
+          <TooltipMap
+            cardData={{
+              id: reqInfo.id,
+              owner: reqInfo.owner,
+              about: reqInfo.description,
+              completedAppQuantity: reqInfo.qty,
+              onButtonClick: onAcceptButtonClick,
+            }}
+          />
         </CoordsPopup>
-        : null
-        }
+      )}
+
+      {isReqAccepted && (placemarkCoords != null) && (
+        <CoordsPopup
+          pageX={placemarkCoords[0]}
+          pageY={placemarkCoords[1]}
+          onOverlayClick={onThanksOverlayClick}
+        >
+          <ThanksPopup/>
+        </CoordsPopup>
+      )}
 
       <div
         className={styles.container__map}
@@ -127,11 +129,9 @@ const MapComponent = () => {
         <section className={styles.container__map__select}>
           <Select
             value={'Выберите город'}
-            elementsList={requests.map((el: any) => {
-              return el.city.name;
-            })}
+            elementsList={requests.map((el) => el.city.name)}
             onChange={onSelectChange}
-          ></Select>
+          />
         </section>
       </div>
     </div>

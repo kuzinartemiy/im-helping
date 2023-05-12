@@ -3,7 +3,7 @@ import { /* Map, Placemark,  */ useYMaps } from '@pbe/react-yandex-maps';
 import location from '../../assets/icons/location.svg';
 
 const MapRecepient = () => {
-  let myMap: any;
+  let myMap: ymaps.Map;
   const mapRef = useRef(null);
   const ymaps = useYMaps([
     'Map',
@@ -47,7 +47,7 @@ const MapRecepient = () => {
       <div
         style={{ height: '175px', width: '100%' }}
         ref={mapRef}
-      ></div>
+      />
   );
 };
 

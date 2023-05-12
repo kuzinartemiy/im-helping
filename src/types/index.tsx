@@ -10,9 +10,9 @@ export enum ApplicationTypes {
 }
 
 export interface IOwner {
-  name?: string
-  avatar?: string
-  phone?: string
+  name: string
+  avatar: string
+  phone: string
 }
 
 export interface IApplicationCard {
@@ -33,4 +33,13 @@ export interface IToolTipMap {
   name?: string
   phone?: string
   avatar?: string
+}
+
+export interface IMessage {
+  id: string
+  owner: IOwner
+  time?: string
+  text?: string
+  type?: string
+  class?: string
 }

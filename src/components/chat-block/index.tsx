@@ -6,10 +6,11 @@ import { ReactComponent as VectorIcon } from '../../assets/icons/vector.svg';
 import Input from '../common/input';
 import { InfoUser } from '../info-user';
 import Chat from './chat';
+import { type IMessage, type IOwner } from '../../types';
 
 interface IChat {
-  user: any
-  messages: any
+  user: IOwner
+  messages: IMessage[]
 }
 
 export const ChatBlock: FC<IChat> = ({ user, messages }) => {
@@ -24,37 +25,39 @@ export const ChatBlock: FC<IChat> = ({ user, messages }) => {
 
   return (
     <div className={styles.container}>
-      <InfoUser data={user} />
+      <InfoUser user={user} />
       <div className={styles.chatContainer}>
         <Chat messages={messages}/>
         <div className={styles.button}>
           <div className={styles.inputContainer}>
-          <Input
-            label={''}
-            type={'text'}
-            name={'chat'}
-            value={chatInput}
-            onChange={handlerChange}
-            placeholder={'Напишите сообщение...'}
-            isError={false}
-            errorMessage={'сообщение не должно быть пустым'}
-            padding={'10px 20px'}
+            <Input
+              label={''}
+              type={'text'}
+              name={'chat'}
+              value={chatInput}
+              onChange={handlerChange}
+              placeholder={'Напишите сообщение...'}
+              isError={false}
+              errorMessage={'сообщение не должно быть пустым'}
+              padding={'10px 20px'}
             />
             <button className={styles.buttonFile} >
               <VectorIcon />
             </button>
           </div>
 
-          <div className={styles.buttonContainer}><Button
-            size={'small'}
-            height={'42'}
-            children={
-              <div className={styles.buttonInner}>
-                <SendIcon />
-              </div>
-            }
-            onClick={handleSubmit}
-          /></div>
+          <div className={styles.buttonContainer}>
+            <Button
+              size={'small'}
+              height={'42'}
+              children={
+                <div className={styles.buttonInner}>
+                  <SendIcon />
+                </div>
+              }
+              onClick={handleSubmit}
+            />
+          </div>
         </div>
       </div>
     </div>
