@@ -10,9 +10,9 @@ export enum ApplicationTypes {
 }
 
 export interface IOwner {
-  name?: string
-  avatar?: string
-  phone?: string
+  name: string
+  avatar: string
+  phone: string
 }
 
 export interface IApplicationCard {
@@ -39,4 +39,13 @@ export enum AdminPageTitle {
   createt = 'Создание / Редактирование заявки',
   statistics = 'Статистика',
   edit = 'Создание / Редактирование заявки',
+}
+
+export interface IMessage {
+  id: string
+  owner: IOwner
+  time?: string
+  text?: string
+  type?: string
+  class?: string
 }

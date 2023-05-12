@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { type ChangeEvent, useState } from 'react';
 import style from './superAdminPage.module.scss';
 import Input from '../../components/common/input';
 import NavCards from '../../components/nav-cards';
@@ -11,7 +11,7 @@ import { data } from '../../components/nav-cards/nav-cards.constants';
 function SuperAdminPage() {
   const [inputName, setUnputName] = useState<string>('');
 
-  const handleInputSearch = (event: any) => {
+  const handleInputSearch = (event: ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value;
     setUnputName(newValue);
   };

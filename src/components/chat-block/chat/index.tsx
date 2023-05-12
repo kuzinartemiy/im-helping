@@ -3,24 +3,10 @@ import styles from './chat.module.scss';
 import UserAvatar from '../../user-avatar';
 import Text from '../../common/text';
 import { COLORS } from '../../../styles/colors';
-
-interface IOwner {
-  id: string
-  name?: string
-  avatar?: string
-}
-
-interface IChat {
-  id: string
-  owner: IOwner
-  time?: string
-  text?: string
-  type?: string
-  class?: string
-}
+import { type IMessage } from '../../../types';
 
 interface IChatS {
-  messages: IChat[]
+  messages: IMessage[]
 }
 
 const Chat: FC<IChatS> = ({ messages }) => {

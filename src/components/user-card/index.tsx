@@ -12,15 +12,15 @@ interface UserCardProps {
 
 const UserCard: React.FC<UserCardProps> = ({ name, id, phone, avatar = defaultAvatar, onClick }) => {
   return (
-    <div className={styles.cardWrapper} onClick={onClick}>
-        <div className={styles.card}>
-            <img className={styles.avatar} src={avatar} alt={avatar === defaultAvatar ? 'User Avatar' : name} />
-            <div className={styles.cardContent}>
-                <div className={styles.name}>{name}</div>
-                <div className={styles.id}>ID {id}</div>
-                <div className={styles.phone}><span className={styles.phoneKey}>Тел.:</span> {phone}</div>
-            </div>
+    <div className={styles.cardWrapper}>
+      <div className={styles.card}>
+        <img className={styles.avatar} src={avatar} alt={avatar === defaultAvatar ? 'User Avatar' : name} />
+        <div className={styles.cardContent}>
+          <div className={styles.name}>{name}</div>
+          <div className={styles.id}>ID {id}</div>
+          <div className={styles.phone}><span className={styles.phoneKey}>Тел.:</span> {phone}</div>
         </div>
+      </div>
     </div>
   );
 };

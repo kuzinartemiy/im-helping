@@ -2,22 +2,22 @@ import TopPanel from '../../../components/top-panel';
 import { ReactComponent as Message } from '../../../assets/icons/message.svg';
 import styles from '../contactsPage.module.scss';
 import Button from '../../../components/common/button';
-import { useState } from 'react';
+import { type ChangeEvent, useState } from 'react';
 
 const Feedback = () => {
   const [name, setName] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [comment, setComment] = useState<string>('');
 
-  const onChangeName = (event: any) => {
+  const onChangeName = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
 
-  const onChangeDescription = (event: any) => {
+  const onChangeDescription = (event: ChangeEvent<HTMLInputElement>) => {
     setDescription(event.target.value);
   };
 
-  const onChangeComment = (event: any) => {
+  const onChangeComment = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setComment(event.target.value);
   };
 
