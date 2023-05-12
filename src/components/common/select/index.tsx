@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from './select.module.scss';
+import { type ChangeEvent } from 'react';
 
 interface ISelect {
   value: string
@@ -7,7 +8,7 @@ interface ISelect {
   name?: string
   errorText?: string
   isError?: boolean
-  onChange?: (e: React.FormEvent) => void
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 const Select: React.FC<ISelect> = ({

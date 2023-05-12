@@ -3,7 +3,7 @@ import { type FC } from 'react';
 /* import defaultAvatar from '../../assets/images/default-avatar.png'; */
 
 interface IUserAvatar {
-  src: any
+  src?: string
   width?: string
   height?: string
 }
