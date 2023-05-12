@@ -9,22 +9,24 @@ import { useStore } from '../../services/store';
 const VolunteerPage = () => {
   const owner = useStore((state) => state.owner);
   return (
-      <main className={styles.volunteerPage}>
-        <section>
-          <PersonVolunteer {...owner}></PersonVolunteer>
-          <ul className={navCardsStyles.linkCardContainer}>
+    <main className={styles.volunteerPage}>
+      <section>
+        <PersonVolunteer {...owner} />
+        <ul className={navCardsStyles.linkCardContainer}>
           {volunteerData.map((item, index) => {
-            return <li key={index} className={navCardsStyles.linkCard}>
-              <NavCard text={item.text} icon={item.icon} path={item.path}/>
-            </li>;
+            return (
+              <li key={index} className={navCardsStyles.linkCard}>
+                <NavCard text={item.text} icon={item.icon} path={item.path}/>
+              </li>
+            );
           })}
         </ul>
-        </section>
-        <section className={styles.volunteerPage__applications}>
-        <Outlet />
-        <div className={styles.volunteerPage__applications_opacity}></div>
       </section>
-      </main>
+      <section className={styles.volunteerPage__applications}>
+        <Outlet />
+        <div className={styles.volunteerPage__applications_opacity} />
+      </section>
+    </main>
   );
 };
 

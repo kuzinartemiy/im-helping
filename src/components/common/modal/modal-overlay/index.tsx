@@ -6,7 +6,9 @@ interface IOnClose {
 }
 
 const ModalOverlay: FC<IOnClose> = ({ onClose }) => {
-  return <div className={`${styles.modalOverlay}`} onClick={onClose}></div>;
+  return (
+    <div className={`${styles.modalOverlay}`} onClick={onClose} />
+  );
 };
 
 export default ModalOverlay;
