@@ -47,7 +47,7 @@ const MapRecepient = () => {
       <div
         style={{ height: '175px', width: '100%' }}
         ref={mapRef}
-      ></div>
+      />
   );
 };
 

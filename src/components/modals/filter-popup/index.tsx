@@ -30,7 +30,8 @@ const FilterPopup: FC<IFilterPopup> = ({ onClose, children }) => {
         {children}
       </div>
       <ModalOverlay onClose={onClose} />
-    </>);
+    </>
+  );
 };
 
 export default FilterPopup;

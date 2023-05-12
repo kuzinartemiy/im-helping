@@ -55,7 +55,7 @@ const ApplicationCards = ({
         <EmptyApplicationsCards />
         )}
       {isCreateAppModalOpen && <CreateApplicationPopup owner={owner} onClose={() => setCreateAppModalOpen(false)} />}
-      </>
+    </>
   );
 };
 

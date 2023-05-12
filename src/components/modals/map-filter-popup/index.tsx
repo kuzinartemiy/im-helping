@@ -20,11 +20,13 @@ function MapFilterPopup() {
             if (index > 5) {
               return false;
             }
-            return <li key={index}>
-              <Checkbox id={item.id}>
-                {item.name}
-              </Checkbox>
-            </li>;
+            return (
+              <li key={index}>
+                <Checkbox id={item.id}>
+                  {item.name}
+                </Checkbox>
+              </li>
+            );
           })}
         </ul>
       </div>
