@@ -1,6 +1,6 @@
 import TopPanel from '../../../components/top-panel';
 import { ReactComponent as Message } from '../../../assets/icons/message.svg';
-import styles from '../contactsPage.module.scss';
+import styles from './feedback.module.scss';
 import Button from '../../../components/common/button';
 import { type ChangeEvent, useState } from 'react';
 

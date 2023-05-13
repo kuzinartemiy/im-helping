@@ -1,4 +1,4 @@
-import styles from './contactsPage.module.scss';
+import styles from './contacts-page.module.scss';
 import { ReactComponent as IconContactsGlobe } from '../../assets/icons/contacts-globe.svg';
 import { ReactComponent as IconMessage } from '../../assets/icons/message.svg';
 import type { INavCard } from '../../components/common/nav-card';

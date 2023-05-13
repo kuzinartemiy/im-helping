@@ -1,4 +1,4 @@
-import styles from './contactsPage.module.scss';
+import styles from './contacts-page.module.scss';
 import NavCards from '../../components/nav-cards';
 import { contactsPageNavCards } from './contacts.constants';
 import { Outlet } from 'react-router-dom';
