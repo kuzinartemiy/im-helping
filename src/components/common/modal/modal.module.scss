@@ -1,0 +1,30 @@
+@import '../../../styles/colors.scss';
+
+.modal {
+    z-index: 10;
+    position: fixed;
+    background: $white;
+    min-width: 586px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min-content;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.16), 0px 0px 4px rgba(0, 0, 0, 0.04);
+}
+
+.modalCloseButton {
+    background-color: inherit;
+    border: none;
+    top: 0;
+    right: 0; 
+    position: absolute;
+}
+
+.modalHeader {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,126 @@
+@import url(../../styles/colors.scss);
+
+.applicationCard {
+  min-height: 219px;
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1fr 0.1fr;
+  grid-template-rows: 0.1fr 1fr;
+  grid-template-areas:
+    "category-bar category-bar user buttons"
+    "dateTimeLocation about user buttons";
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, #ffffff 10%, #2e3192 50%, #ffffff 90%);
+  border-image-slice: 1;
+  box-sizing: border-box;
+}
+
+.applicationCard__categoryBarContainer {
+  grid-area: category-bar;
+  padding-top: 5px;
+  margin-bottom: 10px;
+}
+
+.applicationCard__dateTimeLocation {
+  grid-area: dateTimeLocation;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.applicationCard__dateContainer {
+  max-width: 153px;
+  display: flex;
+  align-items: center;
+  padding-left: 2px;
+  gap: 5px;
+}
+
+.applicationCard__timeContainer {
+  max-width: 153px;
+  display: flex;
+  align-items: center;
+  padding-left: 2px;
+  gap: 5px;
+}
+
+.applicationCard__locationContainer {
+  max-width: 166px;
+  display: flex;
+  align-items: center;
+  padding-left: 2px;
+  gap: 5px;
+}
+
+.applicationCard__about {
+  grid-area: about;
+  max-height: 149px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.applicationCard__textContainer {
+  max-width: 397px;
+  max-height: 65px;
+  padding-top: 10px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+
+.applicationCard__textAbout {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  text-align: left;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.applicationCard__textAboutLink {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  text-align: left;
+}
+
+.applicationCard__completedQuantity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.applicationCard__userColumn {
+  grid-area: user;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding-right: 40px;
+  padding-left: 54px;
+  padding-top: 7px;
+  box-sizing: border-box;
+  min-width: 227px;
+  &_name {
+    overflow: hidden;
+    max-height: 38px;
+  }
+}
+
+.applicationCard__userColumnBtns {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.applicationCard__buttonsColumn {
+  grid-area: buttons;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

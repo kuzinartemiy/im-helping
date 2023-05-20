@@ -4,7 +4,7 @@
         "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
         "standard-with-typescript",
         "plugin:storybook/recommended",
         "eslint-config-airbnb-typescript"
@@ -20,6 +20,13 @@
     ],
     "rules": {
         "import/no-extraneous-dependencies": "off",
-        "@typescript-eslint/explicit-function-return-type": "off"
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-confusing-void-expression": "off",
+        "@typescript-eslint/no-misused-promises": [
+            "error",
+            {
+              "checksVoidReturn": false
+            }
+          ]
     }
 }

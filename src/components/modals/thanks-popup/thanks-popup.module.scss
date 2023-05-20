@@ -1,0 +1,56 @@
+@import '../../../styles/colors.scss';
+
+.thanksWrapper {
+  max-width: 370px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px 30px 50px;
+  background-color: $white;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 32px rgba(0, 0, 0, 0.16);
+
+  @media screen and (max-width: 550px) {
+    padding: 10px 15px 28px;
+    max-width: 263px;
+  }
+}
+
+.thanksText {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 19px 0 14px;
+  border-bottom: 1px solid $pickerdate-border;
+  text-align: center;
+  width: 100%;
+
+  @media screen and (max-width: 550px) {
+    border-color: transparent;
+    border-image: linear-gradient(90deg, $white 0%, $color-primary 50%, $white 100%) 1;
+  }
+}
+
+.imageWrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: $color-secondary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px auto 0;
+
+  @media screen and (max-width: 550px) {
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.image {
+  height: 50px;
+  width: auto;
+
+  @media screen and (max-width: 550px) {
+    height: 25.5px;
+  }
+}
