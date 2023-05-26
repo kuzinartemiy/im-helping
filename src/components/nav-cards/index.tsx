@@ -3,14 +3,14 @@ import NavCard from '../common/nav-card';
 import type { INavCard } from '../common/nav-card';
 
 interface INavCardsProps {
-  cards: INavCard[]
+  cards: INavCard[];
 }
 
 const NavCards = ({ cards }: INavCardsProps) => (
   <ul className={styles.linkCardContainer}>
     {cards.map((item, index) => (
       <li key={index} className={styles.linkCard}>
-        <NavCard text={item.text} icon={item.icon} path={item.path}/>
+        <NavCard text={item.text} icon={item.icon} path={item.path} />
       </li>
     ))}
   </ul>

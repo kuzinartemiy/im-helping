@@ -2,10 +2,10 @@ import styles from '../checkbox/checkbox.module.scss';
 import { type DetailedHTMLProps, type InputHTMLAttributes, useState } from 'react';
 
 export interface ICheckboxProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
-  id?: string
-  children?: React.ReactNode
-  disabled?: boolean
-  checked?: boolean
+  id?: string;
+  children?: React.ReactNode;
+  disabled?: boolean;
+  checked?: boolean;
 }
 
 const Checkbox = ({ children, id, disabled = false, checked = false, ...props }: ICheckboxProps) => {
@@ -14,9 +14,9 @@ const Checkbox = ({ children, id, disabled = false, checked = false, ...props }:
   return (
     <label className={styles.checkbox_label} id={id}>
       <input
-        type="checkbox"
+        type='checkbox'
         className={styles.checkbox_invisible}
-        onChange={() => setChecked((prev) => !prev)}
+        onChange={() => setChecked(prev => !prev)}
         disabled={disabled}
         checked={isChecked}
         {...props}

@@ -8,11 +8,11 @@ import AdminFilterPopup from '../../../components/modals/admin-filter-popup';
 const SuperAdminStatistics = () => {
   return (
     <div className={styles.statsContainer}>
-      <TopPanel title="Статистика" titleIcon={<StatisticIcon fill={COLORS.get('color-primary')} />}>
+      <TopPanel title='Статистика' titleIcon={<StatisticIcon fill={COLORS.get('color-primary')} />}>
         <AdminFilterPopup onClick={() => {}} />
       </TopPanel>
       <div className={styles.diagrammBlock}>
-        <img src={diagramm} alt="Main statistic" />
+        <img src={diagramm} alt='Main statistic' />
       </div>
       <div className={styles.statsBlocks}>
         <div className={styles.statsBlock} />

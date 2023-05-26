@@ -11,9 +11,9 @@ import { COLORS } from '../../../styles/colors';
 
 const ConfBlock = () => {
   const { setTitle } = useSetTitleAdminPage();
-  const adminUsersData = useStore((store) => store.adminUsersData);
+  const adminUsersData = useStore(store => store.adminUsersData);
 
-  useEffect(() => setTitle(AdminPageTitle.created), []);
+  useEffect(() => setTitle(AdminPageTitle.created), [setTitle]);
   return (
     <>
       <TopPanel title='Подтверждение / Блокировка' titleIcon={<BlockingIcon fill={COLORS.get('color-primary')} />}>
@@ -21,10 +21,7 @@ const ConfBlock = () => {
       </TopPanel>
       <div className={styles.userCards}>
         {adminUsersData.map((userData, index) => (
-          <div
-            className={styles.userCard}
-            key={index}
-          >
+          <div className={styles.userCard} key={index}>
             <AdminDefault
               userImg={userData.userImg}
               userName={userData.userName}

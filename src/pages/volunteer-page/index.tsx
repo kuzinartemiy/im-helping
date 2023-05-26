@@ -7,7 +7,7 @@ import navCardsStyles from '../../components/nav-cards/nav-cards.module.scss';
 import { useStore } from '../../services/store';
 
 const VolunteerPage = () => {
-  const owner = useStore((state) => state.owner);
+  const owner = useStore(state => state.owner);
   return (
     <main className={styles.volunteerPage}>
       <section>
@@ -16,7 +16,7 @@ const VolunteerPage = () => {
           {volunteerData.map((item, index) => {
             return (
               <li key={index} className={navCardsStyles.linkCard}>
-                <NavCard text={item.text} icon={item.icon} path={item.path}/>
+                <NavCard text={item.text} icon={item.icon} path={item.path} />
               </li>
             );
           })}

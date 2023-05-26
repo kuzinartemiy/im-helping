@@ -1,20 +1,22 @@
-
-import { type FC, useEffect } from 'react';
+import { type FC, useEffect, useCallback } from 'react';
 import styles from './filter-popup.module.scss';
 import ModalOverlay from '../../common/modal/modal-overlay';
 
 interface IFilterPopup {
-  title?: string
-  onClose: () => void
-  children?: React.ReactNode
+  title?: string;
+  onClose: () => void;
+  children?: React.ReactNode;
 }
 
 const FilterPopup: FC<IFilterPopup> = ({ onClose, children }) => {
-  const onEscDown = (e: { key: string }) => {
-    if (e.key === 'Escape') {
-      onClose();
-    }
-  };
+  const onEscDown = useCallback(
+    (e: { key: string }) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    },
+    [onClose],
+  );
 
   useEffect(() => {
     document.addEventListener('keydown', onEscDown);

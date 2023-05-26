@@ -6,7 +6,7 @@ import { COLORS } from '../../../styles/colors';
 import { type IMessage } from '../../../types';
 
 interface IChatS {
-  messages: IMessage[]
+  messages: IMessage[];
 }
 
 const Chat: FC<IChatS> = ({ messages }) => {
@@ -16,9 +16,11 @@ const Chat: FC<IChatS> = ({ messages }) => {
         if (item.type === 'message') {
           return (
             <li key={index} className={styles.rightMessage}>
-              <UserAvatar src={item.owner.avatar} width={ '30' } height={ '30' } />
+              <UserAvatar src={item.owner.avatar} width={'30'} height={'30'} />
               <div className={`${styles.text} ${styles.right}`}>
-                <Text children={item.text} size={ '12' } lineHeight={' 15px '} color={COLORS.get('white')}/>
+                <Text size='12' lineHeight='15px' color={COLORS.get('white')}>
+                  {item.text}
+                </Text>
               </div>
             </li>
           );
@@ -26,19 +28,23 @@ const Chat: FC<IChatS> = ({ messages }) => {
         if (item.type === 'response') {
           return (
             <li key={index} className={styles.leftMessage}>
-              <UserAvatar src={item.owner.avatar} width={ '30' } height={ '30' } />
+              <UserAvatar src={item.owner.avatar} width={'30'} height={'30'} />
               <div className={`${styles.text} ${styles.left}`}>
-                <Text children={item.text} size={ '12' } lineHeight={' 15px '} color={COLORS.get('white')}/>
+                <Text size='12' lineHeight='15px' color={COLORS.get('white')}>
+                  {item.text}
+                </Text>
               </div>
-          </li>
+            </li>
           );
         }
         if (item.type === 'typing') {
           return (
             <li key={index} className={styles.rightMessage}>
-              <UserAvatar src={item.owner.avatar} width={ '30' } height={ '30' } />
+              <UserAvatar src={item.owner.avatar} width={'30'} height={'30'} />
               <div className={`${styles.text} ${styles.right}`}>
-              <Text children={'печатает сообщение...'} size={ '12' } lineHeight={' 15px '} color={COLORS.get('white')}/>
+                <Text size={'12'} lineHeight={' 15px '} color={COLORS.get('white')}>
+                  печатает сообщение...
+                </Text>
               </div>
             </li>
           );

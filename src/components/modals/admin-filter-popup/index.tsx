@@ -6,26 +6,20 @@ import Button from '../../common/button';
 import { CoordsPopup } from '../../common/coords-modal';
 
 interface IAdminFilterPopup {
-  onClick: () => void
+  onClick: () => void;
 }
 
-const AdminFilterPopup: React.FC<IAdminFilterPopup> = ({ onClick }) => {
+const AdminFilterPopup = ({ onClick }: IAdminFilterPopup) => {
   return (
     <CoordsPopup
       pageX={500}
       pageY={100}
       onOverlayClick={function (): void {
         throw new Error('Function not implemented.');
-      }}
-    >
+      }}>
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <Text
-            tag='h4'
-            weight='700'
-            size='12'
-            color={COLORS.get('text-color-black')}
-          >
+          <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>
             {'Категория'}
           </Text>
           <div className={styles.line}></div>

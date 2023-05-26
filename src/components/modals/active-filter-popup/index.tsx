@@ -10,38 +10,40 @@ function ActiveFilterPopup() {
   return (
     <section className={styles.container}>
       <div className={styles.block}>
-        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>{'Отображать'}</Text>
+        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>
+          Отображать
+        </Text>
         <p className={styles.border} />
         <ul className={styles.sort}>
-          {sort?.map((item) => (
+          {sort?.map(item => (
             <li key={item.id}>
-              <Checkbox id={item.id}>
-                {item.name}
-              </Checkbox>
+              <Checkbox id={item.id}>{item.name}</Checkbox>
             </li>
           ))}
         </ul>
       </div>
       <div className={styles.block}>
-        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>{'Категория'}</Text>
+        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>
+          Категория
+        </Text>
         <p className={styles.border} />
         <ul className={styles.category}>
-          {categories?.map((item) => (
+          {categories?.map(item => (
             <li key={item.id}>
-              <Checkbox id={item.id}>
-                {item.name}
-              </Checkbox>
+              <Checkbox id={item.id}>{item.name}</Checkbox>
             </li>
           ))}
         </ul>
       </div>
       <div className={styles.block}>
-        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>{'Радиус поиска'}</Text>
+        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>
+          Радиус поиска
+        </Text>
         <p className={styles.border} />
         <RadiusSearch />
       </div>
       <div className={styles.btn}>
-        <Button>{'Применить'}</Button>
+        <Button>Применить</Button>
       </div>
     </section>
   );

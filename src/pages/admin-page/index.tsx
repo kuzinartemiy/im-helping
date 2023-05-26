@@ -9,29 +9,27 @@ import { type TAdminUsersData } from '../../types';
 import { useStore } from '../../services/store';
 
 interface IUseFindUser {
-  user: TAdminUsersData | null
-  addUser: (newUser: TAdminUsersData) => void
+  user: TAdminUsersData | null;
+  addUser: (newUser: TAdminUsersData) => void;
 }
 
 interface ISetTitleAdminPAge {
-  title: string
-  setTitle: (newTitle: string) => void
+  title: string;
+  setTitle: (newTitle: string) => void;
 }
 
-export const useFindUser = create<IUseFindUser>((set) => ({
+export const useFindUser = create<IUseFindUser>(set => ({
   user: null,
-  addUser: (newUser: TAdminUsersData) =>
-    set((state) => ({ ...state, user: newUser })),
+  addUser: (newUser: TAdminUsersData) => set(state => ({ ...state, user: newUser })),
 }));
 
-export const useSetTitleAdminPage = create<ISetTitleAdminPAge>((set) => ({
+export const useSetTitleAdminPage = create<ISetTitleAdminPAge>(set => ({
   title: '',
-  setTitle: (newTitle: string) =>
-    set((state) => ({ ...state, title: newTitle })),
+  setTitle: (newTitle: string) => set(state => ({ ...state, title: newTitle })),
 }));
 
 const AdminPage = () => {
-  const adminData = useStore((store) => store.adminData);
+  const adminData = useStore(store => store.adminData);
   return (
     <div className={styles.adminPage}>
       <aside className={styles.adminSidebar}>
@@ -45,15 +43,8 @@ const AdminPage = () => {
         <ul className={styles.linkCardContainer}>
           {adminPageData.map((item, index) => {
             return (
-              <li
-                key={index}
-                className={navCardsStyles.linkCard} style={{ marginBottom: '10px' }}
-              >
-                <NavCard
-                  text={item.text}
-                  icon={item.icon}
-                  path={item.path}
-                />
+              <li key={index} className={navCardsStyles.linkCard} style={{ marginBottom: '10px' }}>
+                <NavCard text={item.text} icon={item.icon} path={item.path} />
               </li>
             );
           })}

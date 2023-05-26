@@ -3,15 +3,15 @@ import testImg1 from '../../../src/assets/images/logo192.png';
 import Button from '../common/button';
 
 interface IAdminDefaultProps {
-  children?: React.ReactNode
-  userImg: string
-  userName: string
-  userId: string
-  userTel: string
-  userPoints: string
-  userKey?: string
-  userHelps: string
-  lineColor: string
+  children?: React.ReactNode;
+  userImg: string;
+  userName: string;
+  userId: string;
+  userTel: string;
+  userPoints: string;
+  userKey?: string;
+  userHelps: string;
+  lineColor: string;
 }
 
 const AdminDefault = (props: IAdminDefaultProps) => {
@@ -32,7 +32,7 @@ const AdminDefault = (props: IAdminDefaultProps) => {
   }
   return (
     <div className={styles.adminDefault}>
-      <img alt={props.userName} src={props.userImg} className={styles.avatar}/>
+      <img alt={props.userName} src={props.userImg} className={styles.avatar} />
       <div className={styles.adminChild}>
         <p className={styles.userName}>{props.userName}</p>
         <p className={styles.userId}>{props.userId}</p>
@@ -42,7 +42,7 @@ const AdminDefault = (props: IAdminDefaultProps) => {
         </div>
         <div className={styles.lineItems}>
           <p className={styles.userPoints}>{props.userPoints}</p>
-          { (isKey != null) ? <p className={styles.userKey}>{props.userKey}</p> : <div className="hidden-block"></div>}
+          {isKey != null ? <p className={styles.userKey}>{props.userKey}</p> : <div className='hidden-block'></div>}
           <p className={styles.userHelps}>{props.userHelps}</p>
         </div>
         <div className={styles.buttons}>

@@ -7,9 +7,9 @@ import ServiceButton from '../service-button';
 const modalRoot = document.getElementById('root') as HTMLElement;
 
 interface IModal {
-  title?: string
-  onClose: () => void
-  children?: React.ReactNode
+  title?: string;
+  onClose: () => void;
+  children?: React.ReactNode;
 }
 
 const Modal: FC<IModal> = ({ onClose, children }) => {
@@ -34,7 +34,7 @@ const Modal: FC<IModal> = ({ onClose, children }) => {
       <div className={styles.modal}>
         <div className={styles.modalHeader}>
           <div className={styles.modalCloseButton}>
-            <ServiceButton viewType="close" onClick={onClose} />
+            <ServiceButton viewType='close' onClick={onClose} />
           </div>
         </div>
         {children}

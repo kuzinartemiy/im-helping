@@ -17,7 +17,7 @@ const SuperAdminConfirm = () => {
   };
   return (
     <>
-      <TopPanel title="Подтверждение / Блокировка" titleIcon={<BlockingIcon fill={COLORS.get('color-primary')} />}>
+      <TopPanel title='Подтверждение / Блокировка' titleIcon={<BlockingIcon fill={COLORS.get('color-primary')} />}>
         <AdminFilterPopup onClick={() => {}} />
       </TopPanel>
       <div className={styles.inputContainer}>
@@ -27,7 +27,8 @@ const SuperAdminConfirm = () => {
         <AdminPrivilegesCard
           name={superAdminTestPersonProps.name}
           phone={superAdminTestPersonProps.phone}
-          id={ superAdminTestPersonProps.id }/>
+          id={superAdminTestPersonProps.id}
+        />
       </div>
     </>
   );

@@ -1,20 +1,16 @@
 import styles from './circle-button.module.scss';
 
 export interface ICircleButtonProps extends React.PropsWithChildren<Omit<React.HTMLProps<HTMLButtonElement>, 'type' | 'size'>> {
-  children?: React.ReactNode
-  onClick?: () => void
-  size?: 'small' | 'medium' | 'large'
-  border?: 'primary' | 'secondary'
-  isDisabled?: boolean
+  children?: React.ReactNode;
+  onClick?: () => void;
+  size?: 'small' | 'medium' | 'large';
+  border?: 'primary' | 'secondary';
+  isDisabled?: boolean;
 }
 
-const CircleButton: React.FC<ICircleButtonProps> = ({ children, isDisabled, size = 'small', border = 'primary                        ', ...props }) => {
+const CircleButton = ({ children, isDisabled, size = 'small', border = 'primary', ...props }: ICircleButtonProps) => {
   return (
-    <button
-      className={`${styles.button} ${styles[`button__${size}`]} ${styles[`button__${border}`]}`}
-      disabled={isDisabled}
-      {...props}
-    >
+    <button className={`${styles.button} ${styles[`button__${size}`]} ${styles[`button__${border}`]}`} disabled={isDisabled} {...props}>
       {children}
     </button>
   );

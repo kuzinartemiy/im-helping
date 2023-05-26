@@ -4,10 +4,10 @@ import style from './coords-modal.module.scss';
 const modalsContainer = document.querySelector('#modalsContainer');
 
 type TCoordsPopup = {
-  pageX: number
-  pageY: number
-  children: React.ReactNode
-  onOverlayClick: () => void
+  pageX: number;
+  pageY: number;
+  children: React.ReactNode;
+  onOverlayClick: () => void;
 } & React.HTMLProps<HTMLDivElement>;
 
 export const CoordsPopup = ({ pageX, pageY, onOverlayClick, children, ...props }: TCoordsPopup) => {
@@ -31,10 +31,14 @@ export const CoordsPopup = ({ pageX, pageY, onOverlayClick, children, ...props }
     }
   }, [wrapperRef, tongueRef, height, pageX, pageY]);
 
-  return (modalsContainer != null)
+  return modalsContainer != null
     ? createPortal(
         <>
-          <div className={style.wrapper} ref={wrapperRef} style={{ left: pageX - width + tongueWidth, top: pageY + tongueHeight }} {...props}>
+          <div
+            className={style.wrapper}
+            ref={wrapperRef}
+            style={{ left: pageX - width + tongueWidth, top: pageY + tongueHeight }}
+            {...props}>
             <div className={style.content}>
               <div className={style.tongue} ref={tongueRef} style={{ top: `-${tongueHeight}px` }} />
               {children}
@@ -43,6 +47,6 @@ export const CoordsPopup = ({ pageX, pageY, onOverlayClick, children, ...props }
           <div className={style.overlay} onClick={onOverlayClick} />
         </>,
         modalsContainer,
-    )
+      )
     : null;
 };

@@ -1,4 +1,3 @@
-
 import Checkbox from '../../common/checkbox';
 import RadiusSearch from '../../common/radius-search';
 import CustomDatePicker from '../../common/datepicker';
@@ -13,7 +12,9 @@ function MapFilterPopup() {
   return (
     <section className={styles.container}>
       <div className={styles.block}>
-        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>{'Категория'}</Text>
+        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>
+          {'Категория'}
+        </Text>
         <p className={styles.border} />
         <ul className={styles.category}>
           {data?.map((item, index: number) => {
@@ -22,27 +23,29 @@ function MapFilterPopup() {
             }
             return (
               <li key={index}>
-                <Checkbox id={item.id}>
-                  {item.name}
-                </Checkbox>
+                <Checkbox id={item.id}>{item.name}</Checkbox>
               </li>
             );
           })}
         </ul>
       </div>
       <div className={styles.block}>
-        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>{'Радиус поиска'}</Text>
+        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>
+          {'Радиус поиска'}
+        </Text>
         <p className={styles.border} />
         <RadiusSearch />
       </div>
       <div>
-        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>{'Дата и время'}</Text>
+        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>
+          {'Дата и время'}
+        </Text>
         <p className={styles.border} />
         <div className={styles.datePicker}>
-          <CustomDatePicker type={DatePickerTypes.Time} >{'Время'}</CustomDatePicker>
+          <CustomDatePicker type={DatePickerTypes.Time}>{'Время'}</CustomDatePicker>
         </div>
         <div className={styles.datePicker}>
-          <CustomDatePicker type={DatePickerTypes.Date} >{'Дата'}</CustomDatePicker>
+          <CustomDatePicker type={DatePickerTypes.Date}>{'Дата'}</CustomDatePicker>
         </div>
       </div>
       <div className={styles.btn}>

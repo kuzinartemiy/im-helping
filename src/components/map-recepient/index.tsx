@@ -5,15 +5,7 @@ import location from '../../assets/icons/location.svg';
 const MapRecepient = () => {
   let myMap: ymaps.Map;
   const mapRef = useRef(null);
-  const ymaps = useYMaps([
-    'Map',
-    'GeoObjectCollection',
-    'Placemark',
-    'GeoObject',
-    'suggest',
-    'geocode',
-    'geolocation',
-  ]);
+  const ymaps = useYMaps(['Map', 'GeoObjectCollection', 'Placemark', 'GeoObject', 'suggest', 'geocode', 'geolocation']);
 
   useEffect(() => {
     const iconLayout = 'default#image';
@@ -43,12 +35,7 @@ const MapRecepient = () => {
     myMap.geoObjects.add(myPlacemark);
   }, [ymaps]);
 
-  return (
-      <div
-        style={{ height: '175px', width: '100%' }}
-        ref={mapRef}
-      />
-  );
+  return <div style={{ height: '175px', width: '100%' }} ref={mapRef} />;
 };
 
 export default MapRecepient;

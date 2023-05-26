@@ -11,19 +11,23 @@ import { useStore } from '../../../services/store';
 
 const EmptyApplicationsCards = () => {
   const [isCreateAppModalOpen, setCreateAppModalOpen] = useState<boolean>(false);
-  const owner = useStore((state) => state.owner);
+  const owner = useStore(state => state.owner);
   return (
     <>
       <div className={styles.emptyApplicationsCards}>
         <div className={styles.emptyApplicationsCards__info}>
           <CompletedApplicationsIcon />
-          <Text size='24' color={ COLORS.get('color-secondary') }>У Вас пока нет заявок</Text>
+          <Text size='24' color={COLORS.get('color-secondary')}>
+            У Вас пока нет заявок
+          </Text>
         </div>
         <div className={styles.emptyApplicationsCards__info}>
-          <Text size='24' color={ COLORS.get('color-primary') }>Хотите создать заявку?</Text>
+          <Text size='24' color={COLORS.get('color-primary')}>
+            Хотите создать заявку?
+          </Text>
           <div className={styles.emptyApplicationsCards__button}>
-            <CircleButton onClick={() => setCreateAppModalOpen(true)} size={ 'large' }>
-              <Plus/>
+            <CircleButton onClick={() => setCreateAppModalOpen(true)} size={'large'}>
+              <Plus />
             </CircleButton>
             <Arrow />
           </div>
