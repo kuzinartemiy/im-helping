@@ -11,14 +11,14 @@ import { COLORS } from '../../../styles/colors';
 const Statistics = () => {
   const { setTitle } = useSetTitleAdminPage();
 
-  useEffect(() => setTitle(AdminPageTitle.statistics), []);
+  useEffect(() => setTitle(AdminPageTitle.statistics), [setTitle]);
   return (
     <div className={styles.statsContainer}>
       <TopPanel title='Статистика' titleIcon={<StatisticsIcon fill={COLORS.get('color-primary')} />}>
         <AdminFilterPopup onClick={() => {}} />
       </TopPanel>
       <div className={styles.diagrammBlock}>
-        <img src={diagramm} alt="Main statistic" />
+        <img src={diagramm} alt='Main statistic' />
       </div>
       <div className={styles.statsBlocks}>
         <div className={styles.statsBlock}></div>
@@ -30,7 +30,7 @@ const Statistics = () => {
         <div className={styles.statsBlock}></div>
         <div className={styles.statsBlock}></div>
       </div>
-  </div>
+    </div>
   );
 };
 

@@ -6,16 +6,18 @@ import styles from './nav-button.module.scss';
 import { COLORS } from '../../../styles/colors';
 
 interface INavButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  children?: React.ReactNode
-  isDisabled?: boolean
+  children?: React.ReactNode;
+  isDisabled?: boolean;
 }
 
 const NavButton = ({ children, isDisabled, ...props }: INavButtonProps) => {
   return (
     <button disabled={isDisabled} className={styles.navButton} {...props}>
-     {/*  <ArrowIcon fill={COLORS.get('background')} /> */}
+      {/*  <ArrowIcon fill={COLORS.get('background')} /> */}
       <Search />
-      <Text lineHeight='19px' size='16' color={COLORS.get('background')}>{children}</Text>
+      <Text lineHeight='19px' size='16' color={COLORS.get('background')}>
+        {children}
+      </Text>
     </button>
   );
 };

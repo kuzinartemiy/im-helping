@@ -5,12 +5,12 @@ import { ReactComponent as IconCompleted } from '../../assets/icons/completed-ap
 export const recipientPageNavLinks = [
   {
     text: 'Активные заявки',
-    icon: <IconActiveList className={styles.colorIcon}/>,
+    icon: <IconActiveList className={styles.colorIcon} />,
     path: 'active-applications',
   },
   {
     text: 'Завершенные заявки',
-    icon: <IconCompleted className={styles.colorIcon}/>,
+    icon: <IconCompleted className={styles.colorIcon} />,
     path: 'completed-applications',
   },
 ];

@@ -10,12 +10,12 @@ import { type IOwner } from '../../../types';
 
 interface IDocumentsPopup {
   data: {
-    owner: IOwner
-  }
-  id: string
-  name?: string
-  phone?: string
-  avatar?: string
+    owner: IOwner;
+  };
+  id: string;
+  name?: string;
+  phone?: string;
+  avatar?: string;
 }
 
 export const DocumentsPopup: FC<IDocumentsPopup> = ({ data }) => {
@@ -26,23 +26,28 @@ export const DocumentsPopup: FC<IDocumentsPopup> = ({ data }) => {
       </div>
       <div className={styles.documentsPoupup__userInfo}>
         <div className={styles.documentsPoupup__userInfoText}>
-          <Text size='24' lineHeight='24px'>{data.owner.name}</Text>
+          <Text size='24' lineHeight='24px'>
+            {data.owner.name}
+          </Text>
           <div className={styles.documentsPoupup__userInfoPhone}>
-            <Text size='16' lineHeight='19px' weight='700'>Тел.:</Text>
-            <Text size='16' lineHeight='19px'>{ data.owner.phone }</Text>
+            <Text size='16' lineHeight='19px' weight='700'>
+              Тел.:
+            </Text>
+            <Text size='16' lineHeight='19px'>
+              {data.owner.phone}
+            </Text>
           </div>
         </div>
       </div>
       <div className={styles.documentsPoupup__textAreaContainer}>
-        <Textarea
-          placeholder='Например: Отправляю Вам скан медицинской справки, паспорта и свидетельства о  рождении.'
-          maxLength={ 256 }
-        />
+        <Textarea placeholder='Например: Отправляю Вам скан медицинской справки, паспорта и свидетельства о  рождении.' maxLength={256} />
         <div className={styles.documentsPoupup__button}>
           <Button>
             <div className={styles.documentsPoupup__buttonInner}>
               <AttachIcon />
-              <Text color={COLORS.get('white')} align='center'>Прикрепить</Text>
+              <Text color={COLORS.get('white')} align='center'>
+                Прикрепить
+              </Text>
             </div>
           </Button>
         </div>

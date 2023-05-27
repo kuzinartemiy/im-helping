@@ -21,14 +21,14 @@ const CreateEdit = () => {
   const navigate = useNavigate();
   const { user, addUser } = useFindUser();
   const { setTitle } = useSetTitleAdminPage();
-  const adminUsersData = useStore((store) => store.adminUsersData);
-  const applicationCards = useStore((store) => store.applicationCards);
+  const adminUsersData = useStore(store => store.adminUsersData);
+  const applicationCards = useStore(store => store.applicationCards);
 
-  useEffect(() => setTitle(AdminPageTitle.edit), []);
+  useEffect(() => setTitle(AdminPageTitle.edit), [setTitle]);
 
   useEffect(() => {
     addUser(adminUsersData[0]);
-  }, []);
+  }, [addUser, adminUsersData]);
 
   return (
     <div className={styles.creatEditAppContainer}>
@@ -36,31 +36,16 @@ const CreateEdit = () => {
         <AdminFilterPopup onClick={() => {}} />
       </TopPanel>
       <div className={styles.search}>
-        <NavButton onClick={() => navigate('/profile/admin/search-applications')}>
-          Поиск
-        </NavButton>
+        <NavButton onClick={() => navigate('/profile/admin/search-applications')}>Поиск</NavButton>
       </div>
-      <div className={styles.searchCards}>
-        {user !== null && (
-          <UserCard
-            name={user.userName}
-            id={user.userId}
-            phone={user.userTel}
-          />
-        )}
-      </div>
+      <div className={styles.searchCards}>{user !== null && <UserCard name={user.userName} id={user.userId} phone={user.userTel} />}</div>
       <div className={styles.createApp}>
-        <CircleButton
-          size='large'
-          onClick={() => setIsOpen(true)}
-        >
+        <CircleButton size='large' onClick={() => setIsOpen(true)}>
           <Plus />
         </CircleButton>
-        <Text
-          children={'Создать заявку'}
-          size={'24'}
-          color={COLORS.get('color-secondary')}
-        />
+        <Text size={'24'} color={COLORS.get('color-secondary')}>
+          Создать заявку
+        </Text>
         {isOpen && user !== null && (
           <CreateApplicationPopup
             owner={{

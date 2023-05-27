@@ -1,19 +1,18 @@
-import type React from 'react';
 import styles from './input.module.scss';
 
 interface InputProps {
-  label?: string
-  type: string
-  name: string
-  value: string
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  placeholder?: string
-  isError?: boolean
-  errorMessage?: string
-  padding?: string
+  label?: string;
+  type: string;
+  name: string;
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+  isError?: boolean;
+  errorMessage?: string;
+  padding?: string;
 }
 
-const Input: React.FC<InputProps> = ({
+const Input = ({
   label,
   type,
   name,
@@ -23,7 +22,7 @@ const Input: React.FC<InputProps> = ({
   isError = false,
   errorMessage,
   padding = '12px 12px 12px 12px',
-}) => {
+}: InputProps) => {
   return (
     <div className={styles.inputContainer}>
       <label className={styles.label} htmlFor={name}>

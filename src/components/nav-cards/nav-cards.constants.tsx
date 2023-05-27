@@ -8,11 +8,13 @@ export const data = [
     text: 'Карта заявок',
     icon: <IconMaps className={styles.colorIcon} />,
     path: '/',
-  }, {
+  },
+  {
     text: 'Активные заявки',
     icon: <IconActiveList className={styles.colorIcon} />,
     path: '/',
-  }, {
+  },
+  {
     text: 'Завершенные заявки',
     icon: <IconCompleted className={styles.colorIcon} />,
     path: '/',

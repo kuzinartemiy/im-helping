@@ -9,13 +9,8 @@ function RecipientFilterPopup() {
   return (
     <section className={styles.container}>
       <div className={styles.block}>
-        <Text
-          tag="h4"
-          weight="700"
-          size="12"
-          color={COLORS.get('text-color-black')}
-        >
-          {'Отображать'}
+        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>
+          Отображать
         </Text>
         <p className={styles.border} />
         <div className={styles.category}>
@@ -23,13 +18,8 @@ function RecipientFilterPopup() {
         </div>
       </div>
       <div className={styles.block}>
-        <Text
-          tag="h4"
-          weight="700"
-          size="12"
-          color={COLORS.get('text-color-black')}
-        >
-          {'Категория'}
+        <Text tag='h4' weight='700' size='12' color={COLORS.get('text-color-black')}>
+          Категория
         </Text>
         <p className={styles.border} />
         <ul className={styles.category}>
@@ -46,7 +36,7 @@ function RecipientFilterPopup() {
         </ul>
       </div>
       <div className={styles.btn}>
-        <Button>{'Применить'}</Button>
+        <Button>Применить</Button>
       </div>
     </section>
   );

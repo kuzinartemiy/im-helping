@@ -88,24 +88,12 @@ export const router = createBrowserRouter([
           },
           {
             path: 'active-applications',
-            element: (
-              <TypeApplications
-                type='activeRecepient'
-                size='small'
-                title='Активные заявки'
-                titleIcon={<ActiveApplicationIcon/>}
-              />
-            ),
+            element: <TypeApplications type='activeRecepient' size='small' title='Активные заявки' titleIcon={<ActiveApplicationIcon />} />,
           },
           {
             path: 'completed-applications',
             element: (
-              <TypeApplications
-                type='completed'
-                size='large'
-                title='Завершенные заявки'
-                titleIcon={<ComplitedApplicationsIcon />}
-              />
+              <TypeApplications type='completed' size='large' title='Завершенные заявки' titleIcon={<ComplitedApplicationsIcon />} />
             ),
           },
         ],
@@ -122,30 +110,18 @@ export const router = createBrowserRouter([
             path: 'map-applications',
             element: (
               <YMaps>
-                <MapComponent/>
+                <MapComponent />
               </YMaps>
             ),
           },
           {
             path: 'active-applications',
-            element: (
-              <TypeApplications
-                type='activeVolunteer'
-                size='large'
-                title='Активные заявки'
-                titleIcon= {<ActiveApplicationIcon />}
-              />
-            ),
+            element: <TypeApplications type='activeVolunteer' size='large' title='Активные заявки' titleIcon={<ActiveApplicationIcon />} />,
           },
           {
             path: 'completed-applications',
             element: (
-              <TypeApplications
-                type='completed'
-                size='large'
-                title='Завершенные заявки'
-                titleIcon= {<ComplitedApplicationsIcon />}
-              />
+              <TypeApplications type='completed' size='large' title='Завершенные заявки' titleIcon={<ComplitedApplicationsIcon />} />
             ),
           },
         ],
@@ -160,11 +136,11 @@ export const router = createBrowserRouter([
           },
           {
             path: 'popular',
-            element: <Popular/>,
+            element: <Popular />,
           },
           {
             path: 'category',
-            element: <Popular/>,
+            element: <Popular />,
           },
         ],
       },

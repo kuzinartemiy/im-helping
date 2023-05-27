@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import styles from './search.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../../../services/store';
@@ -15,26 +15,26 @@ const SearchApp = () => {
   const { addUser } = useFindUser();
   const navigate = useNavigate();
 
-  const adminUsersData = useStore((store) => store.adminUsersData);
+  const adminUsersData = useStore(store => store.adminUsersData);
 
-  useEffect(() => setTitle(AdminPageTitle.edit), []);
+  useEffect(() => setTitle(AdminPageTitle.edit), [setTitle]);
 
-  const search = () => {
-    const searchArr = adminUsersData.filter((el) => {
+  const search = useCallback(() => {
+    const searchArr = adminUsersData.filter(el => {
       const reg = new RegExp(state, 'i');
       return reg.test(el.userName);
     });
     setArr(searchArr);
     if (state === '') setVisible(false);
     else setVisible(true);
-  };
+  }, [adminUsersData, state]);
 
-  let timer: NodeJS.Timeout | null = null;
   useEffect(() => {
+    let timer: NodeJS.Timeout | null = null;
     if (timer !== null) clearTimeout(timer);
 
     timer = setTimeout(search, 600);
-  }, [state]);
+  }, [search, state]);
 
   const onChange = (e: React.FormEvent) => {
     if (visible) setVisible(false);
@@ -45,16 +45,10 @@ const SearchApp = () => {
     <div className={styles.container}>
       <div className={styles.inputContainer}>
         <p>Введите имя</p>
-        <Input
-          type={'text'}
-          name={'searchAdmin'}
-          value={state}
-          placeholder='Петр'
-          onChange={onChange}
-        />
+        <Input type={'text'} name={'searchAdmin'} value={state} placeholder='Петр' onChange={onChange} />
       </div>
       {visible &&
-        arr.map((user) => (
+        arr.map(user => (
           <UserCard
             key={user.userId}
             name={user.userName}

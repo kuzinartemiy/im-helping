@@ -65,9 +65,9 @@ const meta: Meta<typeof CircleButton> = {
         defaultValue: { summary: 'Phone' },
       },
       control: {
-        type: [<Phone />, <Message />, <Location />, <Plus />],
+        type: [<Phone key='1' />, <Message key='2' />, <Location key='3' />, <Plus key='4' />],
       },
-      options: [<Phone />, <Message />, <Location />, <Plus />],
+      options: [<Phone key='1' />, <Message key='2' />, <Location key='3' />, <Plus key='4' />],
     },
   },
 };

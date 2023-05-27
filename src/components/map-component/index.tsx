@@ -22,14 +22,9 @@ const MapComponent = () => {
   const [isReqAccepted, setIsReqAccepted] = useState(false);
   let myMap: ymaps.Map;
   const placemarkCollection: any = {};
-  const ymaps = useYMaps([
-    'Map',
-    'GeoObjectCollection',
-    'Placemark',
-    'GeoObject',
-  ]);
-  const mapRef = useRef(null);
+  const ymaps = useYMaps(['Map', 'GeoObjectCollection', 'Placemark', 'GeoObject']);
 
+  const mapRef = useRef(null);
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     if (ymaps == null || !mapRef.current) {
@@ -41,9 +36,9 @@ const MapComponent = () => {
       zoom: 10,
     });
 
-    requests.forEach((city) => {
+    requests.forEach(city => {
       const cityCollection = new ymaps.GeoObjectCollection();
-      city.requests.forEach((req) => {
+      city.requests.forEach(req => {
         const reqPlaceMark = new ymaps.Placemark(
           req.coord,
           {
@@ -88,17 +83,9 @@ const MapComponent = () => {
 
   return (
     <div className={styles.container}>
-      <TopPanel
-        filterType='MapFilterPopup'
-        title="Карта"
-        titleIcon={<MapIcon />}
-      />
-      {(Boolean(reqInfo)) && (Boolean(placemarkCoords)) && (placemarkCoords != null) && (
-        <CoordsPopup
-          pageX={placemarkCoords[0]}
-          pageY={placemarkCoords[1]}
-          onOverlayClick={onOverlayClickRequest}
-        >
+      <TopPanel filterType='MapFilterPopup' title='Карта' titleIcon={<MapIcon />} />
+      {Boolean(reqInfo) && Boolean(placemarkCoords) && placemarkCoords != null && (
+        <CoordsPopup pageX={placemarkCoords[0]} pageY={placemarkCoords[1]} onOverlayClick={onOverlayClickRequest}>
           <TooltipMap
             cardData={{
               id: reqInfo.id,
@@ -111,27 +98,15 @@ const MapComponent = () => {
         </CoordsPopup>
       )}
 
-      {isReqAccepted && (placemarkCoords != null) && (
-        <CoordsPopup
-          pageX={placemarkCoords[0]}
-          pageY={placemarkCoords[1]}
-          onOverlayClick={onThanksOverlayClick}
-        >
-          <ThanksPopup/>
+      {isReqAccepted && placemarkCoords != null && (
+        <CoordsPopup pageX={placemarkCoords[0]} pageY={placemarkCoords[1]} onOverlayClick={onThanksOverlayClick}>
+          <ThanksPopup />
         </CoordsPopup>
       )}
 
-      <div
-        className={styles.container__map}
-        style={{ height: '728px', width: '100%' }}
-        ref={mapRef}
-      >
+      <div className={styles.container__map} style={{ height: '728px', width: '100%' }} ref={mapRef}>
         <section className={styles.container__map__select}>
-          <Select
-            value={'Выберите город'}
-            elementsList={requests.map((el) => el.city.name)}
-            onChange={onSelectChange}
-          />
+          <Select value={'Выберите город'} elementsList={requests.map(el => el.city.name)} onChange={onSelectChange} />
         </section>
       </div>
     </div>

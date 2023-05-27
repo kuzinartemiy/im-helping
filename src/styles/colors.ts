@@ -1,5 +1,4 @@
 const collection = {
-
   'color-primary': '#2e3192',
   'color-secondary': '#9798c9',
 

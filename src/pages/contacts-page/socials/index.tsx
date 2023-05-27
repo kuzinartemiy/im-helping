@@ -5,12 +5,14 @@ import { contactSocialLinks } from '../contacts.constants';
 
 const Socials = () => (
   <>
-    <TopPanel title="Контакты" titleIcon={<IconContactsGlobe className={styles.colorBlueIcon} />} filter={false}/>
+    <TopPanel title='Контакты' titleIcon={<IconContactsGlobe className={styles.colorBlueIcon} />} filter={false} />
     <ul className={styles.socialsList}>
-      {contactSocialLinks.map((social) => (
+      {contactSocialLinks.map(social => (
         <li key={social.id} className={styles.socialsItem}>
           <p className={styles.socialsTitle}>{social.title}</p>
-          <a href={social.link} className={styles.socialsLink}>{social.link}</a>
+          <a href={social.link} className={styles.socialsLink}>
+            {social.link}
+          </a>
         </li>
       ))}
     </ul>

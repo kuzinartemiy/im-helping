@@ -9,8 +9,8 @@ import Chat from './chat';
 import { type IMessage, type IOwner } from '../../types';
 
 interface IChat {
-  user: IOwner
-  messages: IMessage[]
+  user: IOwner;
+  messages: IMessage[];
 }
 
 export const ChatBlock: FC<IChat> = ({ user, messages }) => {
@@ -27,7 +27,7 @@ export const ChatBlock: FC<IChat> = ({ user, messages }) => {
     <div className={styles.container}>
       <InfoUser user={user} />
       <div className={styles.chatContainer}>
-        <Chat messages={messages}/>
+        <Chat messages={messages} />
         <div className={styles.button}>
           <div className={styles.inputContainer}>
             <Input
@@ -41,22 +41,17 @@ export const ChatBlock: FC<IChat> = ({ user, messages }) => {
               errorMessage={'сообщение не должно быть пустым'}
               padding={'10px 20px'}
             />
-            <button className={styles.buttonFile} >
+            <button className={styles.buttonFile}>
               <VectorIcon />
             </button>
           </div>
 
           <div className={styles.buttonContainer}>
-            <Button
-              size={'small'}
-              height={'42'}
-              children={
-                <div className={styles.buttonInner}>
-                  <SendIcon />
-                </div>
-              }
-              onClick={handleSubmit}
-            />
+            <Button size='small' height='42' onClick={handleSubmit}>
+              <div className={styles.buttonInner}>
+                <SendIcon />
+              </div>
+            </Button>
           </div>
         </div>
       </div>

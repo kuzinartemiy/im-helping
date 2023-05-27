@@ -3,22 +3,15 @@ import styles from './select.module.scss';
 import { type ChangeEvent } from 'react';
 
 interface ISelect {
-  value: string
-  elementsList: string[]
-  name?: string
-  errorText?: string
-  isError?: boolean
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  value: string;
+  elementsList: string[];
+  name?: string;
+  errorText?: string;
+  isError?: boolean;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Select: React.FC<ISelect> = ({
-  value,
-  elementsList,
-  errorText,
-  isError: checkError = false,
-  onChange,
-  name,
-}) => {
+const Select: React.FC<ISelect> = ({ value, elementsList, errorText, isError: checkError = false, onChange, name }) => {
   const [stateValue, setStateValue] = React.useState(value);
   const [isDefault, setIsDefault] = React.useState(true);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -71,33 +64,20 @@ const Select: React.FC<ISelect> = ({
       <button
         ref={buttonRef}
         className={`${styles.dropdown} ${colorStyle} ${arrowAnimation} ${borderColorStyle}`}
-        onClick={handleClickButton}
-      >
+        onClick={handleClickButton}>
         {stateValue}
       </button>
       {isError && <p className={styles.error}>{errorText}</p>}
       {isOpen && (
         <ul className={styles.dropdownList}>
           {elementsList.map((el, index) => (
-            <li
-              key={index}
-              className={styles.dropdownItem}
-              onClick={handleClickLi}
-            >
+            <li key={index} className={styles.dropdownItem} onClick={handleClickLi}>
               {el}
             </li>
           ))}
         </ul>
       )}
-      <input
-        ref={inputRef}
-        type='text'
-        value={stateValue}
-        className={styles.input}
-        onInput={onChange}
-        readOnly
-        name={name}
-      />
+      <input ref={inputRef} type='text' value={stateValue} className={styles.input} onInput={onChange} readOnly name={name} />
     </div>
   );
 };

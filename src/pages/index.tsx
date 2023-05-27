@@ -6,12 +6,4 @@ import PrivacyPage from './privacy-page';
 import HomePage from './home-page';
 import BlogPage from './blog-page';
 
-export {
-  HomePage,
-  SuperAdminPage,
-  AdminPage,
-  VolunteerPage,
-  RecipientPage,
-  BlogPage,
-  PrivacyPage,
-};
+export { HomePage, SuperAdminPage, AdminPage, VolunteerPage, RecipientPage, BlogPage, PrivacyPage };

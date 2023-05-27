@@ -7,7 +7,7 @@ import NavCard from '../../components/common/nav-card';
 import { useStore } from '../../services/store';
 
 const RecipientPage = () => {
-  const owner = useStore((state) => state.owner);
+  const owner = useStore(state => state.owner);
   return (
     <main className={styles.recipientPage}>
       <section>
@@ -15,7 +15,7 @@ const RecipientPage = () => {
         <ul className={navCardsStyles.linkCardContainer}>
           {recipientPageNavLinks.map((item, index) => (
             <li key={index} className={navCardsStyles.linkCard}>
-              <NavCard text={item.text} icon={item.icon} path={item.path}/>
+              <NavCard text={item.text} icon={item.icon} path={item.path} />
             </li>
           ))}
         </ul>
